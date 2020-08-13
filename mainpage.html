@@ -1,96 +1,95 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SK SUNNY 은하수</title>
+    
     <style>
-        *{
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+        html, body{
+            height:100%;
             margin:0;
-            padding:0;
             overflow:hidden;
-            font-family: "Noto Sans KR", sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
+            
         }
-        body{
-            margin:0;
-        }
+
         hr{ 
-            border: 2px solid #ededed;
-
-
-
+            border: 0.5px solid #000000;
         }
         .logo{
-            padding-top:3%;
-            padding-left:12%;
-            text-align:left;
-            font-weight: 900;
-            font-size:4em;
-            line-height:2 em;
+            padding-top:4%;
+            padding-left:6%;
+            font-size:55px;
+            font-weight:900;
             cursor:pointer;
-            color:black;
         }
         .menu{
             display:flex;
             text-align:center;
-            margin-bottom: 1%;
-            padding-top: 3%;
+            margin-top: 4px;
             font-size:large;
             cursor: pointer;
         }
         #menu_1 {
            flex:1;
+           margin-bottom: 1%;
+           padding-top: 2%;
         }
         #menu_2 {
            flex:1;
         }
         #menu_3 {
            flex:1;
+           margin-bottom: 1%;
+           padding-top: 2%;
         }
         #menu_1:hover{
-            font-weight: 800;
-            transition: all 0.4s ease;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
-        #menu_2:hover{
-            font-weight: 800;
-            transition: all 0.4s ease;
+        #menu_2 img{
+            padding-top:17px;
+            width:220px;
         }
         #menu_3:hover{
-            font-weight: 800;
-            transition: all 0.4s ease;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
         .map{
             margin:0;
             padding:0;
             display:flex;
-            height: 86%;
-            
         }
 
         svg{
             flex:1;
             padding:0;
+            margin:0;
+            height:700px;
         }
-        svg a:visited{
-            opacity: 0%;
-        }
+
 
 
         /* 구별로 색지정 */
         #tile-Jongno-gu{
             fill:#a4a6bf;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Jongno-gu:hover{
             fill:#a4a6bf;
             opacity:100%;
             transition: all 0.4s ease;
         }
+        #tile-Jongno-gu:visited{
+            fill:#a4a6bf;
+        }
         #tile-Jung-gu{
             fill:#dd7f27;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Yongsan-gu{
             fill:#84a19c;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Yongsan-gu:hover{
             fill:#84a19c;
@@ -99,91 +98,91 @@
         }
         #tile-Seongdong-gu{
             fill:#f0ad9c;
-            opacity:50%;            
+            opacity:55%;            
         }
         #tile-Gwangjin-gu{
             fill:#f7e0af;
-            opacity:50%;            
+            opacity:55%;            
         }
         #tile-Dongdaemun-gu{
             fill:#7a9e61;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Jungnang-gu{
             fill:#dfa14a;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Seongbuk-gu{
             fill:#c4d2d9;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Gangbuk-gu{
-            fill:#96aff3;
-            opacity:50%;
+            fill:#ba795d;
+            opacity:55%;
         }
         #tile-Dobong-gu{
             fill:#fccb89;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Nowon-gu{
             fill:#a28a6e;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Eunpyeong-gu{
             fill:#dfdacb;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Seodaemun-gu{
             fill:#a7ab84;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Mapo-gu{
             fill:#fccb89;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Yangcheon-gu{
             fill:#dcb097;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Gangseo-gu{
             fill:#cccc99;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Guro-gu{
             fill:#fbcc64;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Geumcheon-gu{
             fill:#feae66;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Yeongdeungpo-gu{
             fill:#cec1ef;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Dongjak-gu{
             fill:#99cccc;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Gwanak-gu{
             fill:#99cc99;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Seocho-gu{
             fill:#bdc36f;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Gangnam-gu{
             fill:#c5c4c2;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Songpa-gu{
             fill:#d19d9d;
-            opacity:50%;
+            opacity:55%;
         }
         #tile-Gangdong-gu{
             fill:#baded2;
-            opacity:50%;
+            opacity:55%;
         }
 
         .tile {
@@ -233,10 +232,10 @@
         }
 
         .modal-window>div {
-        width: 450px;
+        width: 350px;
         position: relative;
-        margin-top:9%;
-        margin-left:70%;
+        margin-top:8%;
+        margin-left:65%;
         padding: 0;
         background: #f3f3f3;
         color: #444;
@@ -261,6 +260,9 @@
         .modal-close:hover {
         color: #000;
         }
+        div img{
+            width:350px;
+        }
 
 
     </style>
@@ -272,16 +274,20 @@
 
     <!-- 메뉴 -->
     <div class="menu">
-        <a id="menu_1" href="mainpage.html" style="text-decoration:none ;color:black">은하수 프로젝트</a>
-        <a id="menu_2" href="menu2.html" style="text-decoration:none ;color:black">제21대 서울시 국회의원 선거 공보물</a>
+        <a id="menu_1" href="mainpage.html" style="text-decoration:none ;color:black">
+        은하수 프로젝트</a>
+        <a id="menu_2" href="mainpage.html">
+            <img src="로고2.jpg">
+        </a>
+        <a id="menu_3" href="menu3.html" style="text-decoration:none ;color:black">제21대 서울시 국회의원 선거 공보물</a>
     </div>
     <hr>
     <!-- 콘텐츠 영역 -->
     <span class="map">
             <!-- 로고 -->
           <span class="logo"> 
-            <a href="mainpage_proto.html" style="text-decoration:none ;color:black">
-              제21대<br>서울시 국회의원<br>선거공보물 보기<br>
+            <a href="mainpage.html" style="text-decoration:none; color:black">
+                제21대<br>서울시 국회의원<br>약속 보러가기
             </a>
           </span>
           <!-- 팝업창 -->
@@ -303,7 +309,7 @@
         </div>
     </div>
            <!-- 지도 -->
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" viewBox="40 0 349 300" stroke-linecap="round" stroke-linejoin="round"><defs xmlns="http://www.w3.org/2000/svg">    <filter id="outline">        <feMorphology in="SourceAlpha" result="morp" operator="dilate" radius="1"></feMorphology>        <feFlood flood-color="#000000" flood-opacity="0.7" result="flood"></feFlood>        <feComposite in="flood" in2="morp" operator="in" result="outline"></feComposite>        <feMerge>            <feMergeNode in="outline"></feMergeNode>            <feMergeNode in="SourceGraphic"></feMergeNode>        </feMerge>    </filter></defs>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" viewBox="0 16 309 300" stroke-linecap="round" stroke-linejoin="round"><defs xmlns="http://www.w3.org/2000/svg">    <filter id="outline">        <feMorphology in="SourceAlpha" result="morp" operator="dilate" radius="1"></feMorphology>        <feFlood flood-color="#000000" flood-opacity="0.7" result="flood"></feFlood>        <feComposite in="flood" in2="morp" operator="in" result="outline"></feComposite>        <feMerge>            <feMergeNode in="outline"></feMergeNode>            <feMergeNode in="SourceGraphic"></feMergeNode>        </feMerge>    </filter></defs>
             <g id="서울특별시-sig-main">
               
             <a xlink:href="#open-moda1" xlink:title="종로구" target="_parent">
@@ -384,32 +390,32 @@
                 <path d="M 273.9556 170.6525 275.7463 163.9828 278.5116 158.0848 284.2145 151.8765 288.3922 149.4205 295.0742 147.3505 303.3905 147.3727 309.2646 143.2095 316.5419 137.6603 317.6252 137.6486 317.9422 137.6451 317.9423 137.6451 319.1241 137.6312 320.2936 137.408 322.7057 136.4862 324.2181 135.6269 324.205 136.8698 324.205 136.87 324.1684 137.0222 324.1541 137.0813 324.1433 137.1599 324.0119 137.4179 322.9471 138.2498 322.9271 138.3092 322.9186 138.3933 322.9132 138.501 322.9132 138.5011 322.9047 138.5575 322.894 138.6234 322.8855 138.7271 322.8633 138.8586 322.8633 138.8588 322.8623 138.9163 322.8837 139.0272 322.8589 139.294 323.1135 141.4578 325.6981 147.0043 327.7217 154.3498 327.2136 161.7804 328.5189 163.5288 328.2877 167.9143 329 168.6298 328.9999 168.6301 328.8102 169.0031 327.8265 168.4864 327.1317 167.6926 325.7124 167.6991 323.044 168.9486 320.3834 168.637 316.3468 169.8099 313.7876 169.1167 306.6745 179.5776 306.0083 184.3305 299.4356 194.9507 297.6522 193.9396 295.2683 192.6248 292.1061 190.8481 285.7483 187.2887 282.4212 185.4263 281.3799 184.8434 281.3637 184.8342 281.2344 184.7618 282.0094 183.1888 282.7844 180.687 283.337 178.8085 284.4794 174.8821 284.4793 174.8821 284.4794 174.8818 281.1226 172.6188 276.8333 170.8361 273.9556 170.6525 Z" class="sig tile" stroke="#fff" stroke-width="2" id="tile-Gangdong-gu" data-value="강동구"></path>
             </a>
             </g>
-            <g id="서울특별시-sig-point" font-family="sans-serif" font-size="12" text-anchor="middle">
-            <text y="0" x="0" transform="translate(170.208 105.9895)" class="sig label" font-size="6" fill="#fff" id="label-Jongno-gu" data-value="종로구">종로구</text>
-            <text y="0" x="0" transform="translate(192.2351 155.3914)" class="sig label" font-size="6" fill="#fff" id="label-Jung-gu" data-value="중구">중구</text>
-            <text y="0" x="0" transform="translate(178.0984 180.9387)" class="sig label" font-size="6" fill="#fff" id="label-Yongsan-gu" data-value="용산구">용산구</text>
-            <text y="0" x="0" transform="translate(224.1612 162.4418)" class="sig label" font-size="6" fill="#fff" id="label-Seongdong-gu" data-value="성동구">성동구</text>
-            <text y="0" x="0" transform="translate(258.2072 166.9804)" class="sig label" font-size="6" fill="#fff" id="label-Gwangjin-gu" data-value="광진구">광진구</text>
-            <text y="0" x="0" transform="translate(234.0973 133.5026)" class="sig label" font-size="6" fill="#fff" id="label-Dongdaemun-gu" data-value="동대문구">동대문구</text>
-            <text y="0" x="0" transform="translate(262.5302 119.125)" class="sig label" font-size="6" fill="#fff" id="label-Jungnang-gu" data-value="중랑구">중랑구</text>
-            <text y="0" x="0" transform="translate(207.3018 119.9919)" class="sig label" font-size="6" fill="#fff" id="label-Seongbuk-gu" data-value="성북구">성북구</text>
-            <text y="0" x="0" transform="translate(195.4224 78.6685)" class="sig label" font-size="6" fill="#fff" id="label-Gangbuk-gu" data-value="강북구">강북구</text>
-            <text y="0" x="0" transform="translate(219.3658 61.5537)" class="sig label" font-size="6" fill="#fff" id="label-Dobong-gu" data-value="도봉구">도봉구</text>
-            <text y="0" x="0" transform="translate(248.7621 69.1764)" class="sig label" font-size="6" fill="#fff" id="label-Nowon-gu" data-value="노원구">노원구</text>
-            <text y="0" x="0" transform="translate(140.5722 100.606)" class="sig label" font-size="6" fill="#fff" id="label-Eunpyeong-gu" data-value="은평구">은평구</text>
-            <text y="0" x="0" transform="translate(147.0657 139.2402)" class="sig label" font-size="6" fill="#fff" id="label-Seodaemun-gu" data-value="서대문구">서대문구</text>
-            <text y="0" x="0" transform="translate(125.3525 155.2923)" class="sig label"  fill="#fff" font-size="6"id="label-Mapo-gu" data-value="마포구">마포구</text>
-            <text y="0" x="0" transform="translate(88.5551 191.6243)" class="sig label" font-size="6" fill="#fff" id="label-Yangcheon-gu" data-value="양천구">양천구</text>
-            <text y="0" x="0" transform="translate(59.4393 146.7218)" class="sig label" font-size="6" fill="#fff" id="label-Gangseo-gu" data-value="강서구">강서구</text>
-            <text y="0" x="0" transform="translate(82.2421 213.5797)" class="sig label" font-size="6" fill="#fff" id="label-Guro-gu" data-value="구로구">구로구</text>
-            <text y="0" x="0" transform="translate(120.2016 245.847)" class="sig label" font-size="6" fill="#fff" id="label-Geumcheon-gu" data-value="금천구">금천구</text>
-            <text y="0" x="0" transform="translate(125.3365 188.9643)" class="sig label" font-size="6" fill="#fff" id="label-Yeongdeungpo-gu" data-value="영등포구">영등포구</text>
-            <text y="0" x="0" transform="translate(155.0821 204.8648)" class="sig label" font-size="6" fill="#fff" id="label-Dongjak-gu" data-value="동작구">동작구</text>
-            <text y="0" x="0" transform="translate(152.2721 240.8026)" class="sig label" font-size="6" fill="#fff" id="label-Gwanak-gu" data-value="관악구">관악구</text>
-            <text y="0" x="0" transform="translate(198.4263 221.5588)" class="sig label" font-size="6" fill="#fff" id="label-Seocho-gu" data-value="서초구">서초구</text>
-            <text y="0" x="0" transform="translate(229.7449 210.0765)" class="sig label" font-size="6" fill="#fff" id="label-Gangnam-gu" data-value="강남구">강남구</text>
-            <text y="0" x="0" transform="translate(278.8758 203.1322)" class="sig label" font-size="6" fill="#fff" id="label-Songpa-gu" data-value="송파구">송파구</text>
-            <text y="0" x="0" transform="translate(296.9076 164.2115)" class="sig label" font-size="6" fill="#fff" id="label-Gangdong-gu" data-value="강동구">강동구</text>
+            <g id="서울특별시-sig-point" font-family:Noto Sans KR, sans-serif; font-size="12" text-anchor="middle">
+            <text xlink:href="#open-moda1" y="0" x="0" transform="translate(180.208 135.9895)" class="sig label" font-size="6" fill="#000" id="label-Jongno-gu" data-value="종로구">종로구</text>
+            <text y="0" x="0" transform="translate(192.2351 155.3914)" class="sig label" font-size="6" fill="#000" id="label-Jung-gu" data-value="중구">중구</text>
+            <text y="0" x="0" transform="translate(178.0984 180.9387)" class="sig label" font-size="6" fill="#000" id="label-Yongsan-gu" data-value="용산구">용산구</text>
+            <text y="0" x="0" transform="translate(224.1612 162.4418)" class="sig label" font-size="6" fill="#000" id="label-Seongdong-gu" data-value="성동구">성동구</text>
+            <text y="0" x="0" transform="translate(258.2072 166.9804)" class="sig label" font-size="6" fill="#000" id="label-Gwangjin-gu" data-value="광진구">광진구</text>
+            <text y="0" x="0" transform="translate(232.0973 137.5026)" class="sig label" font-size="6" fill="#000" id="label-Dongdaemun-gu" data-value="동대문구">동대문구</text>
+            <text y="0" x="0" transform="translate(262.5302 123.125)" class="sig label" font-size="6" fill="#000" id="label-Jungnang-gu" data-value="중랑구">중랑구</text>
+            <text y="0" x="0" transform="translate(207.3018 119.9919)" class="sig label" font-size="6" fill="#000" id="label-Seongbuk-gu" data-value="성북구">성북구</text>
+            <text y="0" x="0" transform="translate(200.4224 83.6685)" class="sig label" font-size="6" fill="#000" id="label-Gangbuk-gu" data-value="강북구">강북구</text>
+            <text y="0" x="0" transform="translate(219.3658 61.5537)" class="sig label" font-size="6" fill="#000" id="label-Dobong-gu" data-value="도봉구">도봉구</text>
+            <text y="0" x="0" transform="translate(248.7621 69.1764)" class="sig label" font-size="6" fill="#000" id="label-Nowon-gu" data-value="노원구">노원구</text>
+            <text y="0" x="0" transform="translate(140.5722 100.606)" class="sig label" font-size="6" fill="#000" id="label-Eunpyeong-gu" data-value="은평구">은평구</text>
+            <text y="0" x="0" transform="translate(147.0657 144.2402)" class="sig label" font-size="6" fill="#000" id="label-Seodaemun-gu" data-value="서대문구">서대문구</text>
+            <text y="0" x="0" transform="translate(125.3525 158.2923)" class="sig label"  fill="#000" font-size="6"id="label-Mapo-gu" data-value="마포구">마포구</text>
+            <text y="0" x="0" transform="translate(88.5551 193.6243)" class="sig label" font-size="6" fill="#000" id="label-Yangcheon-gu" data-value="양천구">양천구</text>
+            <text y="0" x="0" transform="translate(66.4393 153.7218)" class="sig label" font-size="6" fill="#000" id="label-Gangseo-gu" data-value="강서구">강서구</text>
+            <text y="0" x="0" transform="translate(82.2421 213.5797)" class="sig label" font-size="6" fill="#000" id="label-Guro-gu" data-value="구로구">구로구</text>
+            <text y="0" x="0" transform="translate(119.2016 246.847)" class="sig label" font-size="6" fill="#000" id="label-Geumcheon-gu" data-value="금천구">금천구</text>
+            <text y="0" x="0" transform="translate(130.3365 190.9643)" class="sig label" font-size="6" fill="#000" id="label-Yeongdeungpo-gu" data-value="영등포구">영등포구</text>
+            <text y="0" x="0" transform="translate(155.0821 209.8648)" class="sig label" font-size="6" fill="#000" id="label-Dongjak-gu" data-value="동작구">동작구</text>
+            <text y="0" x="0" transform="translate(152.2721 240.8026)" class="sig label" font-size="6" fill="#000" id="label-Gwanak-gu" data-value="관악구">관악구</text>
+            <text y="0" x="0" transform="translate(198.4263 226.5588)" class="sig label" font-size="6" fill="#000" id="label-Seocho-gu" data-value="서초구">서초구</text>
+            <text y="0" x="0" transform="translate(229.7449 210.0765)" class="sig label" font-size="6" fill="#000" id="label-Gangnam-gu" data-value="강남구">강남구</text>
+            <text y="0" x="0" transform="translate(273.8758 203.1322)" class="sig label" font-size="6" fill="#000" id="label-Songpa-gu" data-value="송파구">송파구</text>
+            <text y="0" x="0" transform="translate(298.9076 166.2115)" class="sig label" font-size="6" fill="#000" id="label-Gangdong-gu" data-value="강동구">강동구</text>
             </g>
             </svg>
 
