@@ -127,8 +127,8 @@
     div.cls_068{font-size:106.7px;color:rgb(0,163,225);font-weight:bold;font-style:normal;text-decoration: none}
     span.cls_069{font-size:22.1px;color:rgb(0,91,166);font-weight:normal;font-style:normal;text-decoration: none}
     div.cls_069{font-size:22.1px;color:rgb(0,91,166);font-weight:normal;font-style:normal;text-decoration: none}
-    span.cls_070{font-size:9.3px;color:rgb(43,42,41);font-weight:normal;font-style:normal;text-decoration: none}
-    div.cls_070{font-size:9.3px;color:rgb(43,42,41);font-weight:normal;font-style:normal;text-decoration: none}
+    span.cls_070{font-size:9px;color:rgb(43,42,41);font-weight:normal;font-style:normal;text-decoration: none}
+    div.cls_070{font-size:9px;color:rgb(43,42,41);font-weight:normal;font-style:normal;text-decoration: none}
     span.cls_071{font-size:9.3px;color:rgb(43,42,41);font-weight:normal;font-style:normal;text-decoration: none}
     div.cls_071{font-size:9.3px;color:rgb(43,42,41);font-weight:normal;font-style:normal;text-decoration: none}
     span.cls_076{font-size:9.6px;color:rgb(43,42,41);font-weight:normal;font-style:normal;text-decoration: none}
@@ -220,11 +220,12 @@
 	.tooltip {
 		background:#f3faaf;
 		color:black;
-		width:25%;
+		width:35%;
 		font-size:13px;
 		padding:10px;
 		position:absolute;
 		box-shadow:4px 4px 6px gray;
+        z-index: 1;
 	}
 
     .triangle {
@@ -233,6 +234,7 @@
         border-style: solid;
         border-color:transparent transparent #f3faaf transparent;
         border-width: 14px;
+        z-index: 1;
     }
 
     #modal {
@@ -268,28 +270,33 @@
         }   
 
     </style>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            document.body.style.zoom ="130%";
-        });
-        
-        var idx=-1;
-        //var cursorX;
-        //var cursorY;
-    
-        $(function() {
-            $('.point').hover(function() {
-                idx=$('.point').index($(this));	
-                var val=$('.point')[idx];
-                var word=val.innerHTML;
-                var height=val.offsetHeight;
-                var clientRect=val.getBoundingClientRect();
 
-                var relativeTop=(window.pageYOffset)*100/130+clientRect.top+2;
-                var relativeLeft=(window.pageXOffset)*100/130+clientRect.left;
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $(document).ready(function(){
+        document.body.style.zoom ="130%";
+    });
     
-                if(!document.getElementById("hello")) {
+    var idx=-1;
+    var check=0;
+    //var cursorX;
+    //var cursorY;
+
+
+    
+    function mouseover(e) {
+        if(check==1) {
+            idx=$('.point').index($(e));	
+            var val=$('.point')[idx];
+            var word=val.innerHTML;
+            console.log(word);
+            var height=val.offsetHeight;
+            var clientRect=val.getBoundingClientRect();
+
+            var relativeTop=(window.pageYOffset)*100/130+clientRect.top*1.8+height+2;
+            var relativeLeft=(window.pageXOffset)*100/130+clientRect.left*1.8;
+    
+            if(!document.getElementById("hello")) {
                     var element2=document.createElement("div");
                     element2.className="triangle";
                     element2.id="hello2";
@@ -303,69 +310,109 @@
                     element.id="hello";
                     element.className="tooltip";
                     var text="";
-                    text+="<div style='line-height:1.5;'>"+"경제에서도 현장을 중시합니다.<br>노동자, 소상공인, 중소기업인, 중견기업인, 대기업인과 부단히 소통해 왔습니다.<br>어떤 정책도 현장이 감당하고 수용할 수 있도록 추진할 것입니다.</div>";
+                    text+="<div style='line-height:1.5;'>"+word;
                     element.innerHTML=text;
                     relativeTop=relativeTop+20;
                     relativeLeft=relativeLeft-30;
                     element.style.top=relativeTop+"px";
                     element.style.left=relativeLeft+"px";
                     document.body.appendChild(element);
-                }
-    
-            }, function() {
-                var val=$('.point')[idx];
-                var word=val.innerHTML;
-                var element=document.getElementById("hello");
-                var element2=document.getElementById("hello2");
-                element.remove();
-                element2.remove();
-                
-            });
+            }
+        }
+    }
+
+    function mouseout() {
+        var element=document.getElementById("hello");
+        var element2=document.getElementById("hello2");
+        if(element) {
+            element.remove();
+            element2.remove();
+        }
+
+    }
+
+    /*
+    document.onmousemove = function(e){
+        cursorX = e.pageX;
+        cursorY = e.pageY;
+    }
+    setInterval(checkCursor, 1000);
+    function checkCursor(){
+    //console.log(cursorX + ", " + cursorY);
+    }*/
+
+
+    //position:absolute;없애기
+    function replaceAll(str, searchStr, replaceStr) {
+        return str.split(searchStr).join(replaceStr);
+    }
+
+    //모달 보기
+    function viewModal(id) {
+        var text=document.getElementById(id).innerHTML;
+        //console.log(text);
+        text=replaceAll(text,"position:absolute;"," ");
+        document.getElementById("modal").style.display="block";
+        document.getElementById("content").innerHTML=text;
+        $('#modal').css({
+        "top": ( ($(window).height() - $("#modal").outerHeight() ) / 2 + $(window).scrollTop() )*100/130 + "px"
+
         });
-    
-        /*
-        document.onmousemove = function(e){
-            cursorX = e.pageX;
-            cursorY = e.pageY;
+        check=1;
+    }
+
+    //모달 닫기
+    function closeModal() {
+        document.getElementById("modal").style.display="none";
+        check=0;
+    }
+
+    /*
+    function viewTooltip(e) {
+        idx=$('.point').index($(e));	
+        var val=$('.point')[idx];
+        var word=val.innerHTML;
+        console.log(word);
+        var height=val.offsetHeight;
+        var clientRect=val.getBoundingClientRect();
+
+        var relativeTop=(window.pageYOffset)*100/129+clientRect.top+2;
+        var relativeLeft=(window.pageXOffset)*100/129+clientRect.left;
+
+        if(!document.getElementById("hello")) {
+                var element2=document.createElement("div");
+                element2.className="triangle";
+                element2.id="hello2";
+
+                element2.style.top=relativeTop+"px";
+                element2.style.left=relativeLeft+"px";
+                document.body.appendChild(element2);
+                
+                
+                var element=document.createElement("div");
+                element.id="hello";
+                element.className="tooltip";
+                var text="";
+                text+="<div style='line-height:1.5;'>"+word;
+                element.innerHTML=text;
+                relativeTop=relativeTop+20;
+                relativeLeft=relativeLeft-30;
+                element.style.top=relativeTop+"px";
+                element.style.left=relativeLeft+"px";
+                document.body.appendChild(element);
         }
-        setInterval(checkCursor, 1000);
-        function checkCursor(){
-        //console.log(cursorX + ", " + cursorY);
-        }*/
+
+    } */
 
 
-        //position:absolute;없애기
-        function replaceAll(str, searchStr, replaceStr) {
-            return str.split(searchStr).join(replaceStr);
-        }
-
-        //모달 보기
-        function viewModal(id) {
-            var text=document.getElementById(id).innerHTML;
-            console.log(text);
-            text=replaceAll(text,"position:absolute;"," ");
-            document.getElementById("modal").style.display="block";
-            document.getElementById("content").innerHTML=text;
-            $('#modal').css({
-            "top": ( ($(window).height() - $("#modal").outerHeight() ) / 2 + $(window).scrollTop() )*100/130 + "px"
-
-            });
-        }
-
-        //모달 닫기
-        function closeModal() {
-            document.getElementById("modal").style.display="none";
-        }
-
-    
-    </script>
+</script>
     </head>
     <body style="font-family: 'Noto Sans KR', sans-serif;">
     
     <!-- 모달 -->
     <div id="modal">
         <div class="modal_content">
-            <span id="content" style="zoom:150%;"></span>
+            <span id="content" style="zoom:180%;"></span>
             <button type="button" id="modal_close_btn" onclick="closeModal()">모달 창 닫기</button>
         </div>
         <div class="modal_layer"></div>
@@ -623,58 +670,58 @@
     <div style="position:absolute;left:50%;margin-left:-262px;top: 5255;width:524px;height:737px;overflow:hidden;border:1.5px solid lightgray;">
     <div style="position:absolute;left:0px;top:0px">
     <img src="./6ba932e2-caec-11ea-8b25-0cc47a792c0a_id_6ba932e2-caec-11ea-8b25-0cc47a792c0a_files/background08.jpg" width="524" height="737"></div>
-    <div style="position:absolute;left:18.12px;top:68.75px;width:240px;height:120px;background:#2bbcff28;cursor:pointer;" class="button1" onclick="viewModal('button1')">
+    <div style="position:absolute;left:18.12px;top:68.75px;width:240px;height:120px;background:#2bbcff28;cursor:pointer;" id="button1" onclick="viewModal('button1')">
         <div style="position:absolute;left:40;top:4px" class="cls_069"><span class="cls_069"><span class="point">경제</span></span></div>
-        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point">•코로나19 피해 소상공인, 중소기업, 예술인 등 자금 지원</span></span></div>
-        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point">•첨단복합창업단지 유치, 창업·R&D·지식산업 집적공간 구축</span></span></div>
-        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point">•주얼리, 봉제, 공연 등 지역 특화산업 활성화</span></span></div>
-        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point">•관광명소, 숙박업소, 교통편 등 정보화, 관광스마트시티 구축</span></span></div>
-        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point">•지역사랑상품권 2배 확대, 자영업자 적극 지원</span></span></div>
+        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•코로나19 피해 소상공인, 중소기업, 예술인 등 자금 지원</span></span></div>
+        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•첨단복합창업단지 유치, 창업·R&D·지식산업 집적공간 구축</span></span></div>
+        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•주얼리, 봉제, 공연 등 지역 특화산업 활성화</span></span></div>
+        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•관광명소, 숙박업소, 교통편 등 정보화, 관광스마트시티 구축</span></span></div>
+        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•지역사랑상품권 2배 확대, 자영업자 적극 지원</span></span></div>
     </div>
-    <div style="position:absolute;left:262.12px;top:68.75px;width:240px;height:120px;background:#2bbcff28;cursor:pointer;" class="button1" onclick="viewModal('button1')">
+    <div style="position:absolute;left:262.12px;top:68.75px;width:240px;height:120px;background:#2bbcff28;cursor:pointer;" id="button2" onclick="viewModal('button2')">
         <div style="position:absolute;left:40;top:4px" class="cls_069"><span class="cls_069"><span class="point">청년</span></span></div>
-        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point">•청년·신혼부부 맞춤형 행복주택, 역세권 건립 추진</span></span></div>
-        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point">•창신동 남측, 공동주거·일자리 집적된 복합도시로 개발</span></span></div>
-        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point">•청년 창업자 무이자 대출 등 창업환경 조성</span></span></div>
-        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point">•10분 거리 교육·문화·복지시설 지속 확충</span></span></div>
-        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point">•맞벌이부부 위한 24시간 보육시설 운영 확대</span></span></div>
+        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•청년·신혼부부 맞춤형 행복주택, 역세권 건립 추진</span></span></div>
+        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•창신동 남측, 공동주거·일자리 집적된 복합도시로 개발</span></span></div>
+        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•청년 창업자 무이자 대출 등 창업환경 조성</span></span></div>
+        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•10분 거리 교육·문화·복지시설 지속 확충</span></span></div>
+        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•맞벌이부부 위한 24시간 보육시설 운영 확대</span></span></div>
     </div>
-    <div style="position:absolute;left:18.12px;top:196.75px;width:240px;height:120px;background:#2bbcff28;cursor:pointer;" class="button1" onclick="viewModal('button1')">
+    <div style="position:absolute;left:18.12px;top:196.75px;width:240px;height:132px;background:#2bbcff28;cursor:pointer;" id="button3" onclick="viewModal('button3')">
         <div style="position:absolute;left:40;top:4px" class="cls_069"><span class="cls_069"><span class="point">교육</span></span></div>
-        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point">•대학·기업·고궁·박물관과 협력, 초중고 창의교육 활성화</span></span></div>
-        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point">•한국폴리텍대학 서울융합기술원 유치, 4차 산업혁명 신기술 교육</span></span></div>
-        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point">•한국방송통신대 기반으로 생애주기 맞춤형 평생교육 특화</span></span></div>
-        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point">•독립문초교 통학로 등 학교 주변 환경 대폭 개선</span></span></div>
-        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point">•전통있는 학교 존치, 학구제 부분적 완화 등 학습권 보장</span></span></div>
-        <div style="position:absolute;left:0.28px;top:113.24px" class="cls_070"><span class="cls_070"><span class="point">•종로 첫 청소년센터, 세검정에 건립 추진</span></span></div>
+        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•대학·기업·고궁·박물관과 협력, 초중고 창의교육 활성화</span></span></div>
+        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•한국폴리텍대학 서울융합기술원 유치, 4차 산업혁명 신기술 교육</span></span></div>
+        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•한국방송통신대 기반으로 생애주기 맞춤형 평생교육 특화</span></span></div>
+        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•독립문초교 통학로 등 학교 주변 환경 대폭 개선</span></span></div>
+        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•전통있는 학교 존치, 학구제 부분적 완화 등 학습권 보장</span></span></div>
+        <div style="position:absolute;left:0.28px;top:113.24px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•종로 첫 청소년센터, 세검정에 건립 추진</span></span></div>
     </div>
-    <div style="position:absolute;left:262.12px;top:196.75px;width:240px;height:133px;background:#2bbcff28;cursor:pointer;" class="button1" onclick="viewModal('button1')">
+    <div style="position:absolute;left:262.12px;top:196.75px;width:240px;height:133px;background:#2bbcff28;cursor:pointer;" id="button4" onclick="viewModal('button4')">
         <div style="position:absolute;left:40;top:4px" class="cls_069"><span class="cls_069"><span class="point">삶의 질</span></span></div>
-        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point">•창신동 채석장 명소화 사업 추진 정상화</span></span></div>
-        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point">•광화문광장 일대 경찰버스를 친환경 차량으로 추가 배치</span></span></div>
-        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point">•재개발 취소 지역에 세대 공감 생활SOC 지속 확충</span></span></div>
-        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point">•주거지역 내 소음안전지대 지정 운영</span></span></div>
-        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point">•서부지역 노인복지관 건립 추진</span></span></div>
-        <div style="position:absolute;left:0.28px;top:113.24px" class="cls_070"><span class="cls_070"><span class="point">•자연경관지구 층수 등 규제 완화</span></span></div>
+        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•창신동 채석장 명소화 사업 추진 정상화</span></span></div>
+        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•광화문광장 일대 경찰버스를 친환경 차량으로 추가 배치</span></span></div>
+        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•재개발 취소 지역에 세대 공감 생활SOC 지속 확충</span></span></div>
+        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•주거지역 내 소음안전지대 지정 운영</span></span></div>
+        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•서부지역 노인복지관 건립 추진</span></span></div>
+        <div style="position:absolute;left:0.28px;top:113.24px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•자연경관지구 층수 등 규제 완화</span></span></div>
     </div>
-    <div style="position:absolute;left:18.12px;top:334.75px;width:240px;height:150px;background:#2bbcff28;cursor:pointer;" class="button1" onclick="viewModal('button1')">
+    <div style="position:absolute;left:18.12px;top:334.75px;width:240px;height:150px;background:#2bbcff28;cursor:pointer;" id="button5" onclick="viewModal('button5')">
         <div style="position:absolute;left:40;top:4px" class="cls_069"><span class="cls_069"><span class="point">역사와 문화</span></span></div>
-        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point">•송현동 랜드마크 숲·민속박물관 등 문화공간 조성</span></span></div>
-        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point">•북촌과 경복궁 일대, 역사문화 도시재생 추진</span></span></div>
-        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point">•청년 창작·창업 등 지원, 자문밖 창의예술마을 활성화</span></span></div>
-        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point">•대학로와 연결, 낙산공원을 공연·미술 문화공원으로 탈바꿈</span></span></div>
-        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point">•한복, 연극, 국악 등 지역축제를 글로벌 축제로 발전</span></span></div>
-        <div style="position:absolute;left:0.28px;top:113.24px" class="cls_070"><span class="cls_070"><span class="point">•낙원상가 일대 K-POP 공연과 퍼포먼스가 있는 젊음의 마당 조성</span></span></div>
-        <div style="position:absolute;left:0.28px;top:128.24px" class="cls_070"><span class="cls_070"><span class="point">•옥인동, 세종대왕탄신기념관 건립 추진</span></span></div>
+        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•송현동 랜드마크 숲·민속박물관 등 문화공간 조성</span></span></div>
+        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•북촌과 경복궁 일대, 역사문화 도시재생 추진</span></span></div>
+        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•청년 창작·창업 등 지원, 자문밖 창의예술마을 활성화</span></span></div>
+        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•대학로와 연결, 낙산공원을 공연·미술 문화공원으로 탈바꿈</span></span></div>
+        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•한복, 연극, 국악 등 지역축제를 글로벌 축제로 발전</span></span></div>
+        <div style="position:absolute;left:0.28px;top:113.24px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•낙원상가 일대 K-POP 공연과 퍼포먼스가 있는 젊음의 마당 조성</span></span></div>
+        <div style="position:absolute;left:0.28px;top:128.24px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•옥인동, 세종대왕탄신기념관 건립 추진</span></span></div>
     </div>
-    <div style="position:absolute;left:262.12px;top:334.75px;width:240px;height:140px;background:#2bbcff28;cursor:pointer;" class="button1" onclick="viewModal('button1')">
+    <div style="position:absolute;left:262.12px;top:334.75px;width:240px;height:140px;background:#2bbcff28;cursor:pointer;" id="button6" onclick="viewModal('button6')">
         <div style="position:absolute;left:40;top:4px" class="cls_069"><span class="cls_069"><span class="point">교통</span></span></div>
-        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point">•세검정 경유 지하철 신분당선 연장(용산~고양 삼송) 추진</span></span></div>
-        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point">•상명대·평창동 경유 강북횡단선 경전철(목동~청량리) 조기 착공</span></span></div>    
-        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point">•교통문제 해결 후 광화문광장 재조성 논의</span></span></div>
-        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point">•경복궁 일대 관광버스 불편 해소 위한 승하차장·순환버스 운영</span></span></div>
-        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point">•정독도서관 지하주차장 설치 등 주택가 주차난 완화</span></span></div>
-        <div style="position:absolute;left:0.28px;top:113.24px" class="cls_070"><span class="cls_070"><span class="point">•이화동사거리~종로5가 양방향 정상화 등 교통신호체계 개선</span></span></div>    
+        <div style="position:absolute;left:0.28px;top:37.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•세검정 경유 지하철 신분당선 연장(용산~고양 삼송) 추진</span></span></div>
+        <div style="position:absolute;left:0.28px;top:52.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•상명대·평창동 경유 강북횡단선 경전철(목동~청량리) 조기 착공</span></span></div>    
+        <div style="position:absolute;left:0.28px;top:67.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•교통문제 해결 후 광화문광장 재조성 논의</span></span></div>
+        <div style="position:absolute;left:0.28px;top:82.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•경복궁 일대 관광버스 불편 해소 위한 승하차장·순환버스 운영</span></span></div>
+        <div style="position:absolute;left:0.28px;top:97.81px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•정독도서관 지하주차장 설치 등 주택가 주차난 완화</span></span></div>
+        <div style="position:absolute;left:0.28px;top:113.24px" class="cls_070"><span class="cls_070"><span class="point" onmouseover="mouseover(this)" onmouseout="mouseout()">•이화동사거리~종로5가 양방향 정상화 등 교통신호체계 개선</span></span></div>    
     </div>
     </div>
     <div style="position:absolute;left:50%;margin-left:-262px;top: 6005;width:524px;height:737px;overflow:hidden;border:1.5px solid lightgray;">
