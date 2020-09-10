@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SK SUNNY 은하수</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+<style>
+	.sidenav {
+		height:100%;
+		width: 0;
+		position: fixed;
+		z-index:1;
+		top: 0;
+		left: 0;
+		background:#f5f5f5;
+		overflow-x: hidden;
+		transition:0.5s ease-in-out;
+		padding-top: 60px;
+	}
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 18px;
+		color: #5d5d5d;
+		display: block;
+		transition: 0.2s ease-in-out;
+	}
+	
+	.articleinfo {
+		padding: 8px 8px 8px 32px;
+		font-size: 12px;
+		color: gray;
+	
+	}
+	
+	.sidenav a:hover, .offcanvas a:focus {
+		color: #000;
+	}
+	#closebtn {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		color: #5d5d5d;
+		cursor :pointer;
+		font-size: 36px !important;
+		margin-left: 50px;
+	}
+	
+	#closebtn:hover {
+		color: #000;
+	}
+	
+	/* 미디어쿼리 적용 */
+	@media screen and (max-height:450px) {
+		.sidenav {
+			padding-top:15px;
+		}
+		.sidenav a {
+			font-size: 18px;
+		}
+	}
+	
+    .point {
+		cursor:pointer;
+		background:#ffea5b;
+		position:absolute;
+		opacity:40%;
+	}
+
+	.point:hover {
+		background:#efd000;
+	}
+	
+    .link {
+		cursor:pointer;
+		background:#ffc107;
+		position:absolute;
+		opacity:40%;
+	}
+
+	.link:hover {
+		background:#ff9007;
+	}
+
+	.tooltip {
+		background:#edf691;
+		color:black;
+		width:35%;
+		font-size:16px;
+		padding:10px;
+		position:absolute;
+		box-shadow:4px 4px 6px gray;
+        z-index: 2;
+	}
+
+    .triangle {
+        display:inline-block;
+        position: absolute;
+        border-style: solid;
+        border-color:transparent transparent #edf691 transparent;
+        border-width: 14px;
+        z-index: 2;
+    }
+</style>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">  
+	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
+	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
+	var relativeTop,relativeLeft;
+	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+
+	function openNav(linkName) {
+		if(check==0) { 
+			document.getElementById('mysidenav').style.width = '300px';
+			document.getElementById('linkName').innerHTML="'"+linkName+"'와 관련된 기사";
+			check=1;
+		}
+		else {
+			document.getElementById('mysidenav').style.width = '0';
+			check=0;
+		}
+	}
+	function closeNav() {
+		document.getElementById('mysidenav').style.width = '0';
+		check=0;
+	}
+
+	function openTooltip(e) {
+		idx=$('.point').index($(e));	
+		var val=$('.point')[idx];
+		var word=val.getAttribute('id');
+
+		var height=val.offsetHeight; //val의 height값
+		var clientRect=val.getBoundingClientRect();
+		relativeTop=(window.pageYOffset)+clientRect.top+2; //val의 top
+		relativeLeft=(window.pageXOffset)+clientRect.left; //val의 left
+		if(chkTooltip==1) { //툴팁박스가 열려있다면
+				if(relativeTop_tmp==relativeTop && relativeLeft_tmp==relativeLeft) { //이미 선택되어 있는 단어를 또 선택했을 때는 element 삭제
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					chkTooltip=0;
+					return;
+				}
+				else { //이미 선택되어 있는 단어가 아닌 단어를 선택했을 때는 element 삭제 후 툴팁 띄우기
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					getMeaning(word);
+				}
+		}
+		else { //툴팁박스가 닫혀있다면 툴팁 띄우기
+			getMeaning(word);
+		}
+	}
+
+	function getMeaning(word) { //툴팁 추가
+		var element2=document.createElement("div");
+		element2.className="triangle";
+		element2.id="hello2";
+		element2.style.top=relativeTop+"px";
+		element2.style.left=relativeLeft+"px";
+		document.body.appendChild(element2);
+		relativeTop_tmp=relativeTop; //현재 툴팁의 top위치를 tmp에 저장
+		relativeLeft_tmp=relativeLeft;
+														
+		var element=document.createElement("div");
+		element.id="hello";
+		element.className="tooltip";
+		element.innerHTML=word;
+
+		relativeTop=relativeTop+20;
+		relativeLeft=relativeLeft-30;
+		element.style.top=relativeTop+"px";
+		element.style.left=relativeLeft+"px";
+		document.body.appendChild(element);
+		chkTooltip=1;
+	}
+</script> 
+
+</head>
+<body style="font-family: 'Noto Sans KR', sans-serif;">
+
+	<!-- 사이드바 -->
+	<div id="mysidenav" class="sidenav" style="float:left;">
+		<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3>
+		<span id="closebtn" onclick='javascript:closeNav()'>x</span>
+		<a href="#">기사1</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+		<a href="#">기사2</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+		<a href="#">기사3</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+	</div>
+
+	<div style="position:absolute;top:0px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./gangnamgu3_files/background01.jpg" width="700" height="984">
+	</div>
+    
+	<div style="position:absolute;top:994px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./gangnamgu3_files/background02.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:1988px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./gangnamgu3_files/background03.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:2982px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./gangnamgu3_files/background04.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:3976px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./gangnamgu3_files/background05.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:4970px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./gangnamgu3_files/background06.jpg" width="700" height="984">
+
+	</div>
+	
+	<div style="position:absolute;top:5964px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./gangnamgu3_files/background07.jpg" width="700" height="984">
+		<span class="point" style="top: 70px;left: 155px;height: 65px;width: 215px;" id="공시가격" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 278px;left: 130px;height:16px;width: 63px;" id="공시가격" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 216px;left: 484px;height: 22px;width: 77px;" id="공시가격" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 477px;left: 161px;height: 65px;width: 303px;" id="부동산보유세" onclick="openTooltip(this)"></span>
+	</div>
+
+	<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./gangnamgu3_files/background08.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:7952px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./gangnamgu3_files/background09.jpg" width="700" height="984">
+		<span class="point" style="top: 194px;left: 326px;height: 25px;width: 80px;" id="공시가격" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 284px;left: 162px;height:16px;width: 44px;" id="공시가격" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 396px;left: 98px;height:16px;width: 64px;" id="종합부동산세" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 831px;left: 287px;height:16px;width: 65px;" id="종합부동산세" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 414px;left: 164px;height:16px;width: 61px;" id="조정대상지역" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 414px;left: 326px;height:16px;width: 78px;" id="종부세 부담 상한" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 431px;left: 211px;height:16px;width: 87px;" id="양도소득세 중과세" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 793px;left: 176px;height: 20px;width: 135px;" id="도시재생지역진흥지구" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 718px;left: 184px;height:16px;width: 66px;" id="공공 와이파이" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 815px;left: 212px;height:16px;width: 34px;" id="용적률" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 815px;left: 249px;height:16px;width: 30px;" id="건폐율" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 851px;left: 474px;height:16px;width: 83px;" id="장기저리 융자지원" onclick="openTooltip(this)"></span>
+	</div>
+	
+	<div style="position:absolute;top:8946px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./gangnamgu3_files/background10.jpg" width="700" height="984">
+		<span class="point" style="top: 352px;left: 89px;height:16px;width: 41px;" id="과밀학급" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 370px;left: 263px;height:16px;width: 43px;" id="SW교육" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 388px;left: 256px;height:16px;width: 84px;" id="가족소통프로그램" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 480px;left: 82px;height:16px;width: 31px;" id="GBC" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 531px;left: 299px;height:16px;width: 101px;" id="글로벌 파트너스 센터" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 781px;left: 65px;height:16px;width: 80px;" id="학교시설 복합화" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 638px;left: 543px;height:16px;width: 53px;" id="MICE산업" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 654px;left: 514px;height:16px;width: 67px;" id="전신주 지하화" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 687px;left: 504px;height:16px;width: 83px;" id="지상 공간 공원화" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 847px;left: 456px;height:16px;width: 61px;" id="세택(SETECT)" onclick="openTooltip(this)"></span>
+	    
+	</div>
+	
+	<div style="position:absolute;top:9940px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./gangnamgu3_files/background11.jpg" width="700" height="984">
+		<span class="point" style="top: 388px;left: 441px;height:16px;width: 43px;" id="강남도심 재생지원" onclick="openTooltip(this)"></span>
+	</div>
+	
+</body></html>
