@@ -107,7 +107,9 @@
 <script type="text/javascript">  
 	var idx=-1;
 	var check=0; //사이드바 열려있는지 체크
-	var chkTooltip=0;
+	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
+	var relativeTop,relativeLeft;
+	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
 
 	function openNav(linkName) {
 		if(check==0) { 
@@ -129,24 +131,39 @@
 		idx=$('.point').index($(e));	
 		var val=$('.point')[idx];
 		var word=val.getAttribute('id');
-		if(chkTooltip==1) {
-				var element=document.getElementById("hello");
-				var element2=document.getElementById("hello2");
-				element.remove();
-	        	element2.remove();
-		}
-		var height=val.offsetHeight;
-		var clientRect=val.getBoundingClientRect();
-		var relativeTop=(window.pageYOffset)+clientRect.top+2;
-		var relativeLeft=(window.pageXOffset)+clientRect.left;
 
+		var height=val.offsetHeight; //val의 height값
+		var clientRect=val.getBoundingClientRect();
+		relativeTop=(window.pageYOffset)+clientRect.top+2; //val의 top
+		relativeLeft=(window.pageXOffset)+clientRect.left; //val의 left
+		if(chkTooltip==1) { //툴팁박스가 열려있다면
+				if(relativeTop_tmp==relativeTop && relativeLeft_tmp==relativeLeft) { //이미 선택되어 있는 단어를 또 선택했을 때는 element 삭제
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					chkTooltip=0;
+					return;
+				}
+				else { //이미 선택되어 있는 단어가 아닌 단어를 선택했을 때는 element 삭제 후 툴팁 띄우기
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					getMeaning(word);
+				}
+		}
+		else { //툴팁박스가 닫혀있다면 툴팁 띄우기
+			getMeaning(word);
+		}
+	}
+
+	function getMeaning(word) { //툴팁 추가
 		var element2=document.createElement("div");
 		element2.className="triangle";
 		element2.id="hello2";
 		element2.style.top=relativeTop+"px";
 		element2.style.left=relativeLeft+"px";
 		document.body.appendChild(element2);
-											
+		relativeTop_tmp=relativeTop; //현재 툴팁의 top위치를 tmp에 저장
+		relativeLeft_tmp=relativeLeft;
+														
 		var element=document.createElement("div");
 		element.id="hello";
 		element.className="tooltip";
