@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!-- saved from url=(0167)file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%9C%EB%8C%80%EB%AC%B8%EA%B5%AC%EA%B0%91_%EC%9A%B0%EC%83%81%ED%98%B8/seodaemungu.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SK SUNNY 은하수</title>
+<link href="./seodaemungu_files/css2" rel="stylesheet">
+
+<style>
+	.sidenav {
+		height:100%;
+		width: 0;
+		position: fixed;
+		z-index:1;
+		top: 0;
+		left: 0;
+		background:#f5f5f5;
+		overflow-x: hidden;
+		transition:0.5s ease-in-out;
+		padding-top: 60px;
+	}
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 18px;
+		color: #5d5d5d;
+		display: block;
+		transition: 0.2s ease-in-out;
+	}
+	
+	.articleinfo {
+		padding: 8px 8px 8px 32px;
+		font-size: 12px;
+		color: gray;
+	
+	}
+	
+	.sidenav a:hover, .offcanvas a:focus {
+		color: #000;
+	}
+	#closebtn {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		color: #5d5d5d;
+		cursor :pointer;
+		font-size: 36px !important;
+		margin-left: 50px;
+	}
+	
+	#closebtn:hover {
+		color: #000;
+	}
+	
+	/* 미디어쿼리 적용 */
+	@media screen and (max-height:450px) {
+		.sidenav {
+			padding-top:15px;
+		}
+		.sidenav a {
+			font-size: 18px;
+		}
+	}
+	
+    .point {
+		cursor:pointer;
+		background:#ffea5b;
+		position:absolute;
+		opacity:40%;
+	}
+
+	.point:hover {
+		background:#efd000;
+	}
+	
+    .link {
+		cursor:pointer;
+		background:#ffc107;
+		position:absolute;
+		opacity:40%;
+	}
+
+	.link:hover {
+		background:#ff9007;
+	}
+
+	.tooltip {
+		background:#edf691;
+		color:black;
+		width:35%;
+		font-size:16px;
+		padding:10px;
+		position:absolute;
+		box-shadow:4px 4px 6px gray;
+        z-index: 2;
+	}
+
+    .triangle {
+        display:inline-block;
+        position: absolute;
+        border-style: solid;
+        border-color:transparent transparent #edf691 transparent;
+        border-width: 14px;
+        z-index: 2;
+    }
+</style>
+
+<script src="./seodaemungu_files/jquery-latest.min.js.다운로드"></script>
+<script type="text/javascript">  
+	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
+	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
+	var relativeTop,relativeLeft;
+	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+
+	function openNav(linkName) {
+		if(check==0) { 
+			document.getElementById('mysidenav').style.width = '300px';
+			document.getElementById('linkName').innerHTML="'"+linkName+"'와 관련된 기사";
+			check=1;
+		}
+		else {
+			document.getElementById('mysidenav').style.width = '0';
+			check=0;
+		}
+	}
+	function closeNav() {
+		document.getElementById('mysidenav').style.width = '0';
+		check=0;
+	}
+
+	function openTooltip(e) {
+		idx=$('.point').index($(e));	
+		var val=$('.point')[idx];
+		var word=val.getAttribute('id');
+
+		var height=val.offsetHeight; //val의 height값
+		var clientRect=val.getBoundingClientRect();
+		relativeTop=(window.pageYOffset)+clientRect.top+2; //val의 top
+		relativeLeft=(window.pageXOffset)+clientRect.left; //val의 left
+		if(chkTooltip==1) { //툴팁박스가 열려있다면
+				if(relativeTop_tmp==relativeTop && relativeLeft_tmp==relativeLeft) { //이미 선택되어 있는 단어를 또 선택했을 때는 element 삭제
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					chkTooltip=0;
+					return;
+				}
+				else { //이미 선택되어 있는 단어가 아닌 단어를 선택했을 때는 element 삭제 후 툴팁 띄우기
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					getMeaning(word);
+				}
+		}
+		else { //툴팁박스가 닫혀있다면 툴팁 띄우기
+			getMeaning(word);
+		}
+	}
+
+	function getMeaning(word) { //툴팁 추가
+		var element2=document.createElement("div");
+		element2.className="triangle";
+		element2.id="hello2";
+		element2.style.top=relativeTop+"px";
+		element2.style.left=relativeLeft+"px";
+		document.body.appendChild(element2);
+		relativeTop_tmp=relativeTop; //현재 툴팁의 top위치를 tmp에 저장
+		relativeLeft_tmp=relativeLeft;
+														
+		var element=document.createElement("div");
+		element.id="hello";
+		element.className="tooltip";
+		element.innerHTML=word;
+
+		relativeTop=relativeTop+20;
+		relativeLeft=relativeLeft-30;
+		element.style.top=relativeTop+"px";
+		element.style.left=relativeLeft+"px";
+		document.body.appendChild(element);
+		chkTooltip=1;
+	}
+</script> 
+
+</head>
+<body style="font-family: &#39;Noto Sans KR&#39;, sans-serif;">
+
+	<!-- 사이드바 -->
+	<div id="mysidenav" class="sidenav" style="float:left;">
+		<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3>
+		<span id="closebtn" onclick="javascript:closeNav()">x</span>
+		<a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%9C%EB%8C%80%EB%AC%B8%EA%B5%AC%EA%B0%91_%EC%9A%B0%EC%83%81%ED%98%B8/seodaemungu.html#">기사1</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+		<a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%9C%EB%8C%80%EB%AC%B8%EA%B5%AC%EA%B0%91_%EC%9A%B0%EC%83%81%ED%98%B8/seodaemungu.html#">기사2</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+		<a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%9C%EB%8C%80%EB%AC%B8%EA%B5%AC%EA%B0%91_%EC%9A%B0%EC%83%81%ED%98%B8/seodaemungu.html#">기사3</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+	</div>
+
+	<div style="position:absolute;top:0px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./seodaemungu_files/background01.jpg" width="700" height="984">
+	</div>
+    
+	<div style="position:absolute;top:994px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./seodaemungu_files/background02.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:1988px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./seodaemungu_files/background03.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:2982px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./seodaemungu_files/background04.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:3976px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./seodaemungu_files/background05.jpg" width="700" height="984">
+	</div>
+	
+	<div style="position:absolute;top:4970px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./seodaemungu_files/background06.jpg" width="700" height="984">
+
+	</div>
+	
+	<div style="position:absolute;top:5964px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./seodaemungu_files/background07.jpg" width="700" height="984">
+		<span class="point" style="top: 239px;left: 105px;height:16px;width: 76px;" id="고가도로 철거" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 239px;left: 220px;height:16px;width: 73px;" id="고가도로 철거" onclick="openTooltip(this)"></span>
+	</div>
+
+	<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./seodaemungu_files/background08.jpg" width="700" height="984">
+		<span class="point" style="top: 101px;left: 142px;height:16px;width: 29px;" id="개축" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 345px;left: 416px;height:16px;width: 43px;" id="옐로카펫" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 409px;left: 240px;height: 21px;width: 55px;" id="보훈회관" onclick="openTooltip(this)"></span>
+
+	</div>
+	
+	<div style="position:absolute;top:7952px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./seodaemungu_files/background09.jpg" width="700" height="984">
+		<span class="point" style="top: 697px;left: 208px;height:16px;width: 53px;" id="특화거리" onclick="openTooltip(this)"></span>
+	</div>
+	
+	<div style="position:absolute;top:8946px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="./seodaemungu_files/background10.jpg" width="700" height="984">
+		<span class="point" style="top: 397px;left: 77px;height:16px;width: 111px;" id="돌봄교실 전면 확대" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 737px;left: 170px;height:16px;width: 124px;" id="신촌 작은 도서관" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 778px;left: 76px;height:16px;width: 123px;" id="국립 임시정부 기념관" onclick="openTooltip(this)"></span>
+	</div>
+	
+	<div style="position:absolute;top:9940px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="./seodaemungu_files/background11.jpg" width="700" height="984">
+	</div>
+	
+</body></html>
