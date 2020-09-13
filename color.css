@@ -1,0 +1,222 @@
+        /* 구별로 색지정 */
+        #tile-Jongno-gu{
+            fill:#a4a6bf;
+            opacity:55%;
+        }
+        #tile-Jongno-gu:hover,#label-Jongno-gu:hover{
+            background-color:#a4a6bf;
+            opacity:100%;
+            transition: all 0.4s ease;
+            color:#000;
+        }
+        #tile-Jung-gu{
+            fill:#f0ad9c;
+            opacity:55%;
+        }
+        #tile-Jung-gu:hover{
+            fill:#f0ad9c;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Yongsan-gu{
+            fill:#84a19c;
+            opacity:55%;
+        }
+        #tile-Yongsan-gu:hover{
+            fill:#84a19c;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Seongdong-gu{
+            fill:#f0ad9c;
+            opacity:55%;            
+        }
+        #tile-Gwangjin-gu{
+            fill:#f7e0af;
+            opacity:55%;            
+        }
+        #tile-Gwangjin-gu:hover{
+            fill:#f7e0af;
+            opacity:100%; 
+            transition: all 0.4s ease;           
+        }
+        #tile-Dongdaemun-gu{
+            fill:#7a9e61;
+            opacity:55%;
+        }
+        #tile-Dongdaemun-gu:hover{
+            fill:#7a9e61;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Jungnang-gu{
+            fill:#dfa14a;
+            opacity:55%;
+        }
+        #tile-Jungnang-gu:hover{
+            fill:#dfa14a;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Seongbuk-gu{
+            fill:#c4d2d9;
+            opacity:55%;
+        }
+        #tile-Seongbuk-gu:hover{
+            fill:#c4d2d9;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Gangbuk-gu{
+            fill:#ba795d;
+            opacity:55%;
+        }
+        #tile-Gangbuk-gu:hover{
+            fill:#ba795d;
+            opacity:100%;
+            transition:all 0.4s ease; 
+        }
+        #tile-Dobong-gu{
+            fill:#fccb89;
+            opacity:55%;
+        }
+        #tile-Dobong-gu:hover{
+            fill:#fccb89;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Nowon-gu{
+            fill:#a28a6e;
+            opacity:55%;
+        }
+        #tile-Nowon-gu:hover{
+            fill:#a28a6e;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Eunpyeong-gu{
+            fill:#dfdacb;
+            opacity:55%;
+        }
+        #tile-Eunpyeong-gu:hover{
+            fill:#dfdacb;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Seodaemun-gu{
+            fill:#a7ab84;
+            opacity:55%;
+        }
+        #tile-Seodaemun-gu:hover{
+            fill:#a7ab84;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Mapo-gu{
+            fill:#fccb89;
+            opacity:55%;
+        }
+        #tile-Mapo-gu:hover{
+            fill:#fccb89;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Yangcheon-gu{
+            fill:#dcb097;
+            opacity:55%;
+        }
+        #tile-Yangcheon-gu:hover{
+            fill:#dcb097;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Gangseo-gu{
+            fill:#cccc99;
+            opacity:55%;
+        }
+        #tile-Gangseo-gu:hover{
+            fill:#cccc99;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Guro-gu{
+            fill:#fbcc64;
+            opacity:55%;
+        }
+        #tile-Guro-gu:hover{
+            fill:#fbcc64;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Geumcheon-gu{
+            fill:#feae66;
+            opacity:55%;
+        }
+        #tile-Geumcheon-gu:hover{
+            fill:#feae66;
+            opacity:100%;
+            transition: all 0.4s ease; 
+        }
+        #tile-Yeongdeungpo-gu{
+            fill:#cec1ef;
+            opacity:55%;
+        }
+        #tile-Yeongdeungpo-gu:hover{
+            fill:#cec1ef;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Dongjak-gu{
+            fill:#99cccc;
+            opacity:55%;
+        }
+        #tile-Dongjak-gu:hover{
+            fill:#99cccc;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Gwanak-gu{
+            fill:#99cc99;
+            opacity:55%;
+        }
+        #tile-Gwanak-gu:hover{
+            fill:#99cc99;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Seocho-gu{
+            fill:#bdc36f;
+            opacity:55%;
+        }
+        #tile-Seocho-gu:hover{
+            fill:#bdc36f;
+            opacity:100%;
+            transition: all 0.4s ease;
+        }
+        #tile-Gangnam-gu{
+            fill:#c5c4c2;
+            opacity:55%;
+        }
+        #tile-Gangnam-gu:hover{
+            fill:#c5c4c2;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Songpa-gu{
+            fill:#d19d9d;
+            opacity:55%;
+        }
+        #tile-Songpa-gu:hover{
+            fill:#d19d9d;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
+        #tile-Gangdong-gu{
+            fill:#baded2;
+            opacity:55%;
+        }
+        #tile-Gangdong-gu:hover{
+            fill:#baded2;
+            opacity:100%;
+            transition:all 0.4s ease;
+        }
