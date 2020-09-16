@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="color.css"  />
     <link rel="stylesheet" type="text/css" href="outerdesign.css"  />
     <link rel="stylesheet" type="text/css" href="modal.css"/>
+    <link rel="stylesheet" type="text/css" href="fixedmenutab.css"/>
+
     <style>
         @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
     </style>
@@ -15,17 +17,21 @@
 <body>
 
     <!-- 메뉴 -->
-    <div class="menu">
-        <a id="menu_2" href="mainpage.html">
-            <img src="로고.png">
-        </a>
-        <a id="menu_1" href="mainpage.html" style="text-decoration:none ;color:black">은하수 프로젝트</a>
-        <a id="menu_3" href="menu3.html" style="text-decoration:none ;color:black">제21대 서울시 국회의원 선거 공보물</a>
-        <a id="menu_1" href="mainpage.html" style="text-decoration:none ;color:black">제21대 서울시 국회의원 정책 모음</a>
-        <a id="menu_1" href="mainpage.html" style="text-decoration:none ;color:black">제20대 서울시 국회의원 공약이행률 확인</a>
+    <nav role="navigation">
+        <ul id="main-menu">
+            <li><a href="mainpage.html" style="padding:0;"><img src="로고.png" style="width:240px;transform:translateY(-16%);"></a></li>
+            <li><a href="#">은하수 소개</a></li>
+            <li><a href="#">제21대 국회의원 공약보기</a>
+            <ul id="sub-menu">
+                <li><a href="#" aria-label="subemnu">선거공보물 보기</a></li>
+                <li><a href="#" aria-label="subemnu">국회의원 별 공약 보기</a></li>
+                <li><a href="#" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+            </ul>
+            </li>
+            <li><a href="#">지난 공약 이행률 보기</a></li>
 
-    </div>
-    <hr>
+        </ul>
+      </nav>
     <!-- 콘텐츠 영역 -->
     <span class="map">
             <!-- 로고 -->
