@@ -2,6 +2,7 @@
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SK SUNNY 은하수</title>
+<link rel="stylesheet" type="text/css" href="../../fixedmenutab.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
 <style>
@@ -105,78 +106,7 @@
         border-width: 14px;
         z-index: 2;
     }
-	nav {
-		margin:0;
-		padding:0;
-        width:100%;
-        font-family: 'Noto Sans KR', sans-serif;
-		z-index: 22;
-		position: fixed;
-		background-color: #ffffff;
-		height:10%;
-		border-bottom: #000 2px solid;
-        }
-
-        ul, li {
-        margin: 0;
-        padding: 0;
-        padding-top:4px;
-        list-style: none;
-        }
-        #main-menu{
-            display:flex;
-        }
-
-        #main-menu > li {
-        float: left;
-        position: relative;
-        flex:1;
-        }
-
-        #main-menu > li > a {
-        font-size: large;
-        color: black;
-        font-weight: bold;
-        text-align: center;
-        text-decoration: none;
-        letter-spacing: 0.05em;
-        display: block;
-        padding: 14px 16px;
-       }
-        #sub-menu {
-        background: #fcfcfc;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.15s ease-in;
-        text-align: center;
-
-        }
-
-        #sub-menu > li {
-        padding: 16px 28px;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        #sub-menu>li:last-child{
-            border-bottom:white;
-        }
-
-        #sub-menu > li >  a {
-        color:black;
-        text-decoration: none;
-        }
-
-        #main-menu > li:hover #sub-menu {
-        opacity: 1;
-        visibility: visible;
-        }
-
-        #sub-menu > li >  a:hover {
-        font-weight: bold;
-        }
-		.contentslining{
-			position:relative;
-			top:0;
-		}
+	
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -256,22 +186,24 @@
 
 </head>
 <body style="font-family: 'Noto Sans KR', sans-serif;">
-	    <!-- 메뉴 -->
+		<!-- 메뉴 -->
+
 		<nav role="navigation">
-			<ul id="main-menu">
-				<li><a href="mainpage.html" style="padding:0;"><img src="../../로고.png" style="width:240px;transform:translateY(-16%);"></a></li>
+
+			<ul>
+				<li><a href="../../mainpage.html" style="padding:0;"><img src="../../로고.png" style="width:220px;transform:translateY(-15%);padding-left:72px;"></a></li>
 				<li><a href="#">은하수 소개</a></li>
-				<li><a href="#">제21대 국회의원 공약보기</a>
-				<ul id="sub-menu">
-					<li><a href="#" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="#" aria-label="subemnu">국회의원 별 공약 보기</a></li>
-					<li><a href="#" aria-label="subemnu">카테고리 별 공약 보기</a></li>
-				</ul>
+				<li class="dropdown">
+				  <a href="#" class="dropbtn">제21대 국회의원 공약보기</a>
+				  <div class="dropdown-content">
+					<a href="#">선거공보물 보기</a>
+					<a href="#">국회의원 별 공약 보기</a>
+					<a href="#">카테고리 별 공약 보기</a>
+				  </div>
 				</li>
-				<li><a href="#">지난 공약 이행률 보기</a></li>
-	
+				<li><a href="#news">지난 공약 이행률 보기</a></li>
 			</ul>
-		  </nav>
+		</nav>
 
 	<!-- 사이드바 -->
 	<div id="mysidenav" class="sidenav" style="float:left;">
