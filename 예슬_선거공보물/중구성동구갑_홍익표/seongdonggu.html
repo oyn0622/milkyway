@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!-- saved from url=(0176)file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%A4%91%EA%B5%AC%EC%84%B1%EB%8F%99%EA%B5%AC%EA%B0%91_%ED%99%8D%EC%9D%B5%ED%91%9C/seongdonggu.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SK SUNNY 은하수</title>
+<link rel="stylesheet" type="text/css" href="./seongdonggu_files/fixedmenutab.css">
+
+<style>
+	html,body{
+		margin:0;
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+
+	.sidenav {
+		height:100%;
+		width: 0;
+		position: fixed;
+		z-index:333;
+		top: 0;
+		left: 0;
+		background:#f5f5f5;
+		overflow-x: hidden;
+		transition:0.5s ease-in-out;
+		padding-top: 60px;
+	}
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 18px;
+		color: #5d5d5d;
+		display: block;
+		transition: 0.2s ease-in-out;
+	}
+	
+	.articleinfo {
+		padding: 8px 8px 8px 32px;
+		font-size: 12px;
+		color: gray;
+	
+	}
+	
+	.sidenav a:hover, .offcanvas a:focus {
+		color: #000;
+	}
+	#closebtn {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		color: #5d5d5d;
+		cursor :pointer;
+		font-size: 36px !important;
+		margin-left: 50px;
+	}
+	
+	#closebtn:hover {
+		color: #000;
+	}
+	
+	/* 미디어쿼리 적용 */
+	@media screen and (max-height:450px) {
+		.sidenav {
+			padding-top:15px;
+		}
+		.sidenav a {
+			font-size: 18px;
+		}
+	}
+	
+    .point {
+		cursor:pointer;
+		background:#ffea5b;
+		position:absolute;
+		opacity:40%;
+	}
+
+	.point:hover {
+		background:#efd000;
+	}
+	
+    .link {
+		cursor:pointer;
+		background:#ffc107;
+		position:absolute;
+		opacity:40%;
+	}
+
+	.link:hover {
+		background:#ff9007;
+	}
+
+	.tooltip {
+		background:#edf691;
+		color:black;
+		width:35%;
+		font-size:16px;
+		padding:10px;
+		position:absolute;
+		box-shadow:4px 4px 6px gray;
+        z-index: 2;
+	}
+
+    .triangle {
+        display:inline-block;
+        position: absolute;
+        border-style: solid;
+        border-color:transparent transparent #edf691 transparent;
+        border-width: 14px;
+        z-index: 2;
+    }
+	
+	.contentslining{
+		position:relative;
+		top:0;
+	}
+</style>
+
+<script src="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%A4%91%EA%B5%AC%EC%84%B1%EB%8F%99%EA%B5%AC%EA%B0%91_%ED%99%8D%EC%9D%B5%ED%91%9C/seongbukgu_files/jquery-latest.min.js.%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"></script>
+<script type="text/javascript">  
+	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
+	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
+	var relativeTop,relativeLeft;
+	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+
+	function openNav(linkName) {
+		if(check==0) { 
+			document.getElementById('mysidenav').style.width = '300px';
+			document.getElementById('linkName').innerHTML="'"+linkName+"'와 관련된 기사";
+			check=1;
+		}
+		else {
+			document.getElementById('mysidenav').style.width = '0';
+			check=0;
+		}
+	}
+	function closeNav() {
+		document.getElementById('mysidenav').style.width = '0';
+		check=0;
+	}
+
+	function openTooltip(e) {
+		idx=$('.point').index($(e));	
+		var val=$('.point')[idx];
+		var word=val.getAttribute('id');
+
+		var height=val.offsetHeight; //val의 height값
+		var clientRect=val.getBoundingClientRect();
+		relativeTop=(window.pageYOffset)+clientRect.top+2; //val의 top
+		relativeLeft=(window.pageXOffset)+clientRect.left; //val의 left
+		if(chkTooltip==1) { //툴팁박스가 열려있다면
+				if(relativeTop_tmp==relativeTop && relativeLeft_tmp==relativeLeft) { //이미 선택되어 있는 단어를 또 선택했을 때는 element 삭제
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					chkTooltip=0;
+					return;
+				}
+				else { //이미 선택되어 있는 단어가 아닌 단어를 선택했을 때는 element 삭제 후 툴팁 띄우기
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					getMeaning(word);
+				}
+		}
+		else { //툴팁박스가 닫혀있다면 툴팁 띄우기
+			getMeaning(word);
+		}
+	}
+
+	function getMeaning(word) { //툴팁 추가
+		var element2=document.createElement("div");
+		element2.className="triangle";
+		element2.id="hello2";
+		element2.style.top=relativeTop+"px";
+		element2.style.left=relativeLeft+"px";
+		document.body.appendChild(element2);
+		relativeTop_tmp=relativeTop; //현재 툴팁의 top위치를 tmp에 저장
+		relativeLeft_tmp=relativeLeft;
+														
+		var element=document.createElement("div");
+		element.id="hello";
+		element.className="tooltip";
+		element.innerHTML=word;
+
+		relativeTop=relativeTop+20;
+		relativeLeft=relativeLeft-30;
+		element.style.top=relativeTop+"px";
+		element.style.left=relativeLeft+"px";
+		document.body.appendChild(element);
+		chkTooltip=1;
+	}
+</script> 
+
+</head>
+<body style="font-family: &#39;Noto Sans KR&#39;, sans-serif;">
+	    <!-- 메뉴 -->
+		<nav role="navigation">
+			<ul id="main-menu">
+				<li><a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/mainpage.html" style="padding:0;"><img src="file:///C:/Users/user/Pictures/%EB%A1%9C%EA%B3%A0.png" style="width:240px;transform:translateY(-16%);"></a></li>
+				<li><a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#">은하수 소개</a></li>
+				<li><a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#">제21대 국회의원 공약보기</a>
+				<ul id="sub-menu">
+					<li><a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#" aria-label="subemnu">선거공보물 보기</a></li>
+					<li><a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#" aria-label="subemnu">국회의원 별 공약 보기</a></li>
+					<li><a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+				</ul>
+				</li>
+				<li><a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#">지난 공약 이행률 보기</a></li>
+	
+			</ul>
+		  </nav>
+
+	<!-- 사이드바 -->
+	<div id="mysidenav" class="sidenav" style="float:left;">
+		<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3>
+		<span id="closebtn" onclick="javascript:closeNav()">x</span>
+		<a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#">기사1</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+		<a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#">기사2</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+		<a href="file:///C:/Users/user/Pictures/%EA%B3%B5%EB%B3%B4%EB%AC%BC%EC%A0%95%EB%A6%AC/%EC%84%B1%EB%B6%81%EA%B5%AC%EA%B0%91_%EA%B9%80%EC%98%81%EB%B0%B0/seongbukgu.html#">기사3</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+	</div>
+	<div style="height: 100px;"></div>
+	<div class="contentslining">
+		<div style="position: static;top:0px;width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_1.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_2.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_3.jpg" width="809" height="1104">
+			<span class="point" style="top: 450px;left: 118px;height: 19px;width: 95px;" id="젠트리피케이션" onclick="openTooltip(this)"></span>
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_4.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_5.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_6.jpg" width="809" height="1104">
+			<span class="point" style="top: 268px;left: 483px;height: 19px;width: 139px;" id="지역주도형 청년일자리" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 596px;left: 502px;height: 19px;width: 57px;" id="에코스쿨" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 796px;left: 412px;height: 19px;width: 56px;" id="에코스쿨" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 752px;left: 451px;height: 19px;width: 86px;" id="지하철 캐노피" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 817px;left: 359px;height: 19px;width: 109px;" id="공공복합청사" onclick="openTooltip(this)"></span>
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_7.jpg" width="809" height="1104">
+			<span class="point" style="top: 292px;left: 405px;height: 26px;width: 163px;" id="첨단 스마트도서관" onclick="openTooltip(this)"></span>
+
+		</div>
+	
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_8.jpg" width="809" height="1104">
+			<span class="point" style="top: 654px;left: 236px;height: 24px;width: 258px;" id="뚝섬유수지 복합문화체육센터" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 739px;left: 486px;height: 19px;width: 103px;" id="뚝섬유수지 복합문화체육센터" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 974px;left: 298px;height: 19px;width: 101px;" id="젠트리피케이션" onclick="openTooltip(this)"></span>
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_9.jpg" width="809" height="1104">
+			<span class="point" style="top: 642px;left: 63px;height: 19px;width: 94px;" id="스마트 교통도시" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 702px;left: 63px;height: 19px;width: 125px;" id="패션봉제복합지원센터" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 853px;left: 118px;height: 19px;width: 87px;" id="친수형놀이시설" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 986px;left: 401px;height: 19px;width: 100px;" id="성수전략정비구역" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 406px;left: 102px;height: 19px;width: 77px;" id="공공복합청사" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 760px;left: 611px;height: 19px;width: 76px;" id="공공복합청사" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 906px;left: 554px;height: 19px;width: 106px;" id="첨단 스마트도서관" onclick="openTooltip(this)"></span>
+
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_10.jpg" width="809" height="1104">
+			<span class="point" style="top: 502px;left: 586px;height: 19px;width: 170px;" id="생애주기 맞춤형 사회안전망" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 734px;left: 254px;height: 19px;width: 192px;" id="스마트 여성 안심 통합 네트워크" onclick="openTooltip(this)"></span>
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="./seongdonggu_files/20200415_중구성동구갑_홍익표_선거공보_11.jpg" width="809" height="1104">
+		</div>
+
+	</div>
+	
+	
+</body></html>
