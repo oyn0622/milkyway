@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SK SUNNY 은하수</title>
+<link rel="stylesheet" type="text/css" href="../../fixedmenutab.css"/>
+
+<style>
+	html,body{
+		margin:0;
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+
+	.sidenav {
+		height:100%;
+		width: 0;
+		position: fixed;
+		z-index:333;
+		top: 0;
+		left: 0;
+		background:#f5f5f5;
+		overflow-x: hidden;
+		transition:0.5s ease-in-out;
+		padding-top: 60px;
+	}
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 18px;
+		color: #5d5d5d;
+		display: block;
+		transition: 0.2s ease-in-out;
+	}
+	
+	.articleinfo {
+		padding: 8px 8px 8px 32px;
+		font-size: 12px;
+		color: gray;
+	
+	}
+	
+	.sidenav a:hover, .offcanvas a:focus {
+		color: #000;
+	}
+	#closebtn {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		color: #5d5d5d;
+		cursor :pointer;
+		font-size: 36px !important;
+		margin-left: 50px;
+	}
+	
+	#closebtn:hover {
+		color: #000;
+	}
+	
+	/* 미디어쿼리 적용 */
+	@media screen and (max-height:450px) {
+		.sidenav {
+			padding-top:15px;
+		}
+		.sidenav a {
+			font-size: 18px;
+		}
+	}
+	
+    .point {
+		cursor:pointer;
+		background:#ffea5b;
+		position:absolute;
+		opacity:40%;
+	}
+
+	.point:hover {
+		background:#efd000;
+	}
+	
+    .link {
+		cursor:pointer;
+		background:#ffc107;
+		position:absolute;
+		opacity:40%;
+	}
+
+	.link:hover {
+		background:#ff9007;
+	}
+
+	.tooltip {
+		background:#edf691;
+		color:black;
+		width:35%;
+		font-size:16px;
+		padding:10px;
+		position:absolute;
+		box-shadow:4px 4px 6px gray;
+        z-index: 2;
+	}
+
+    .triangle {
+        display:inline-block;
+        position: absolute;
+        border-style: solid;
+        border-color:transparent transparent #edf691 transparent;
+        border-width: 14px;
+        z-index: 2;
+    }
+	
+	.contentslining{
+		position:relative;
+		top:0;
+	}
+</style>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">  
+	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
+	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
+	var relativeTop,relativeLeft;
+	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+
+	function openNav(linkName) {
+		if(check==0) { 
+			document.getElementById('mysidenav').style.width = '300px';
+			document.getElementById('linkName').innerHTML="'"+linkName+"'와 관련된 기사";
+			check=1;
+		}
+		else {
+			document.getElementById('mysidenav').style.width = '0';
+			check=0;
+		}
+	}
+	function closeNav() {
+		document.getElementById('mysidenav').style.width = '0';
+		check=0;
+	}
+
+	function openTooltip(e) {
+		idx=$('.point').index($(e));	
+		var val=$('.point')[idx];
+		var word=val.getAttribute('id');
+
+		var height=val.offsetHeight; //val의 height값
+		var clientRect=val.getBoundingClientRect();
+		relativeTop=(window.pageYOffset)+clientRect.top+2; //val의 top
+		relativeLeft=(window.pageXOffset)+clientRect.left; //val의 left
+		if(chkTooltip==1) { //툴팁박스가 열려있다면
+				if(relativeTop_tmp==relativeTop && relativeLeft_tmp==relativeLeft) { //이미 선택되어 있는 단어를 또 선택했을 때는 element 삭제
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					chkTooltip=0;
+					return;
+				}
+				else { //이미 선택되어 있는 단어가 아닌 단어를 선택했을 때는 element 삭제 후 툴팁 띄우기
+					document.getElementById("hello").remove();
+	        		document.getElementById("hello2").remove();
+					getMeaning(word);
+				}
+		}
+		else { //툴팁박스가 닫혀있다면 툴팁 띄우기
+			getMeaning(word);
+		}
+	}
+
+	function getMeaning(word) { //툴팁 추가
+		var element2=document.createElement("div");
+		element2.className="triangle";
+		element2.id="hello2";
+		element2.style.top=relativeTop+"px";
+		element2.style.left=relativeLeft+"px";
+		document.body.appendChild(element2);
+		relativeTop_tmp=relativeTop; //현재 툴팁의 top위치를 tmp에 저장
+		relativeLeft_tmp=relativeLeft;
+														
+		var element=document.createElement("div");
+		element.id="hello";
+		element.className="tooltip";
+		element.innerHTML=word;
+
+		relativeTop=relativeTop+20;
+		relativeLeft=relativeLeft-30;
+		element.style.top=relativeTop+"px";
+		element.style.left=relativeLeft+"px";
+		document.body.appendChild(element);
+		chkTooltip=1;
+	}
+</script> 
+
+</head>
+<body style="font-family: 'Noto Sans KR', sans-serif;">
+		<!-- 메뉴 -->
+
+		<nav role="navigation">
+
+			<ul>
+				<li><a href="../../mainpage.html" style="padding:0;"><img src="../../로고.png" style="width:220px;transform:translateY(-15%);padding-left:72px;"></a></li>
+				<li><a href="#">은하수 소개</a></li>
+				<li class="dropdown">
+				  <a href="#" class="dropbtn">제21대 국회의원 공약보기</a>
+				  <div class="dropdown-content">
+					<a href="#">선거공보물 보기</a>
+					<a href="#">국회의원 별 공약 보기</a>
+					<a href="#">카테고리 별 공약 보기</a>
+				  </div>
+				</li>
+				<li><a href="#news">지난 공약 이행률 보기</a></li>
+			</ul>
+		</nav>
+	<!-- 사이드바 -->
+	<div id="mysidenav" class="sidenav" style="float:left;">
+		<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3>
+		<span id="closebtn" onclick='javascript:closeNav()'>x</span>
+		<a href="#">기사1</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+		<a href="#">기사2</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+		<a href="#">기사3</a>
+		<span class="articleinfo">2020-09-06 ㅇㅇ일보</span>
+	</div>
+	<div style="height: 100px;"></div>
+	<div class="contentslining">
+		<div style="position: static;top:0px;width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_1.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_2.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_3.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_4.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_5.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_6.jpg" width="809" height="1104">
+			<span class="point" style="top: 767px;left: 70px;height:19px;width: 83px;" id="청년 전월세 대출" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 794px;left: 158px;height:19px;width: 97px;" id="장기 모기지론" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 348px;left: 555px;height:19px;width: 68px;" id="부실채권" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 400px;left:428px;height:19px;width:142px;" id="지역상품권 발행규모" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 544px;left:463px;height:19px;width:137px;" id="온종일 돌봄 특별법" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 569px;left: 494px;height:19px;width: 150px;" id="노인공동거주지원주택" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 767px;left: 564px;height:19px;width: 114px;" id="그린뉴딜기본법" onclick="openTooltip(this)"></span>
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_7.jpg" width="809" height="1104">
+			<span class="point" style="top: 921px;left: 338px;height:23px;width: 110px;" id="역사 문화 벨트" onclick="openTooltip(this)"></span>
+		</div>
+	
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_8.jpg" width="809" height="1104">
+			<span class="point" style="top: 610px;left:212px;height:23px;width:102px;" id="청년창업파크" onclick="openTooltip(this)"></span>
+			<span class="point" style="top:697px;left: 370px;height:23px;width: 83px;" id="워킹맘센터" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 865px;left: 212px;height:19px;width: 137px;" id="시간제 보육서비스" onclick="openTooltip(this)"></span>
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_9.jpg"width="809" height="1104">
+			<span class="point" style="top: 390px;left: 180px;height:23px;width: 197px;" id="노후주택 선제적 맞춤" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 762px;left: 308px;height:23px;width: 88px;" id="도시재생" onclick="openTooltip(this)"></span>
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_10.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="도봉구을_오기형_선거공보/도봉구을_오기형_선거공보_11.jpg"width="809" height="1104">
+		</div>
+
+	</div>
+	
+	
+</body></html>
