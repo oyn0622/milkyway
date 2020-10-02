@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SK SUNNY 은하수</title>
+    <link rel="stylesheet" type="text/css" href="color.css"  />
     <link rel="stylesheet" type="text/css" href="outerdesign.css"  />
+    <link rel="stylesheet" type="text/css" href="modal.css"/>
     <link rel="stylesheet" type="text/css" href="fixedmenutab.css"/>
     <style>
         @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
@@ -116,22 +118,23 @@
     </style>
 </head>
 <body>
-    	<!-- 메뉴 -->
-		<nav role="navigation">
-			<ul>
-				<li><a href="mainpage.html" style="padding:0;"><img src="로고.png" style="width:220px;transform:translateY(-15%);padding-left:72px;"></a></li>
-				<li><a href="#">은하수 소개</a></li>
-				<li class="dropdown">
-				  <a href="#" class="dropbtn">제21대 국회의원 공약보기</a>
-				  <div class="dropdown-contentC">
-					<a href="#">선거공보물 보기</a>
-					<a href="#">국회의원 별 공약 보기</a>
-					<a href="select.html">카테고리 별 공약 보기</a>
-				  </div>
-				</li>
-				<li><a href="AchievementRate.html">지난 공약 이행률 보기</a></li>
-			</ul>
-        </nav>
+    <!-- 메뉴 -->
+    <nav role="navigation">
+      <ul id="main-menu">
+          <li><a href="mainpage.html" style="padding:0;"><img src="로고.png" style="width:240px;transform:translateY(-16%);"></a></li>
+          <li><a href="#">은하수 소개</a></li>
+          <li><a href="#">제21대 국회의원 공약보기</a>
+          <ul id="sub-menu">
+              <li><a href="#" aria-label="subemnu">선거공보물 보기</a></li>
+              <li><a href="#" aria-label="subemnu">국회의원 별 공약 보기</a></li>
+              <li><a href="#" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+          </ul>
+          </li>
+          <li><a href="#">지난 공약 이행률 보기</a></li>
+
+      </ul>
+    </nav>
+    
         <!-- 콘텐츠 -->
         <div id="smallTitle">제21대 서울시 국회의원</div>
         <div id="bigTitle">분야별 공약 보기</div>
