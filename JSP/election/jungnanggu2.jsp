@@ -125,10 +125,12 @@
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
 
+
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
-		var region="동대문구 을";
+		var region="중랑구 을";
 		$.ajax({
 			type:"get",
 			url:"${contextPath}/election/getNewsLink",
@@ -163,6 +165,7 @@
 		document.getElementById('mysidenav').innerHTML=sideText;
 		word_tmp=''; //저장되어 있는 단어 초기화
 	}
+	
 
 	function openTooltip(e) {
 		idx=$('.point').index($(e));	
@@ -170,7 +173,7 @@
 		var word=val.getAttribute('id');
 		var height=val.offsetHeight;
 		var clientRect=val.getBoundingClientRect();
-		relativeTop=(window.pageYOffset)+clientRect.top+2;
+		relativeTop=(window.pageYOffset)+clientRect.top+height-9;
 		relativeLeft=(window.pageXOffset)+clientRect.left;
 		
 		if(chkTooltip==1) { //툴팁 박스가 열려있다면
@@ -194,7 +197,7 @@
 	}
 	
 	function getMeaning(word) { //ajax로 meaning select & 툴팁 추가
-		var region="dongdaemungu2";
+		var region="jungnanggu2";
 		$.ajax({
 			type:"get",
 			url:"${contextPath}/election/getMeaning",
@@ -236,7 +239,7 @@
 			}
 		});
 	}
-</script> 
+</script>
 
 </head>
 <body style="font-family: 'Noto Sans KR', sans-serif;">
@@ -257,6 +260,7 @@
 			</ul>
 		  </nav>
 
+
 	<!-- 사이드바 -->
 	<div id="mysidenav" class="sidenav" style="float:left;">
 		<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3>
@@ -264,65 +268,58 @@
 	</div>
 
 	<div style="height: 100px;"></div>
-	<div class="contentslining">
 	<h2 style="text-align: center;margin-top:-0.5%">선거공보물의 저작권은 해당 국회의원에게 있습니다.</h2>
-		<div style="position: static;top:0px;width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_1.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_2.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_3.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_4.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_5.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_6.jpg" width="809" height="1104">
-			<span class="point" style="top: 553px;left: 51px;height:19px;width: 112px;" id="국민입법 발의제" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 600px;left: 50px;height:19px;width: 76px;" id="국민소환제" onclick="openTooltip(this)"></span>
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_7.jpg" width="809" height="1104">
-			<span class="point" style="top: 57px;left: 173px;height: 49px;width: 259px;" id="복합환승센터" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 751px;left: 240px;height:19px;width: 60px;" id="도시재생" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 682px;left: 421px;height:19px;width: 147px;" id="지역사회 통합돌봄체계" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 895px;left: 191px;height: 31px;width: 128px;" id="스마트 여성 안심 통합네트워크" onclick="openTooltip(this)"></span>
 
+	<div class="contentslining">
+		<div style="position: static;top:0px;width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_1.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_2.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_3.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_4.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_5.jpg" width="809" height="1104">
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_6.jpg" width="809" height="1104">
+			<span class="point" style="top: 652px;left: 427px;height:26px;width: 170px;" id="동부간선 지하 고속화" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 846px;left: 370px;height:26px;width: 52px;" id="케노피" onclick="openTooltip(this)"></span>
+		</div>
+		
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_7.jpg" width="809" height="1104">
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_8.jpg" width="809" height="1104">
-			<span class="point" style="top: 822px;left: 51px;height:19px;width: 144px;" id="소상공인 복합지원센터" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 706px;left: 485px;height:19px;width: 108px;" id="마을공동체사업" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 730px;left: 421px;height:19px;width: 101px;" id="재정비촉진지구" onclick="openTooltip(this)"></span>
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_8.jpg" width="809" height="1104">
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_9.jpg" width="809" height="1104">
-			<span class="point" style="top: 322px;left: 49px;height:19px;width: 134px;" id="크리에이티브 캠퍼스" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 521px;left: 48px;height:19px;width: 113px;" id="면목선 예타 통과" onclick="openTooltip(this)"></span>
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_9.jpg"width="809" height="1104">
+			<span class="point" style="top: 231px;left:166px;height:26px;width:253px;" id="청년 디딤돌 전세자금 금리 인하" onclick="openTooltip(this)"></span>
+			<span class="point" style="top:425px;left: 292px;height:26px;width: 148px;" id="동원훈련비 현실화" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 694px;left:384px;height:68px;width:98px;" id="간이과세 구간 확장" onclick="openTooltip(this)"></span>
+		</div>
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_10.jpg"width="809" height="1104">
+			<span class="point" style="top: 437px;left:488px;height:19px;width:138px;" id="<도심권 재생지역>사업" onclick="openTooltip(this)"></span>
+			<span class="point" style="top:705px;left: 492px;height:21px;width: 99px;" id="동부간선 지하화" onclick="openTooltip(this)"></span>
+		</div>
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_11.jpg"width="809" height="1104">
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_10.jpg" width="809" height="1104">
-			<span class="point" style="top: 613px;left: 421px;height:19px;width: 128px;" id="우리동네 키움센터" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 637px;left: 481px;height:19px;width: 62px;" id="50+센터" onclick="openTooltip(this)"></span>
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_11.jpg" width="809" height="1104">
-		</div>
 
 	</div>
 	
