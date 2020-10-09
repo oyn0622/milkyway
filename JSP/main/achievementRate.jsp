@@ -22,7 +22,12 @@
 		<nav role="navigation">
 			<ul id="main-menu">
 				<li><a href="${contextPath }/" style="padding:0;"><img src="${contextPath }/resources/image/logo/로고.png" style="width:240px;transform:translateY(-16%);"></a></li>
-				<li><a href="${contextPath }/introduce">은하수 소개</a></li>
+				<li><a href="#">은하수 프로젝트</a>
+				<ul id="sub-menu">
+					<li><a href="${contextPath }/introduce" aria-label="subemnu">은하수 소개</a></li>
+					<li><a href="${contextPath }/guideline" aria-label="subemnu">선거 가이드라인</a></li>
+				</ul>
+				</li>
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
@@ -119,7 +124,7 @@
                     <img src="${contextPath }/resources/image/id_card2/최재성.png"></img>
                 </a> 
                 <a href="">
-                    <img src="${contextPath }/resources/image/id_card2/남인순.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/남인순.png"></img>
                 </a>
             </div>
         </div>
@@ -128,7 +133,7 @@
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates" style="margin-left:22%;">
                 <a href="">
-                    <img src="${contextPath }/resources/image/id_card2/노웅래.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/노웅래.png"></img>
                 </a>
                 <a href="" style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/손혜원.png"></img>
@@ -140,7 +145,7 @@
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
                 <a href="">
-                    <img src="${contextPath }/resources/image/id_card2/안규백.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/안규백.png"></img>
                 </a>
                 <a href=""style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/민병두.png"></img>
@@ -179,7 +184,7 @@
                     <img src="${contextPath }/resources/image/id_card2/이혜훈.png"></img>
                 </a>
                 <a href=""style="margin-left:10px;">
-                    <img src="${contextPath }/resources/image/id_card2/박성중.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/박성중.png"></img>
                 </a>
             </div>
         </div>
@@ -188,7 +193,7 @@
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
                 <a href="">
-                    <img src="${contextPath }/resources/image/id_card2/이인영.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/이인영.png"></img>
                 </a>
                 <a href=""style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/박영선.png"></img>
@@ -218,7 +223,7 @@
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
                 <a href="">
-                    <img src="${contextPath }/resources/image/id_card2/진선미.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/진선미.png"></img>
                 </a>
                 <a href=""style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/심재권.png"></img>
@@ -242,7 +247,7 @@
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
                 <a href="">
-                    <img src="${contextPath }/resources/image/id_card2/황희.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/황희.png"></img>
                 </a>
                 <a href=""style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/김용태.png"></img>
@@ -257,7 +262,7 @@
                     <img src="${contextPath }/resources/image/id_card2/유승희.png"></img>
                 </a>
                 <a href=""style="margin-left:10px;">
-                    <img src="${contextPath }/resources/image/id_card2/기동민.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/기동민.png"></img>
                 </a>
             </div>
         </div>
@@ -287,7 +292,7 @@
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
                 <a href="">
-                    <img src="${contextPath }/resources/image/id_card2/홍익표.png" style="margin-top:-5%;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/홍익표.png"></img>
                 </a>
                 <a href=""style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/지상욱.png"></img>

@@ -246,7 +246,12 @@
 		<nav role="navigation">
 			<ul id="main-menu">
 				<li><a href="${contextPath }/" style="padding:0;"><img src="${contextPath }/resources/image/logo/로고.png" style="width:240px;transform:translateY(-16%);"></a></li>
-				<li><a href="${contextPath }/introduce">은하수 소개</a></li>
+				<li><a href="#">은하수 프로젝트</a>
+				<ul id="sub-menu">
+					<li><a href="${contextPath }/introduce" aria-label="subemnu">은하수 소개</a></li>
+					<li><a href="${contextPath }/guideline" aria-label="subemnu">선거 가이드라인</a></li>
+				</ul>
+				</li>
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>

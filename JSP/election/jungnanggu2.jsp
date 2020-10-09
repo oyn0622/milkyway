@@ -248,7 +248,12 @@
 		<nav role="navigation">
 			<ul id="main-menu">
 				<li><a href="${contextPath }/" style="padding:0;"><img src="${contextPath }/resources/image/logo/로고.png" style="width:240px;transform:translateY(-16%);"></a></li>
-				<li><a href="${contextPath }/introduce">은하수 소개</a></li>
+				<li><a href="#">은하수 프로젝트</a>
+				<ul id="sub-menu">
+					<li><a href="${contextPath }/introduce" aria-label="subemnu">은하수 소개</a></li>
+					<li><a href="${contextPath }/guideline" aria-label="subemnu">선거 가이드라인</a></li>
+				</ul>
+				</li>
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
@@ -271,57 +276,61 @@
 	<h2 style="text-align: center;margin-top:-0.5%">선거공보물의 저작권은 해당 국회의원에게 있습니다.</h2>
 
 	<div class="contentslining">
-		<div style="position: static;top:0px;width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_1.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_2.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_3.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_4.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_5.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_6.jpg" width="809" height="1104">
-			<span class="point" style="top: 652px;left: 427px;height:26px;width: 170px;" id="동부간선 지하 고속화" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 846px;left: 370px;height:26px;width: 52px;" id="케노피" onclick="openTooltip(this)"></span>
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_7.jpg" width="809" height="1104">
-		</div>
+	<div style="position: static;top:0px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src='${contextPath }/resources/image/jungnanggu2/CF9B298C01.jpeg' width="700" height="984">
+	</div>
+    
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src='${contextPath }/resources/image/jungnanggu2/CF9B298C02.jpeg' width="700" height="984">
+	</div>
 	
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_8.jpg" width="809" height="1104">
-		</div>
-		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_9.jpg"width="809" height="1104">
-			<span class="point" style="top: 231px;left:166px;height:26px;width:253px;" id="청년 디딤돌 전세자금 금리 인하" onclick="openTooltip(this)"></span>
-			<span class="point" style="top:425px;left: 292px;height:26px;width: 148px;" id="동원훈련비 현실화" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 694px;left:384px;height:68px;width:98px;" id="간이과세 구간 확장" onclick="openTooltip(this)"></span>
-		</div>
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_10.jpg"width="809" height="1104">
-			<span class="point" style="top: 437px;left:488px;height:19px;width:138px;" id="<도심권 재생지역>사업" onclick="openTooltip(this)"></span>
-			<span class="point" style="top:705px;left: 492px;height:21px;width: 99px;" id="동부간선 지하화" onclick="openTooltip(this)"></span>
-		</div>
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/jungnanggu/중랑구갑_서영교_선거공보_11.jpg"width="809" height="1104">
-		</div>
-		
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="${contextPath }/resources/image/jungnanggu2/CF9B298C03.jpeg" width="700" height="984">
+	</div>
+	
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="${contextPath }/resources/image/jungnanggu2/CF9B298C04.jpeg" width="700" height="984">
+		<span class="point" style="top: 659px;left: 222px;height: 19px;width: 242px;" id="중소유통상인 보호 및 육성에 관한 특별" onclick="openTooltip(this)"></span>
 
 	</div>
 	
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="${contextPath }/resources/image/jungnanggu2/CF9B298C05.jpeg" width="700" height="984">
+		<span class="point" style="top: 311px;left: 215px;height: 22px;width: 182px;" id="국토부 도시재생뉴딜사업" onclick="openTooltip(this)"></span>
+		<span class="point" style="top: 642px;left: 177px;height: 22px;width: 142px;" id="동부간선도로 지하화" onclick="openTooltip(this)"></span>
+
+	</div>
+	
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="${contextPath }/resources/image/jungnanggu2/CF9B298C06.jpeg" width="700" height="984">
+		<span class="point" style="top: 420px;left: 68px;height: 17px;width: 96px;" id="중랑창업지원센터" onclick="openTooltip(this)"></span>
+
+	</div>
+	
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="${contextPath }/resources/image/jungnanggu2/CF9B298C07.jpeg" width="700" height="984">
+		<span class="point" style="top: 453px;left: 99px;height: 32px;width: 192px;" id="첨단산업 클러스터" onclick="openTooltip(this)"></span>
+
+	</div>
+
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="${contextPath }/resources/image/jungnanggu2/CF9B298C08.jpeg" width="700" height="984">
+		<span class="point" style="top: 544px;left: 110px;height: 17px;width: 79px;" id="경전철 면목선" onclick="openTooltip(this)"></span>
+    
+    </div>
+	
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="${contextPath }/resources/image/jungnanggu2/CF9B298C09.jpeg" width="700" height="984">
+	</div>
+	
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="${contextPath }/resources/image/jungnanggu2/CF9B298C10.jpeg" width="700" height="984">
+        <span class="point" style="top: 741px;left: 416px;height:32px;width: 118px;" id="공공암센터" onclick="openTooltip(this)"></span>
+	</div>
+	
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	    <img src="${contextPath }/resources/image/jungnanggu2/CF9B298C11.jpeg" width="700" height="984">
+	</div>
+	</div>
 	
 </body></html>
