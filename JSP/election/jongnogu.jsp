@@ -138,7 +138,7 @@
 				  word : linkName	
 			},
 			success:function(data) {
-				document.getElementById('mysidenav').style.width = '300px';
+				document.getElementById('mysidenav').style.width = '360px';
 				var text=sideText;
 
 				$.each(data, function(idx,val) {

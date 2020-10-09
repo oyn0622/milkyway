@@ -152,7 +152,7 @@
 				  word : linkName	
 			},
 	         success:function(data) {
-	             document.getElementById('mysidenav').style.width = '300px';
+	             document.getElementById('mysidenav').style.width = '360px';
 	             var text=sideText;
 
 	             $.each(data, function(idx,val) {
@@ -309,6 +309,18 @@
         <span class="point" style="top: 283px;left: 143px;height:17px;width: 87px;" id="최고고도지구" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 283px;left: 282px;height:17px;width: 46px;" id="종상향" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 543px;left:143px;height:16px;width: 100px;" id="전선지중화사업" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 283px;left:525px;" onclick="openNav('2. 최고고도지구해제및종상향문제해결:도시발전기반조성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+				<div class="blinkBox" style="top: 457px;left:102px;" onclick="openNav('1. 노후 주민센터 신축 : 군자동·구의2동·광장동 주민센터를 복합청사로 신축해 생활 편의성과 삶의 질 향상')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 544px;left:101px;" onclick="openNav('4. 전선지중화사업 지속 추진 : 보다 쾌적한 주거환경 조성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="position:absolute;top:4970px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -318,6 +330,14 @@
 		<span class="point" style="top: 328px;left:221px;height:16px;width: 198px;" id="지역 맞춤형 범죄예방디자인" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 499px;left: 75px;height:16px;width: 111px;" id="육아종합지원센터" onclick="openTooltip(this)"></span>
         <span class="point" style="top: 565px;left: 225px;height:16px;width: 100px;" id="친환경무상급식" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 327px;left:511px;" onclick="openNav('4. 안전한 치안환경 구축 : 지역 맞춤형 범죄예방디자인설계(CEPTED) 적용')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 477px;left:395px;" onclick="openNav('1. 열린육아방 확충 : 양육부담 덜어주는 육아환경 마련')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="position:absolute;top:5964px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
