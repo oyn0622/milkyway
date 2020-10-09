@@ -124,7 +124,22 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
@@ -304,16 +319,38 @@
 			<img src="${contextPath }/resources/image/gwanakgu2/관악구을_정태호_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 315px;left:70px;height:26px;width:128px;" id="창업 벤처밸리" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 652px;left:114px;height:26px;width:128px;" id="상권 르네상스" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 480px;left:261px;" onclick="openNav('난곡선 2022년 착공')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 656px;left:301px;" onclick="openNav('신림 상권 르네상스 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/gwanakgu2/관악구을_정태호_선거공보_8.jpg" width="809" height="1104">
 			<span class="point" style="top: 757px;left:424px;height:21px;width:140px;" id="청년버팀목 전세대출" onclick="openTooltip(this)"></span>
 			<span class="point" style="top:984px;left: 200px;height:21px;width:105px;" id="메이커 스페이스" onclick="openTooltip(this)"></span>
+
+		<div class="blinkBox" style="top: 759px;left:628px;" onclick="openNav('청년버팀목 전세대출 조건 완화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/gwanakgu2/관악구을_정태호_선거공보_9.jpg"width="809" height="1104">
+		
+		<div class="blinkBox" style="top: 278px;left:378px;" onclick="openNav('소상공인, 자영업자 통째로 살리기')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 865px;left:337px;" onclick="openNav('주거환경 개선')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 		</div>
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/gwanakgu2/관악구을_정태호_선거공보_10.jpg"width="809" height="1104">

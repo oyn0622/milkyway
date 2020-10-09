@@ -116,6 +116,8 @@
 		position:relative;
 		top:0;
 	}
+	
+	
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,7 +126,24 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
+	
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -310,6 +329,18 @@
 		<span class="point" style="top: 877px;left: 116px;height:16px;width: 130px;" id="방과후 다함께돌봄센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 912px;left: 67px;height:16px;width: 95px;" id="공공직장어린이집" onclick="openTooltip(this)"></span>
 
+		<div class="blinkBox" style="top: 271px;left:332px;" onclick="openNav('강북횡단선 조속 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 453px;left:355px;" onclick="openNav('서부광역철도 정상 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 653px;left:389px;" onclick="openNav('월드컵대교 올해 개통 예정')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -317,6 +348,14 @@
 		<span class="point" style="top: 426px;left: 209px;height:16px;width: 60px;" id="전선지중화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 583px;left: 55px;height: 20px;width: 89px;" id="신혼희망타운" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 891px;left: 322px;height: 42px;width: 172px;" id="어울림플라자, 주민문화복합시설로 조성" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 405px;left:290px;" onclick="openNav('먹자골목 활성화(걷고싶은 거리 조성)')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 893px;left:498px;" onclick="openNav('어울림플라자, 주민문화복합시설로 조성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">

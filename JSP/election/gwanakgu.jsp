@@ -124,7 +124,22 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
@@ -289,6 +304,9 @@
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/gwanakgu/관악구갑_유기홍_선거공보_4.jpg" width="809" height="1104">
+		<div class="blinkBox" style="top: 722px;left:270px;" onclick="openNav('일하는 국회법 발의')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="40" class="blink">
+		</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
@@ -306,6 +324,21 @@
 			<img src="${contextPath }/resources/image/gwanakgu/관악구갑_유기홍_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 449px;left:213px;height:21px;width:78px;" id="1인가구 공유창고" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 730px;left:258px;height:21px;width:79px;" id="혁신적 포용국가" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 294px;left:645px;" onclick="openNav('경전철서부선조기착공')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 610px;left:313px;" onclick="openNav('서울대와 함께 낙성벤처벨리 조성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 294px;left:304px;" onclick="openNav('혼자 살아도 행복한 관악')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 610px;left:649px;" onclick="openNav('봉천천 생태하천 복원')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">

@@ -124,7 +124,23 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -292,11 +308,17 @@
 		<span class="point" style="top: 399px;left: 42px;height:16px;width: 89px;" id="고도제한 완화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 592px;left: 387px;height: 28px;width: 99px;" id="청청플라자 유치" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 718px;left: 325px;height:16px;width: 91px;" id="M융합캠퍼스" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 180px;left:678px;" onclick="openNav('경제, 주민친화형 국제공항으로 강서경제 도약의 거점을 만들겠습니다')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	    <img src="${contextPath }/resources/image/gangseogu2/background06.jpg" width="700" height="984">
-
+		<div class="blinkBox" style="top: 179px;left:659px;" onclick="openNav('문화, 꽃피는 시민청을 중심으로 강서의 문화예술벨트를 구축하겠습니다)')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -304,6 +326,13 @@
 		<span class="point" style="top: 235px;left: 349px;height: 19px;width: 90px;" id="방화차량기지 이전" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 810px;left: 50px;height: 18px;width: 124px;" id="공항동 군부대 이전" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 870px;left: 94px;height: 18px;width: 143px;" id="꿈날개 도시재생사업" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 173px;left:539px;" onclick="openNav('방화동 건설폐기물처리장 이전 책임 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 715px;left:551px;" onclick="openNav('강서구청 마곡 이전 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -313,6 +342,9 @@
 		<span class="point" style="top: 345px;left: 399px;height: 18px;width: 65px;" id="스마트팜" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 612px;left: 335px;height: 19px;width: 103px;" id="공공임대아파트" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 812px;left: 86px;height: 17px;width: 104px;" id="공공임대아파트" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 291px;left:608px;" onclick="openNav('서남물재생센터 지화화 및 지상테마공원 조성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
