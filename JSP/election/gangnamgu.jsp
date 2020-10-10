@@ -111,6 +111,12 @@
         border-width: 14px;
         z-index: 2;
     }
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 	
 	.contentslining{
 		position:relative;
