@@ -116,14 +116,37 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,500);
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -312,6 +335,15 @@
 			<span class="point" style="top: 502px;left: 454px;height:19px;width: 147px;" id="발달장애인 국가책임제" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 749px;left: 613px;height:19px;width: 118px;" id="주민 주도형 에너지운동" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 906px;left: 608px;height:19px;width: 92px;" id="거주형 창작 스튜디오" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 343px;left:40px;" onclick="openNav('광역급행철도 GTX-D 노선 강동구 경유 추진')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 343px;left:420px;" onclick="openNav('태호, 유찬이법 등 안착으로 '어린이들이 안전한 강동' 실현')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 502px;left:420px;" onclick="openNav('발달장애인 국가책임제 추진')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
@@ -323,6 +355,9 @@
 			<span class="point" style="top: 823px;left:439px;height:19px;width:133px;" id="한국형 국민기본소득" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 991px;left:450px;height:19px;width:115px;" id="장애인연금 수급권" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 1015px;left: 450px;height:19px;width: 197px;" id="수요맞춤형 장애인 활동지원체계" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 968px;left:20px;" onclick="openNav('탄소제로사회 실현을 위한 '그린뉴딜 기본법' 제정')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
@@ -341,6 +376,9 @@
 			<span class="point" style="top: 943px;left:497px;height:19px;width:76px;" id="국민소환제" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 966px;left:564px;height:19px;width:88px;" id="숙의민주주의" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 1015px;left: 440px;height:19px;width: 72px;" id="자치 경찰제" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 990px;left:20px;" onclick="openNav('중소상인 지원을 위해 간이과세 기준금액 연 6,000만원으로 상향')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
