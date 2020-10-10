@@ -116,14 +116,37 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,500);
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -315,12 +338,27 @@
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/gangseogu/강서구갑_강선우_선거공보_9.jpg" width="700" height="984">
+		<div class="blinkBox" style="top: 266px;left:116px;" onclick="openNav('공항 고도제한 완화를 통한 지역발전 동력 확보')" >
+			<img src="../../search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 468px;left:116px;" onclick="openNav('화곡중앙골목시장 도시재생사업 성공적 추진')" >
+			<img src="../../search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 330px;left:116px;" onclick="openNav('서부광역철도(원종~화곡~홍대) 조기 착공 추진')" >
+			<img src="../../search.png" width="18" class="blink">
+		</div>
     </div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/gangseogu/강서구갑_강선우_선거공보_10.jpg" width="700" height="984">
         <span class="point" style="top:328px;left: 97px;height: 26px;width:100px;" id="공동육아나눔터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:796px;left: 332px;height: 18px;width:66px;" id="저류지 복개" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 266px;left:78px;" onclick="openNav('강서형 지역화폐 도입')" >
+			<img src="../../search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 528px;left:78px;" onclick="openNav('건립 예정인 서울시립 과학·환경 도서관, 주민 친화 공간으로 확장')" >
+			<img src="../../search.png" width="18" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
