@@ -121,9 +121,11 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -152,6 +154,20 @@
 	       });
 	}
 	
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,500);
 	function openNav(linkName) {
 		if(linkName!=word_tmp) { //방금 눌렀던 단어를 또 누르는 경우가 아닐 때 & 처음 사이드바 열 때
 			getNewsLink(linkName);
@@ -311,6 +327,12 @@
 		<span class="point" style="top: 619px;left: 324px;height: 17px;width: 42px;" id="종상향" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 619px;left: 375px;height: 17px;width: 51px;" id="종세분화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 779px;left: 98px;height: 17px;width: 133px;" id="재건축 초과이익 분담금" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 347px;left:63px;" onclick="openNav('•1세대 1주택 종부세 기준 주택가, 현행 공시가 9억에서 12억 이상으로 상향 조정')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 705px;left:63px;" onclick="openNav(' 각종 규제의 현실화! 강남답게 자유롭게 재건축 규제를 확 풀겠습니다!')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
 
     
     </div>
@@ -322,7 +344,16 @@
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangnamgu/background10.jpg" width="700" height="984">
         <span class="point" style="top: 222px;left: 340px;height:16px;width: 120px;" id="MICE산업" onclick="openTooltip(this)"></span>
-		<span class="point" style="top: 374px;left: 98px;height:16px;width: 60px;" id="과밀학급" onclick="openTooltip(this)"></span>   
+		<span class="point" style="top: 374px;left: 98px;height:16px;width: 60px;" id="과밀학급" onclick="openTooltip(this)"></span> 
+	<div class="blinkBox" style="top: 200px;left:63px;" onclick="openNav('영동대로 통합개발의 성공적 완수를 위한 지원 강화')" >
+		<img src="../../search.png" width="20" class="blink">
+	</div>
+	<div class="blinkBox" style="top: 301px;left:63px;" onclick="openNav('- 테헤란로, 역삼로 주변 스타트업 메카로 조성')" >
+		<img src="../../search.png" width="20" class="blink">
+	</div>
+	<div class="blinkBox" style="top: 605px;left:63px;" onclick="openNav('위례신사선 조기착공 및 청담사거리역 신설 추진으로 교통문제 FREE')" >
+		<img src="../../search.png" width="20" class="blink">
+	</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
