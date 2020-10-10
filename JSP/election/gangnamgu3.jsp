@@ -116,15 +116,39 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,500);
+	
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -324,6 +348,15 @@
 		<span class="point" style="top: 815px;left: 212px;height:16px;width: 34px;" id="용적률" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 815px;left: 249px;height:16px;width: 30px;" id="건폐율" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 851px;left: 474px;height:16px;width: 83px;" id="장기저리 융자지원" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 196px;left:58px;" onclick="openNav('‘세금폭탄’, ‘꼼수증세’의 원인, 공시가격 문제 해결!')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 358px;left:58px;" onclick="openNav('● 보유세(부동산세, 재산세) 인하')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 760px;left:58px;" onclick="openNav('강남도심 재생지원에 관한 특별법 제정, 일명 <유경준법>!')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="position:absolute;top:8946px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -338,6 +371,12 @@
 		<span class="point" style="top: 654px;left: 514px;height:16px;width: 67px;" id="전신주 지하화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 687px;left: 504px;height:16px;width: 83px;" id="지상 공간 공원화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 847px;left: 456px;height:16px;width: 61px;" id="세택(SETECT)" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 169px;left:65px;" onclick="openNav(': 대입 수능시험 중심의 정시 대폭확대(70% 이상으로 신속 확대)')" >
+			<img src="../../search.png" width="15" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 446px;left:50px;" onclick="openNav('경제전문가 유경준, 강남을 MICE 산업의 메카로 만들겠습니다!')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
 	    
 	</div>
 	
