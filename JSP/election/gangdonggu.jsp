@@ -116,14 +116,37 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,500);
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -283,6 +306,15 @@
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/gangdonggu/강동구갑_진선미_선거공보_3.jpg" width="700" height="984">
         <span class="point" style="top:349px;left: 386px;height: 22px;width:113px;" id="예비타당성 통과" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 228px;left:295px;" onclick="openNav('지하철 9호선 4단계 조기착공 '청신호'')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 510px;left:295px;" onclick="openNav('지하철 9호선 강일동 추가 연장')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 859px;left:295px;" onclick="openNav('GTX-D 노선 강동 유치 추진')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
     </div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -296,11 +328,17 @@
 		<span class="point" style="top:478px;left: 342px;height: 21px;width:62px;" id="행복학교" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:504px;left: 223px;height: 21px;width:62px;" id="과밀학급" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:718px;left: 277px;height: 21px;width:116px;" id="복합문화체육시설" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 302px;left:40px;" onclick="openNav('고덕비즈밸리, 첨단업무단지, 강동일반산업단지 클러스터화로 경제 성장동력 완성')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/gangdonggu/강동구갑_진선미_선거공보_6.jpg" width="700" height="984">
         <span class="point" style="top:544px;left: 258px;height: 20px;width:158px;" id="재능기부 커뮤니티센터" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 547px;left:35px;" onclick="openNav('강동실버케어센터 조성 및 재능기부 커뮤니티센터 설치')" >
+			<img src="../../search.png" width="18" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
