@@ -111,7 +111,12 @@
         border-width: 14px;
         z-index: 2;
     }
-	
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 	.contentslining{
 		position:relative;
 		top:0;
@@ -121,9 +126,24 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -310,6 +330,15 @@
 	<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangnamgu2/background08.jpg" width="700" height="984">
 		<span class="point" style="top: 852px;left: 124px;height:16px;width: 92px;" id="양재R&amp;CD지구" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 335px;left:43px;" onclick="openNav('•위례-과천선 개포동 구간 지하철역 신설')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 463px;left:33px;" onclick="openNav('개포택지개발지구 재건축, 살기좋은 개포 만들기!')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 848px;left:43px;" onclick="openNav('•개포4동 양재R&CD지구 조속 추진')" >
+			<img src="../../search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="position:absolute;top:7952px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -318,6 +347,9 @@
 		<span class="point" style="top: 530px;left: 152px;height:16px;width: 47px;" id="종상향" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 503px;left: 256px;height:16px;width: 83px;" id="공공임대주택" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 643px;left: 93px;height:16px;width: 167px;" id="탄천하수처리장 5단계 복개" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 530px;left:58px;" onclick="openNav('•대청마을 종상향 및 재개발 사업 추진')" >
+			<img src="../../search.png" width="18" class="blink">
+		</div>
 	</div>
 	
 	<div style="position:absolute;top:8946px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -326,6 +358,9 @@
 		<span class="point" style="top: 371px;left: 92px;height:16px;width: 124px;" id="세곡디지털밸리(SDV)" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 852px;left: 95px;height:16px;width: 81px;" id="ICT벤처리빙랩" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 875px;left: 95px;height:16px;width: 56px;" id="이음학교" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 303px;left:53px;" onclick="openNav('•10년 임대주택 분양전환가 합리화')" >
+			<img src="../../search.png" width="18" class="blink">
+		</div>
 	    
 	</div>
 	
