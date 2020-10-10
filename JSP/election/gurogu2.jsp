@@ -116,14 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -318,12 +338,27 @@
 			<span class="point" style="top: 290px;left: 356px;height:19px;width: 97px;" id="전선지중화 사업" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 380px;left: 218px;height:16px;width: 84px;" id="띠녹지 조성사업" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 907px;left: 156px;height:19px;width: 82px;" id="도시재생사업" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 546px;left:118px;" onclick="openNav('3 항공기 소음피해 대책 및 피해보상 근거 마련 추진')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 844px;left:118px;" onclick="openNav('1 구로역 신역사 건립 및 역세권 정비사업 추진')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_10.jpg" width="809" height="1104">
 			<span class="point" style="top: 858px;left: 452px;height:19px;width: 45px;" id="용적률" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 858px;left: 596px;height:19px;width: 45px;" id="종상향" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 489px;left:110px;" onclick="openNav('3 구로·남구로시장, 고객지원센터·주차장 확보 및 구로시장 아케이드 구간연장')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 704px;left:202px;" onclick="openNav('3 구로디지털산단 내 원스톱 <스마트 창업밸리> 구축사업 추진')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 885px;left:202px;" onclick="openNav('2 청년 행복주택 및 지하 공공주차장 건립')" >
+				<img src="../../search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
