@@ -333,7 +333,7 @@
 		<img src="${contextPath }/resources/image/seodaemungu/background09.jpg" width="700" height="984">
 		<span class="point" style="top: 697px;left: 208px;height:16px;width: 53px;" id="특화거리" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 652px;left:50px;" onclick="openNav('홍제역, 서대문역, 아현역 등 역세권 개발')" >
-			<img src="${contextPath }/resources/image/logo/search.png"" width="16" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="16" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 715px;left:50px;" onclick="openNav('연희맛길 음식문화축제 지원 등을 통한 연희동 상권 활성화')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="16" class="blink">
