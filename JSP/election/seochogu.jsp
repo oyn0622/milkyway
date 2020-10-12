@@ -116,15 +116,35 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -305,6 +325,21 @@
 		<span class="point" style="top: 266px;left: 105px;height:16px;width: 43px;" id="종부세" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 399px;left: 105px;height:16px;width: 90px;" id="초과이익환수제" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 485px;left: 107px;height:16px;width: 121px;" id="경부 고속도로 지하화" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 205px;left:27px;" onclick="openNav('부동산세 부담 완화')" >
+			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 453px;left:27px;" onclick="openNav('경부고속도로 지하화')" >
+			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 580px;left:27px;" onclick="openNav('육아·교육 1번지! 서초')" >
+			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 698px;left:27px;" onclick="openNav('활기찬 노후! 건강한 서초')" >
+			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 833px;left:27px;" onclick="openNav('친환경과 문화의 선두! 서초')" >
+			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+		</div>
 
 	</div>
 	
