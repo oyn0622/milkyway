@@ -116,14 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -290,6 +310,9 @@
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/seongbukgu/20200415_성북구갑_김영배_선거공보_5.jpg" width="809" height="1104">
 			<span class="point" style="top: 732px;left: 186px;height: 30px;width: 253px;" id="국회의원 국민소환제" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 732px;left:167px;" onclick="openNav(''국회의원 국민소환제 ' 도입! 국민을 무서워하는 정치로! ')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
@@ -298,11 +321,23 @@
 			<span class="point" style="top: 853px;left: 226px;height:19px;width: 88px;" id="전월세상한제" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 853px;left: 319px;height:19px;width: 97px;" id="계약갱신청구권" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 877px;left: 273px;height:19px;width: 83px;" id="공공임대주택" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 676px;left:187px;" onclick="openNav('소상공인 자영업자 지원확대로 동네경제 살리기')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 818px;left:187px;" onclick="openNav('1가구 1주택 실현을 위한 '맞춤형 주거정책' 추진')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/seongbukgu/20200415_성북구갑_김영배_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 895px;left: 191px;height: 31px;width: 128px;" id="자치경찰제" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 453px;left:167px;" onclick="openNav('코로나 19 관련 재난극복소득 지급 등 국민생활안정긴급 대책 시행 ')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 758px;left:167px;" onclick="openNav('편한게 숨쉬는 대한민국! 미세먼지 감축을 위한 대기환경 개선대책 추진 ')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
 
 		</div>
 	
