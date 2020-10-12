@@ -330,7 +330,7 @@
 		<img src="${contextPath }/resources/image/gangbukgu2/강북구을_박용진_선거공보_8.jpg" width="700" height="984">
 		<span class="point" style="top: 474px;left: 364px;height:34px;width: 170px;" id="강북발전특별법" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 483px;left:78px;" onclick="openNav('강북과 강남의 격차 해소! 가칭 강북발전특별법 발의')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 	</div>
 	
@@ -338,13 +338,13 @@
 		<img src="${contextPath }/resources/image/gangbukgu2/강북구을_박용진_선거공보_9.jpg" width="700" height="984">
 		<span class="point" style="top: 278px;left: 86px;height:18px;width: 98px;" id="전선 지중화 사업" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 278px;left:48px;" onclick="openNav('전선지중화사업 미아동부터 우선 추진')" >
-			<img src="../../search.png" width="18" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 470px;left:48px;" onclick="openNav('삼양동')" >
-			<img src="../../search.png" width="18" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 873px;left:48px;" onclick="openNav('공연장과 전시장이 있는 아동청소년예술센터 신설')" >
-			<img src="../../search.png" width="18" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 		</div>
 	</div>
 	
@@ -355,7 +355,7 @@
 		<span class="point" style="top: 787px;left: 483px;height:19px;width: 111px;" id="육아종합지원센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 809px;left: 472px;height:19px;width: 81px;" id="복합체육청사" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 256px;left:305px;" onclick="openNav('강남까지 30분! 동북선도시철도 조기 개통 추진')" >
-			<img src="../../search.png" width="18" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 		</div>
 	    
 	</div>
