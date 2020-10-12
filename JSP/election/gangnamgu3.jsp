@@ -349,13 +349,13 @@
 		<span class="point" style="top: 815px;left: 249px;height:16px;width: 30px;" id="건폐율" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 851px;left: 474px;height:16px;width: 83px;" id="장기저리 융자지원" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 196px;left:58px;" onclick="openNav('‘세금폭탄’, ‘꼼수증세’의 원인, 공시가격 문제 해결!')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 358px;left:58px;" onclick="openNav('● 보유세(부동산세, 재산세) 인하')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 760px;left:58px;" onclick="openNav('강남도심 재생지원에 관한 특별법 제정, 일명 <유경준법>!')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png"" width="20" class="blink">
 		</div>
 	</div>
 	
@@ -372,10 +372,10 @@
 		<span class="point" style="top: 687px;left: 504px;height:16px;width: 83px;" id="지상 공간 공원화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 847px;left: 456px;height:16px;width: 61px;" id="세택(SETECT)" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 169px;left:65px;" onclick="openNav(': 대입 수능시험 중심의 정시 대폭확대(70% 이상으로 신속 확대)')" >
-			<img src="../../search.png" width="15" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="15" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 446px;left:50px;" onclick="openNav('경제전문가 유경준, 강남을 MICE 산업의 메카로 만들겠습니다!')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 	    
 	</div>
