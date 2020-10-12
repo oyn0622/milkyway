@@ -307,13 +307,13 @@
         <img src="${contextPath }/resources/image/gangdonggu/강동구갑_진선미_선거공보_3.jpg" width="700" height="984">
         <span class="point" style="top:349px;left: 386px;height: 22px;width:113px;" id="예비타당성 통과" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 228px;left:295px;" onclick="openNav('지하철 9호선 4단계 조기착공 '청신호'')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 510px;left:295px;" onclick="openNav('지하철 9호선 강일동 추가 연장')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 859px;left:295px;" onclick="openNav('GTX-D 노선 강동 유치 추진')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
     </div>
 	
@@ -329,7 +329,7 @@
 		<span class="point" style="top:504px;left: 223px;height: 21px;width:62px;" id="과밀학급" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:718px;left: 277px;height: 21px;width:116px;" id="복합문화체육시설" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 302px;left:40px;" onclick="openNav('고덕비즈밸리, 첨단업무단지, 강동일반산업단지 클러스터화로 경제 성장동력 완성')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 	</div>
 	
@@ -337,7 +337,7 @@
         <img src="${contextPath }/resources/image/gangdonggu/강동구갑_진선미_선거공보_6.jpg" width="700" height="984">
         <span class="point" style="top:544px;left: 258px;height: 20px;width:158px;" id="재능기부 커뮤니티센터" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 547px;left:35px;" onclick="openNav('강동실버케어센터 조성 및 재능기부 커뮤니티센터 설치')" >
-			<img src="../../search.png" width="18" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 		</div>
 	</div>
 	
