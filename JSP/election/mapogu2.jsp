@@ -116,14 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -304,6 +324,15 @@
 		<span class="point" style="top: 479px;left: 108px;height:16px;width: 75px;" id="주민센터 및 데이케어센터 복합공공청사 건립" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 501px;left: 60px;height:16px;width: 75px;" id="주민센터 및 데이케어센터 복합공공청사 건립" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 523px;left: 115px;height:16px;width: 69px;" id="전선지중화" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 650px;left:303px;" onclick="openNav('서부광역철도 조기착공 및 성산역 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png"  width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 751px;left:303px;" onclick="openNav('IoT기반 마포 미세먼지측정망 구축 지원')" >
+			<img src="${contextPath }/resources/image/logo/search.png"  width="20" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 862px;left:303px;" onclick="openNav('출판산업 활성화 지원 및 출판의거리 조성 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png"  width="20" class="blink">
+		</div>
 	</div>
 
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -318,6 +347,12 @@
 		<span class="point" style="top: 765px;left: 117px;height: 20px;width: 63px;" id="그린뉴딜" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 821px;left: 241px;height: 20px;width: 116px;" id="권력기관 정상화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 906px;left: 116px;height: 20px;width: 65px;" id="햇볕정책" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 767px;left:80px;" onclick="openNav('그린뉴딜 기본법 제정 및 미세먼지 저감조치 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png"  width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 878px;left:80px;" onclick="openNav('국회법 개정 등을 통한 '일하는 국회, 신뢰받는 국회' 실현')" >
+			<img src="${contextPath }/resources/image/logo/search.png"  width="18" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
