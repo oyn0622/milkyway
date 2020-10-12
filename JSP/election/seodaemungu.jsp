@@ -116,14 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -312,6 +332,12 @@
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/seodaemungu/background09.jpg" width="700" height="984">
 		<span class="point" style="top: 697px;left: 208px;height:16px;width: 53px;" id="특화거리" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 652px;left:50px;" onclick="openNav('홍제역, 서대문역, 아현역 등 역세권 개발')" >
+			<img src="${contextPath }/resources/image/logo/search.png"" width="16" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 715px;left:50px;" onclick="openNav('연희맛길 음식문화축제 지원 등을 통한 연희동 상권 활성화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="16" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -319,6 +345,15 @@
 		<span class="point" style="top: 397px;left: 77px;height:16px;width: 111px;" id="돌봄교실 전면 확대" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 737px;left: 170px;height:16px;width: 124px;" id="신촌 작은 도서관" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 778px;left: 76px;height:16px;width: 123px;" id="국립 임시정부 기념관" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 652px;left:53px;" onclick="openNav('북아현 2구역과 3구역 재개발사업 조기 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="16" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 694px;left:53px;" onclick="openNav('천연ㆍ충현동 도시재생사업으로 거주환경 개선')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="16" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 859px;left:53px;" onclick="openNav('충현동, 북아현동, 연희동 철로변 소음방지대책 수립')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="16" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
