@@ -331,13 +331,13 @@
 		<img src="${contextPath }/resources/image/gangnamgu2/background08.jpg" width="700" height="984">
 		<span class="point" style="top: 852px;left: 124px;height:16px;width: 92px;" id="양재R&amp;CD지구" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 335px;left:43px;" onclick="openNav('•위례-과천선 개포동 구간 지하철역 신설')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 463px;left:33px;" onclick="openNav('개포택지개발지구 재건축, 살기좋은 개포 만들기!')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 848px;left:43px;" onclick="openNav('•개포4동 양재R&CD지구 조속 추진')" >
-			<img src="../../search.png" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 	</div>
 	
@@ -348,7 +348,7 @@
 		<span class="point" style="top: 503px;left: 256px;height:16px;width: 83px;" id="공공임대주택" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 643px;left: 93px;height:16px;width: 167px;" id="탄천하수처리장 5단계 복개" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 530px;left:58px;" onclick="openNav('•대청마을 종상향 및 재개발 사업 추진')" >
-			<img src="../../search.png" width="18" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 		</div>
 	</div>
 	
@@ -359,7 +359,7 @@
 		<span class="point" style="top: 852px;left: 95px;height:16px;width: 81px;" id="ICT벤처리빙랩" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 875px;left: 95px;height:16px;width: 56px;" id="이음학교" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 303px;left:53px;" onclick="openNav('•10년 임대주택 분양전환가 합리화')" >
-			<img src="../../search.png" width="18" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 		</div>
 	    
 	</div>
