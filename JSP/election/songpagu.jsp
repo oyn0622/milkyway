@@ -115,15 +115,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -295,6 +314,9 @@
 		<span class="point" style="top: 661px;left: 136px;height: 34px;width: 175px;" id="아파트 청약제도" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 777px;left: 121px;height: 20px;width: 91px;" id="아파트 청약제도" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 861px;left: 83px;height: 20px;width: 91px;" id="아파트 청약제도" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 664px;left:373px;" onclick="openNav('아파트 청약제도 개선<br>내 집 마련의 꿈을<br>한 발자국 앞당기도록 하겠습니다.')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -309,6 +331,9 @@
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/songpagu/background07.jpg" width="700" height="984">
 		<span class="point" style="top: 723px;left: 214px;height: 28px;width: 153px;" id="풍납토성 복원사업" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 724px;left:183px;" onclick="openNav('풍납토성 복원사업<br>문화가 꽃피는 송파')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
 	</div>
 
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -316,6 +341,15 @@
 		<span class="point" style="top: 326px;left: 400px;height: 17px;width: 74px;" id="지구단위계획" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 791px;left: 272px;height: 17px;width: 79px;" id="민관 거버넌스" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 835px;left: 379px;height: 17px;width: 60px;" id="지중화사업" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 246px;left:91px;" onclick="openNav('지역경제 활성화<br>더 멀리 더 높게 도약하는 송파')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 438px;left:315px;" onclick="openNav('교통 및 환경개선<br>살고 싶은 쾌적한 송파')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 710px;left:234px;" onclick="openNav('잠실 관광특구 활성화<br>글로벌시티 송파')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
