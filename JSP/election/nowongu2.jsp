@@ -116,14 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 
 
 	
@@ -306,6 +326,12 @@
 			<span class="point" style="top: 774px;left: 60px;height:19px;width: 106px;" id="그린뉴딜 기본법" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 530px;left:417px;height:19px;width:128px;" id="학점비례 등록금제" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 634px;left:417px;height:19px;width:172px;" id="찾아가는 어르신 돌봄 서비스" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 614px;left:24px;" onclick="openNav('정시 확대, 학종 개선 등 공정한 대입제도 설계')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 773px;left:24px;" onclick="openNav('그린뉴딜 기본법으로 탄소제로사회 실현 계획 수립')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
@@ -320,6 +346,9 @@
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/nowongu2/노원구을_우원식_선거공보_9.jpg"width="809" height="1104">
 			<span class="point" style="top: 826px;left: 346px;height:28px;width:194px;" id="동부간선도로 지하화" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 684px;left:610px;" onclick="openNav('KTX 수서-의정부 연장 추진!')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="22" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
@@ -327,6 +356,12 @@
 			<span class="point" style="top: 577px;left: 64px;height:19px;width: 125px;" id="청년공간 무중력지대" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 862px;left: 166px;height:19px;width: 59px;" id="공동주택" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 924px;left: 415px;height:19px;width: 158px;" id="생애 전주기 문화복지시설" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 535px;left:30px;" onclick="openNav('영유아 공동육아방, 아동돌봄교실(아아休 센터) 2배 이상 확대 설치')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 964px;left:379px;" onclick="openNav('저소득 독거어르신 중점 돌봄, 찾아가는 건강버스 운영')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
