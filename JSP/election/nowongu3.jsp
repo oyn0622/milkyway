@@ -116,15 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -288,12 +307,18 @@
 	<div style="position:absolute;top:2982px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/nowongu3/노원구병_김성환_선거공보_4.jpg" width="700" height="984">
         <span class="point" style="top:233px;left: 250px;height: 24px;width:118px;" id="에너지제로주택" onclick="openTooltip(this)"></span>
+	<div class="blinkBox" style="top: 126px;left:66px;" onclick="openNav('새로운 문명 - 2050년 탄소 제로 사회')" >
+		<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+	</div>
 
     </div>
 	
 	<div style="position:absolute;top:3976px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/nowongu3/노원구병_김성환_선거공보_5.jpg" width="700" height="984">
         <span class="point" style="top:818px;left: 142px;height: 21px;width:86px;" id="희망촌도 개발계획" onclick="openTooltip(this)"></span>
+	<div class="blinkBox" style="top: 280px;left:339px;" onclick="openNav('창동차량기지, 도봉면허시험장 이전 부지 확정')" >
+		<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+	</div>
 	</div>
 	
 	<div style="position:absolute;top:4970px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -302,12 +327,18 @@
         <span class="point" style="top:415px;left: 138px;height: 22px;width:118px;" id="동부간선도로 공사" onclick="openTooltip(this)"></span>
         <span class="point" style="top:415px;left: 305px;height: 22px;width:123px;" id="고압송전탑 지중화" onclick="openTooltip(this)"></span>
         <span class="point" style="top:695px;left: 260px;height: 19px;width:68px;" id="지하철 급행화" onclick="openTooltip(this)"></span>
+	<div class="blinkBox" style="top: 280px;left:379px;" onclick="openNav('상계 1동 어울림체육관, 행복타운 착공')" >
+		<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+	</div>
 
 	</div>
 	
 	<div style="position:absolute;top:5964px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/nowongu3/노원구병_김성환_선거공보_7.jpg" width="700" height="984">
         <span class="point" style="top:741px;left: 100px;height: 22px;width:123px;" id="광역급행철도 GTX" onclick="openTooltip(this)"></span>
+	<div class="blinkBox" style="top: 360px;left:473px;" onclick="openNav('첨단 생명의료 산업단지')" >
+		<img src="${contextPath }/resources/image/logo/search.png" width="22" class="blink">
+	</div>
     </div>
 
 	<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -317,6 +348,9 @@
 	<div style="position:absolute;top:7952px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/nowongu3/노원구병_김성환_선거공보_9.jpg" width="700" height="984">
         <span class="point" style="top:350px;left: 413px;height: 19px;width:42px;" id="상계IC" onclick="openTooltip(this)"></span>
+	<div class="blinkBox" style="top: 500px;left:99px;" onclick="openNav('장암동 군부대이전부지 문화체육시설 조성')" >
+		<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+	</div>
 
     </div>
 	
