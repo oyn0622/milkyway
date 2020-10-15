@@ -116,16 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -307,17 +325,32 @@
 			<span class="point" style="top: 701px;left: 360px;height:21px;width: 108px;" id="온종일 돌봄 체계" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 727px;left:543px;height:21px;width:88px;" id="구직촉진수당" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 755px;left:360px;height:21px;width:119px;" id="장애인연금 수급권" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 430px;left:333px;" onclick="openNav('소비자 집단소송제 도입 적극 추진')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 676px;left:333px;" onclick="openNav('2021년까지 기초연금 30만원 인상(소득하위 70% 대상)')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/geumcheongu/금천구_최기상_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 586px;left: 263px;height:24px;width: 210px;" id="제4차 국가철도망 구축계획" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 976px;left: 256px;height:24px;width: 118px;" id="도시재생활성화" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 810px;left:51px;" onclick="openNav('공군부대 이전 및 부지개발')" >
+				img src="${contextPath }/resources/image/logo/search.png" width="22" class="blink">
+			</div>
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/geumcheongu/금천구_최기상_선거공보_8.jpg" width="809" height="1104">
 			<span class="point" style="top: 805px;left:273px;height:26px;width:199px;" id="지식기반산업집적지구" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 805px;left:245px;" onclick="openNav('지식기반산업집적지구 지정 추진 및 G밸리 활성화')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 486px;left:513px;" onclick="openNav('대형종합병원 유치')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
