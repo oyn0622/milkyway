@@ -116,15 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
@@ -287,6 +306,9 @@
 		<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	        <img src="${contextPath }/resources/image/dobonggu/도봉구갑_인재근_선거공보_3.jpg" width="700" height="984">
 	        <span class="point" style="top:493px;left: 162px;height: 36px;width:154px;" id="신경제중심지" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 500px;left:20px;" onclick="openNav('창동·상계 신경제중심지 조성 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
 		</div>
 		
 		<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -302,6 +324,15 @@
 		<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	        <img src="${contextPath }/resources/image/dobonggu/도봉구갑_인재근_선거공보_5.jpg" width="700" height="984">
 	        <span class="point" style="top:392px;left: 206px;height: 21px;width:96px;" id="도봉청소년누리터" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 295px;left:160px;" onclick="openNav('도봉 학교발전예산 약711억원 확보')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 580px;left:160px;" onclick="openNav('도봉어르신문화센터 등 복합시설 신축 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 645px;left:160px;" onclick="openNav('로봇과학관 건립 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 	
 		</div>
 		
@@ -310,6 +341,9 @@
 	        <span class="point" style="top:491px;left: 178px;height: 22px;width:119px;" id="주민 복합커뮤니티공간" onclick="openTooltip(this)"></span>
 	        <span class="point" style="top:541px;left: 209px;height: 22px;width:62px;" id="마을활력소" onclick="openTooltip(this)"></span>
 	        <span class="point" style="top:894px;left: 211px;height: 22px;width:88px;" id="생활권 공원녹지" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 668px;left:128px;" onclick="openNav('창동신창시장 고객지원센터 건립 및 시설 현대화 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 		</div>
 		
 		<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
