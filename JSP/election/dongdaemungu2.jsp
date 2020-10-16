@@ -116,15 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -298,31 +317,45 @@
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_7.jpg" width="809" height="1104">
+			<img src="./dongdaemungu2_files/20200415_동대문구을_장경태_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 57px;left: 173px;height: 49px;width: 259px;" id="복합환승센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 751px;left: 240px;height:19px;width: 60px;" id="도시재생" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 682px;left: 421px;height:19px;width: 147px;" id="지역사회 통합돌봄체계" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 895px;left: 191px;height: 31px;width: 128px;" id="스마트 여성 안심 통합네트워크" onclick="openTooltip(this)"></span>
-
+			<div class="blinkBox" style="top: 63px;left:10px;" onclick="openNav('청량리역 르네상스, 복합환승센터 구축')" >
+				<img src="${contextPath }/resources/image/logo/search.png" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 800px;left:390px;" onclick="openNav('스마트 여성 안심 통합네트워크 구축 및 긴급신고 지원체계 강화')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_8.jpg" width="809" height="1104">
+			<img src="./dongdaemungu2_files/20200415_동대문구을_장경태_선거공보_8.jpg" width="809" height="1104">
 			<span class="point" style="top: 822px;left: 51px;height:19px;width: 144px;" id="소상공인 복합지원센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 706px;left: 485px;height:19px;width: 108px;" id="마을공동체사업" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 730px;left: 421px;height:19px;width: 101px;" id="재정비촉진지구" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 683px;left:20px;" onclick="openNav('동대문구 청년지원센터 설치 및 사업 지원')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_9.jpg" width="809" height="1104">
+			<img src="./dongdaemungu2_files/20200415_동대문구을_장경태_선거공보_9.jpg" width="809" height="1104">
 			<span class="point" style="top: 322px;left: 49px;height:19px;width: 134px;" id="크리에이티브 캠퍼스" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 521px;left: 48px;height:19px;width: 113px;" id="면목선 예타 통과" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 198px;left:10px;" onclick="openNav('서울대표도서관 전문교육기관화')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_10.jpg" width="809" height="1104">
+			<img src="./dongdaemungu2_files/20200415_동대문구을_장경태_선거공보_10.jpg" width="809" height="1104">
 			<span class="point" style="top: 613px;left: 421px;height:19px;width: 128px;" id="우리동네 키움센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 637px;left: 481px;height:19px;width: 62px;" id="50+센터" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 983px;left:20px;" onclick="openNav('동부학당 건립, 전통문화 계승 및 청소년 인성 함양')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
