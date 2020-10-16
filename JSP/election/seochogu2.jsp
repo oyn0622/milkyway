@@ -324,14 +324,10 @@
         <span class="point" style="top: 314px;left: 477px;height:16px;width: 45px;" id="종부세" onclick="openTooltip(this)"></span>
         <span class="point" style="top: 380px;left: 400px;height:16px;width:45px;" id="공시가" onclick="openTooltip(this)"></span>
         <span class="point" style="top: 775px;left: 500px;height:16px;width: 102px;" id="시간제 보육 시설" onclick="openTooltip(this)"></span>
-		<div class="blinkBox" style="top: 820px;left:82px;" onclick="openNav('2. 소상공인 및 중소기업 코로나-19 정책자금 실질지원
-		* 법인(대표) 신용평가 제외 등 평가 지수 개선
-		* 소상공인 및 중소기업 대상 세금 공제폭 확대')" >
+		<div class="blinkBox" style="top: 820px;left:82px;" onclick="openNav('2. 소상공인 및 중소기업 코로나-19 정책자금 실질지원<br>* 법인(대표) 신용평가 제외 등 평가 지수 개선<br>* 소상공인 및 중소기업 대상 세금 공제폭 확대')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
-		<div class="blinkBox" style="top: 753px;left:458px;" onclick="openNav('1. 보육걱정 제로 프로젝트
-		* 시간제 보육 시설 확대
-		* 교사 대 아동비율 축소')" >
+		<div class="blinkBox" style="top: 753px;left:458px;" onclick="openNav('1. 보육걱정 제로 프로젝트<br>* 시간제 보육 시설 확대<br>* 교사 대 아동비율 축소')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 	</div>
@@ -345,13 +341,10 @@
 		<div class="blinkBox" style="top: 110px;left:347px;" onclick="openNav('미세먼지 저감 약속')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
-		<div class="blinkBox" style="top: 647px;left:27px;" onclick="openNav('청년 약속1. 청년문화사업 육성 지원
-		* 생활문화ㆍ생활체육 저변확대를 통한 新산업 생태계 조성')" >
+		<div class="blinkBox" style="top: 647px;left:27px;" onclick="openNav('청년 약속1. 청년문화사업 육성 지원<br>* 생활문화ㆍ생활체육 저변확대를 통한 新산업 생태계 조성')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
-		<div class="blinkBox" style="top: 510px;left:356px;" onclick="openNav('1. 여성 1인가구를 위한 『안심 거주정책법』추진
-		* 문열림센터·휴대용벨 등
-		스마트 세이프 안심 세트 지원 등')" >
+		<div class="blinkBox" style="top: 510px;left:356px;" onclick="openNav('1. 여성 1인가구를 위한 『안심 거주정책법』추진<br>* 문열림센터·휴대용벨 등<br>스마트 세이프 안심 세트 지원 등')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 		</div>
 	</div>
