@@ -116,15 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -296,7 +315,7 @@
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_7.jpg" width="809" height="1104">
+			<img src="./dongjakgu2_files/20200415_동작구을_이수진_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 659px;left: 147px;height:19px;width: 136px;" id="온종일 돌봄 특별법" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 659px;left: 339px;height:19px;width: 108px;" id="온종일 돌봄체계" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 754px;left: 192px;height:19px;width: 153px;" id="4차 산업혁명 창업특구" onclick="openTooltip(this)"></span>
@@ -306,7 +325,7 @@
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_8.jpg" width="809" height="1104">
+			<img src="./dongjakgu2_files/20200415_동작구을_이수진_선거공보_8.jpg" width="809" height="1104">
 			<span class="point" style="top: 583px;left: 147px;height:19px;width: 64px;" id="한강특구" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 620px;left: 440px;height:19px;width: 105px;" id="숭실대 드림센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 780px;left: 284px;height:19px;width: 63px;" id="청년주택" onclick="openTooltip(this)"></span>
@@ -314,18 +333,32 @@
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_9.jpg" width="809" height="1104">
+			<img src="./dongjakgu2_files/20200415_동작구을_이수진_선거공보_9.jpg" width="809" height="1104">
 			<span class="point" style="top: 369px;left: 252px;height:19px;width: 111px;" id="복합문화플랫폼" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 711px;left: 235px;height:19px;width: 100px;" id="지구단위 계획" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 776px;left: 326px;height:19px;width: 115px;" id="행복주택36세대" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 409px;left:68px;" onclick="openNav('종합사회복지관 흑석동 설립')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 796px;left:68px;" onclick="openNav('전통시장 상권 활성화 추진')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_10.jpg" width="809" height="1104">
+			<img src="./dongjakgu2_files/20200415_동작구을_이수진_선거공보_10.jpg" width="809" height="1104">
 			<span class="point" style="top: 778px;left: 463px;height:19px;width: 63px;" id="50+센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 800px;left: 463px;height:19px;width: 96px;" id="도시재생사업" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 390px;left:308px;" onclick="openNav('동작주차공원 내 청년주택 건립')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 670px;left:308px;" onclick="openNav('스마트 안전마을 조성 확대')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 799px;left:308px;" onclick="openNav('주민과 함께하는 도시재생사업 추진')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
-		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_11.jpg" width="809" height="1104">
 		</div>
