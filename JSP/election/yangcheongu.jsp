@@ -116,15 +116,37 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,500);
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -279,8 +301,8 @@
 		<img src="${contextPath }/resources/image/yangcheongu/background02.jpg" width="730" height="999">
 	</div>
 
-	<div style="width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
-		<img src="${contextPath }/resources/image/yangcheongu/background03.jpg" width="1200" height="820">
+	<div style="position:absolute;top:1860px;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
+		<img src="./yangcheongu_files/background03.jpg" width="1200" height="820">
 		<span class="point" style="top: 309px;left: 279px;height: 17px;width: 80px;" id="도시재생뉴딜사업" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 339px;left: 260px;height: 17px;width: 67px;" id="10분생활SOC" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 419px;left: 228px;height: 17px;width: 62px;" id="혁신성장밸리" onclick="openTooltip(this)"></span>
@@ -289,16 +311,31 @@
 		<span class="point" style="top: 657px;left: 451px;height: 22px;width: 49px;" id="복선화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 372px;left: 1000px;height: 17px;width: 71px;" id="민·관·정 협의체" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 157px;left: 964px;height: 17px;width: 34px;" id="용적률" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 398px;left:433px;" onclick="openNav('목동유수지 혁신성장밸리 조성 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 245px;left:1027px;" onclick="openNav('양천쓰레기소각장 이전 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 	</div>
 
-	<div style="width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
-		<img src="${contextPath }/resources/image/yangcheongu/background04.jpg" width="1200" height="820">
+	<div style="position:absolute;top:2700px;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
+		<img src="./yangcheongu_files/background04.jpg" width="1200" height="820">
 		<span class="point" style="top: 427px;left: 106px;height: 19px;width: 70px;" id="혁신성장밸리" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 410px;left: 47px;height: 19px;width: 68px;" id="미래교육센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 620px;left: 82px;height: 16px;width: 53px;" id="미래교육센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 174px;left: 783px;height: 25px;width: 91px;" id="공공어린이집" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 196px;left: 722px;height: 18px;width: 69px;" id="공공어린이집" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 238px;left: 768px;height: 24px;width: 122px;" id="우리동네키움센터" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 450px;left:363px;" onclick="openNav('정시비율 추가 확대 등 대입제도 공정성 강화 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 240px;left:923px;" onclick="openNav('더 좋은 돌봄을 위한 우리동네키움센터 설립')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 304px;left:999px;" onclick="openNav('기초연금 30만원 인상으로 어르신들의 당당한 노후 보장 ')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 	</div>
 
 	<div style="width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
