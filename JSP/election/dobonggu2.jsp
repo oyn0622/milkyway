@@ -116,16 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -309,6 +327,12 @@
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/dobonggu2/도봉구을_오기형_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 921px;left: 338px;height:23px;width: 110px;" id="역사 문화 벨트" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 375px;left:160px;" onclick="openNav('우이-방학 경전철 조기 착공')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 865px;left:150px;" onclick="openNav('방학천 문화예술 테마거리 조성')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
@@ -316,12 +340,21 @@
 			<span class="point" style="top: 610px;left:212px;height:23px;width:102px;" id="청년창업파크" onclick="openTooltip(this)"></span>
 			<span class="point" style="top:697px;left: 370px;height:23px;width: 83px;" id="워킹맘센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 865px;left: 212px;height:19px;width: 137px;" id="시간제 보육서비스" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 613px;left:180px;" onclick="openNav('청년창업파크 추진(도봉소방학교 부지)')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
+			<div class="blinkBox" style="top: 923px;left:180px;" onclick="openNav('어르신 공공 도농일자리 발굴 및 확대')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/dobonggu2/도봉구을_오기형_선거공보_9.jpg"width="809" height="1104">
 			<span class="point" style="top: 390px;left: 180px;height:23px;width: 197px;" id="노후주택 선제적 맞춤" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 762px;left: 308px;height:23px;width: 88px;" id="도시재생" onclick="openTooltip(this)"></span>
+			<div class="blinkBox" style="top: 420px;left:140px;" onclick="openNav('무수골 생태치유공원 완공')" >
+				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+			</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
