@@ -116,16 +116,33 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -296,6 +313,9 @@
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/yangcheongu2/20200415_양천구을_이용선_선거공보_5.jpg" width="700" height="984">
+		<div class="blinkBox" style="top:140px;left:323px;" onclick="openNav('서부트럭터미널 부지, 확실한 개발')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -305,6 +325,9 @@
 		<span class="point" style="top: 387px;left: 185px;height:16px;width: 117px;" id="공공임대주택 우선 입주권" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 438px;left: 228px;height:16px;width: 129px;" id="총괄사업관리자 뉴딜 사업" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 545px;left: 146px;height:16px;width: 26px;" id="웨클(WECPNL)" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 333px;left:499px;" onclick="openNav('공항주변지역 발전 특별법 제정')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -314,6 +337,12 @@
 		<span class="point" style="top: 636px;left: 27px;height:16px;width: 126px;" id="학생 참여 및 참관 제도" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 656px;left: 25px;height:16px;width: 79px;" id="초중등교육법" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 697px;left: 26px;height:16px;width: 54px;" id="유급휴가" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 468px;left:190px;" onclick="openNav('4차 산업 인재 육성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 583px;left:309px;" onclick="openNav('학부모 학생의 학교운영 참여 확대')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
 	</div>
 
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -329,6 +358,9 @@
 		<span class="point" style="top: 348px;left: 24px;height:16px;width: 121px;" id="신혼부부 맞춤형 주거" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 388px;left: 143px;height:16px;width: 54px;" id="청년주택" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 614px;left: 53px;height:16px;width: 100px;" id="청년내일채움공제" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 405px;left:329px;" onclick="openNav('청년신혼부부주택활용')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 	</div>
 	
 	<div style="position:absolute;top:8946px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
