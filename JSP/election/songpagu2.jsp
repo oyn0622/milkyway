@@ -116,15 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -295,21 +314,36 @@
 	    <img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_6.jpg" width="700" height="984">
 	</div>
 	
-	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-        <img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_7.jpg" width="700" height="984">
+	<div style="position:absolute;top:5964px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+        <img src="송파구을_배현진_선거공보/송파구을_배현진_선거공보_7.jpg" width="700" height="984">
         <span class="point" style="top:193px;left: 252px;height: 42px;width:108px;" id="종부세" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 364px;left:600px;" onclick="openNav('문정권이 급격히 올린 보유세 조정 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
 	</div>
 
 	<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_8.jpg" width="700" height="984">
+		<img src="송파구을_배현진_선거공보/송파구을_배현진_선거공보_8.jpg" width="700" height="984">
 		<span class="point" style="top: 676px;left: 132px;height: 28px;width: 243px;" id="학부모 교육 정보지원센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 712px;left: 132px;height: 28px;width: 183px;" id="교육특구" onclick="openTooltip(this)"></span>    
-    </div>
+		<div class="blinkBox" style="top: 415px;left:93px;" onclick="openNav('국공립 어린이집 확충')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 535px;left:93px;" onclick="openNav('국가 재난시 긴급 유급 돌봄 휴가제 도입')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
+	</div>
 	
-	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_9.jpg" width="700" height="984">
+	<div style="position:absolute;top:7952px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+		<img src="송파구을_배현진_선거공보/송파구을_배현진_선거공보_9.jpg" width="700" height="984">
         <span class="point" style="top: 358px;left: 118px;height: 36px;width: 260px;" id="탄청 동측도로 지하화" onclick="openTooltip(this)"></span>
-    </div>
+		<div class="blinkBox" style="top: 367px;left:620px;" onclick="openNav('탄천 동측도로 지하화 지상공원 계속 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 655px;left:448px;" onclick="openNav('석촌호수~ 백제고분 명소화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_10.jpg" width="700" height="984">
