@@ -315,7 +315,7 @@
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="./dongjakgu2_files/20200415_동작구을_이수진_선거공보_7.jpg" width="809" height="1104">
+			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 659px;left: 147px;height:19px;width: 136px;" id="온종일 돌봄 특별법" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 659px;left: 339px;height:19px;width: 108px;" id="온종일 돌봄체계" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 754px;left: 192px;height:19px;width: 153px;" id="4차 산업혁명 창업특구" onclick="openTooltip(this)"></span>
@@ -325,7 +325,7 @@
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="./dongjakgu2_files/20200415_동작구을_이수진_선거공보_8.jpg" width="809" height="1104">
+			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_8.jpg" width="809" height="1104">
 			<span class="point" style="top: 583px;left: 147px;height:19px;width: 64px;" id="한강특구" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 620px;left: 440px;height:19px;width: 105px;" id="숭실대 드림센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 780px;left: 284px;height:19px;width: 63px;" id="청년주택" onclick="openTooltip(this)"></span>
@@ -333,7 +333,7 @@
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="./dongjakgu2_files/20200415_동작구을_이수진_선거공보_9.jpg" width="809" height="1104">
+			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_9.jpg" width="809" height="1104">
 			<span class="point" style="top: 369px;left: 252px;height:19px;width: 111px;" id="복합문화플랫폼" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 711px;left: 235px;height:19px;width: 100px;" id="지구단위 계획" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 776px;left: 326px;height:19px;width: 115px;" id="행복주택36세대" onclick="openTooltip(this)"></span>
@@ -346,7 +346,7 @@
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="./dongjakgu2_files/20200415_동작구을_이수진_선거공보_10.jpg" width="809" height="1104">
+			<img src="${contextPath }/resources/image/dongjakgu2/20200415_동작구을_이수진_선거공보_10.jpg" width="809" height="1104">
 			<span class="point" style="top: 778px;left: 463px;height:19px;width: 63px;" id="50+센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 800px;left: 463px;height:19px;width: 96px;" id="도시재생사업" onclick="openTooltip(this)"></span>
 			<div class="blinkBox" style="top: 390px;left:308px;" onclick="openNav('동작주차공원 내 청년주택 건립')" >
