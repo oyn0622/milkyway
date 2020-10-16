@@ -302,7 +302,7 @@
 	</div>
 
 	<div style="position:absolute;top:1860px;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
-		<img src="./yangcheongu_files/background03.jpg" width="1200" height="820">
+		<img src="${contextPath }/resources/image/yangcheongu/background03.jpg" width="1200" height="820">
 		<span class="point" style="top: 309px;left: 279px;height: 17px;width: 80px;" id="도시재생뉴딜사업" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 339px;left: 260px;height: 17px;width: 67px;" id="10분생활SOC" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 419px;left: 228px;height: 17px;width: 62px;" id="혁신성장밸리" onclick="openTooltip(this)"></span>
@@ -320,7 +320,7 @@
 	</div>
 
 	<div style="position:absolute;top:2700px;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
-		<img src="./yangcheongu_files/background04.jpg" width="1200" height="820">
+		<img src="${contextPath }/resources/image/yangcheongu/background04.jpg" width="1200" height="820">
 		<span class="point" style="top: 427px;left: 106px;height: 19px;width: 70px;" id="혁신성장밸리" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 410px;left: 47px;height: 19px;width: 68px;" id="미래교육센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 620px;left: 82px;height: 16px;width: 53px;" id="미래교육센터" onclick="openTooltip(this)"></span>
