@@ -317,7 +317,7 @@
 		</div>
 		
 		<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-			<img src="마포구갑_노웅래_선거공보/마포구갑_노웅래_선거공보_7.jpg" width="700" height="984">
+			<img src="${contextPath }/resources/image/mapogu/마포구갑_노웅래_선거공보_7.jpg" width="700" height="984">
 			<span class="point" style="top: 701px;left:335px;height:19px;width:132px;" id="청년창업혁신타운" onclick="openTooltip(this)"></span>
 			<div class="blinkBox" style="top: 299px;left:110px;" onclick="openNav('강북 예술의 전당 건립으로 문화예술 트라이앵글 구축')" >
 				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
@@ -328,7 +328,7 @@
 		</div>
 	
 		<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-			<img src="마포구갑_노웅래_선거공보/마포구갑_노웅래_선거공보_8.jpg" width="700" height="984">
+			<img src="${contextPath }/resources/image/mapogu/마포구갑_노웅래_선거공보_8.jpg" width="700" height="984">
 			<span class="point" style="top: 374px;left: 468px;height:16px;width: 95px;" id="메이커 스페이스" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 860px;left: 322px;height:16px;width: 90px;" id="본회의 정례화" onclick="openTooltip(this)"></span>
 			<div class="blinkBox" style="top: 370px;left:290px;" onclick="openNav('창의융합적 사고가 배양되는 메이커 스페이스 구축')" >
@@ -340,7 +340,7 @@
 		</div>
 		
 		<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-			<img src="마포구갑_노웅래_선거공보/마포구갑_노웅래_선거공보_9.jpg" width="700" height="984">
+			<img src="${contextPath }/resources/image/mapogu/마포구갑_노웅래_선거공보_9.jpg" width="700" height="984">
 			<span class="point" style="top: 325px;left: 163px;height:16px;width: 102px;" id="육아체육복합공공센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 831px;left: 95px;height:16px;width: 112px;" id="생활밀착형 스마트시티" onclick="openTooltip(this)"></span>
 			<div class="blinkBox" style="top: 765px;left:368px;" onclick="openNav('서부경전철 노선 광흥창 환승역 신설')" >
