@@ -116,16 +116,34 @@
 		position:relative;
 		top:0;
 	}
+	.blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">  
 	var idx=-1;
+	var check=0; //사이드바 열려있는지 체크
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	setInterval(toggle,500);
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
@@ -298,27 +316,42 @@
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_5.jpg" width="700" height="984">
+		<img src="./dongdaemungu_files/20200415_동대문구갑_안규백_선거공보_5.jpg" width="700" height="984">
 		<span class="point" style="top: 188px;left: 257px;height: 33px;width: 161px;" id="복합환승센터" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 192px;left:8px;" onclick="openNav('청량리역 르네상스, 복합환승센터 구축')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		<div class="blinkBox" style="top: 545px;left:340px;" onclick="openNav('홍릉 바이오산업 육성 및 청년일자리 창출')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_6.jpg" width="700" height="984">
+		<img src="./dongdaemungu_files/20200415_동대문구갑_안규백_선거공보_6.jpg" width="700" height="984">
 		<span class="point" style="top: 579px;left: 374px;height:24px;width: 123px;" id="이문고가 지하화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 713px;left: 413px;height:24px;width: 89px;" id="전선 지중화" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 899px;left:10px;" onclick="openNav('한방문화거리 조성을 통한 관광명소화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_7.jpg" width="700" height="984">
+		<img src="./dongdaemungu_files/20200415_동대문구갑_안규백_선거공보_7.jpg" width="700" height="984">
 		<span class="point" style="top: 830px;left: 136px;height:24px;width: 68px;" id="복합청사" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 210px;left:605px;" onclick="openNav('경동시장 문화예술극장 건립')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
 	</div>
 
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_8.jpg" width="700" height="984">
+		<img src="./dongdaemungu_files/20200415_동대문구갑_안규백_선거공보_8.jpg" width="700" height="984">
 		<span class="point" style="top: 331px;left: 368px;height: 19px;width: 92px;" id="온종일 돌봄체계" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 417px;left: 450px;height:24px;width: 92px;" id="상권 르네상스" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 623px;left: 190px;height:24px;width: 63px;" id="음압병상" onclick="openTooltip(this)"></span>
-    </div>
+		<div class="blinkBox" style="top: 470px;left:353px;" onclick="openNav('K-유니콘 기업 육성을 통한 벤처 4대 강국 실현')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
+		</div>
+	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_9.jpg" width="700" height="984">
