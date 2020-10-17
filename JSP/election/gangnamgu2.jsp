@@ -291,7 +291,8 @@
 
 	<div style="height: 100px;"></div>
 	<div class="contentslining">
-	<h2 style="text-align: center;margin-top:-0.5%">선거공보물의 저작권은 해당 국회의원에게 있습니다.</h2>
+	<h2 style="text-align:center;margin-top:-0.5%">선거공보물의 저작권은 해당 국회의원에게 있습니다.</h2>
+		
 	<div style="position:absolute;top:0px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	    <img src="${contextPath }/resources/image/gangnamgu2/background01.jpg" width="700" height="984">
 	</div>
