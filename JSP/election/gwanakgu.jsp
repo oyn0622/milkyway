@@ -320,8 +320,8 @@
 			<span class="point" style="top: 610px;left: 365px;height:21px;width: 92px;" id="교장공모제" onclick="openTooltip(this)"></span>
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/gwanakgu/관악구갑_유기홍_선거공보_7.jpg" width="809" height="1104">
+		<div style="width:809px;height:604px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/gwanakgu/관악구갑_유기홍_선거공보_7.jpg" width="809" height="604">
 			<span class="point" style="top: 449px;left:213px;height:21px;width:78px;" id="1인가구 공유창고" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 730px;left:258px;height:21px;width:79px;" id="혁신적 포용국가" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 294px;left:645px;" onclick="openNav('경전철서부선조기착공')" >
@@ -341,8 +341,8 @@
 		</div>
 		</div>
 	
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="${contextPath }/resources/image/gwanakgu/관악구갑_유기홍_선거공보_8.jpg" width="809" height="1104">
+		<div style="width:809px;height:604px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
+			<img src="${contextPath }/resources/image/gwanakgu/관악구갑_유기홍_선거공보_8.jpg" width="809" height="604">
 			<span class="point" style="top: 437px;left:224px;height:19px;width:48px;" id="디지털 문해 교육" onclick="openTooltip(this)"></span>
 			<span class="point" style="top:630px;left: 632px;height:21px;width: 84px;" id="도시재생 희망지 사업" onclick="openTooltip(this)"></span>
 		</div>
