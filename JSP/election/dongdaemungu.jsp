@@ -316,7 +316,7 @@
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="./dongdaemungu_files/20200415_동대문구갑_안규백_선거공보_5.jpg" width="700" height="984">
+		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_5.jpg" width="700" height="984">
 		<span class="point" style="top: 188px;left: 257px;height: 33px;width: 161px;" id="복합환승센터" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 192px;left:8px;" onclick="openNav('청량리역 르네상스, 복합환승센터 구축')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
@@ -327,7 +327,7 @@
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="./dongdaemungu_files/20200415_동대문구갑_안규백_선거공보_6.jpg" width="700" height="984">
+		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_6.jpg" width="700" height="984">
 		<span class="point" style="top: 579px;left: 374px;height:24px;width: 123px;" id="이문고가 지하화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 713px;left: 413px;height:24px;width: 89px;" id="전선 지중화" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 899px;left:10px;" onclick="openNav('한방문화거리 조성을 통한 관광명소화')" >
@@ -336,7 +336,7 @@
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="./dongdaemungu_files/20200415_동대문구갑_안규백_선거공보_7.jpg" width="700" height="984">
+		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_7.jpg" width="700" height="984">
 		<span class="point" style="top: 830px;left: 136px;height:24px;width: 68px;" id="복합청사" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 210px;left:605px;" onclick="openNav('경동시장 문화예술극장 건립')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
@@ -344,7 +344,7 @@
 	</div>
 
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
-		<img src="./dongdaemungu_files/20200415_동대문구갑_안규백_선거공보_8.jpg" width="700" height="984">
+		<img src="${contextPath }/resources/image/dongdaemungu/20200415_동대문구갑_안규백_선거공보_8.jpg" width="700" height="984">
 		<span class="point" style="top: 331px;left: 368px;height: 19px;width: 92px;" id="온종일 돌봄체계" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 417px;left: 450px;height:24px;width: 92px;" id="상권 르네상스" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 623px;left: 190px;height:24px;width: 63px;" id="음압병상" onclick="openTooltip(this)"></span>
