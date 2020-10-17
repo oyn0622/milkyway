@@ -25,7 +25,6 @@
     margin-left:2%;
     margin-right:1%;
     padding: 0;
-    background: #f3f3f3;
     color: #444;
     }
 
@@ -42,7 +41,7 @@
     text-align: right;
     top: 73%;
     width: 200px;
-    text-decoration: none;
+    text-decoration: underline;
     }
 
     .modal-close:hover {
