@@ -9,7 +9,8 @@ html, body{
 .logo{
     padding-top:10%;
     padding-left:8%;
-    font-size:55px;
+    font-size:58px;
+    line-height: 72px;
     font-weight:900;
     cursor:pointer;
 }
@@ -25,7 +26,7 @@ svg{
     padding:0;
     padding-top:5%;
     margin:0;
-    height:700px;
+    height:610px;
 }
 
 
