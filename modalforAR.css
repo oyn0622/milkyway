@@ -63,4 +63,15 @@
         padding:0;
         width:460px;
     }
+    .emptycandidates{
+        background-color: white;
+        color:black;
+        width:200px;
+        color:black;
+        font-weight: bold;
+        font-size:20px;
+        text-align: center;
+        top:33%;
+        border:2px black solid;
+    }
 
