@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -322,7 +329,7 @@
 		
 		<div style="width:809px;height:604px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/gwanakgu/관악구갑_유기홍_선거공보_7.jpg" width="809" height="604">
-			<span class="point" style="top: 449px;left:213px;height:21px;width:78px;" id="1인가구 공유창고" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 242px;left:213px;height:14px;width:73px;" id="1인가구 공유창고" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 730px;left:258px;height:21px;width:79px;" id="혁신적 포용국가" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 294px;left:645px;" onclick="openNav('경전철서부선조기착공')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">

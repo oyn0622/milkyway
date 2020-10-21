@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -270,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -337,6 +344,26 @@
 			<span class="point" style="top: 969px;left: 227px;height:19px;width: 100px;" id="뇌병변장애인" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 969px;left: 664px;height:19px;width: 57px;" id="뇌병변장애인 비전센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 986px;left: 403px;height: 15px;width: 57px;" id="뇌병변장애인 비전센터" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 377px;left:282px;" onclick="openNav('미세먼지 신호등 설치')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 430px;left:338px;" onclick="openNav('보건지소 신설')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 784px;left:201px;" onclick="openNav('어린이 보호구역 안전 시설 추가 설치 및 정비')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 826px;left:205px;" onclick="openNav('어르신 일자리 확대')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 897px;left:208px;" onclick="openNav('돌봄 SOS센터 설치')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">

@@ -279,7 +279,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -297,32 +297,32 @@
 	<div style="height: 100px;"></div>
 	<div class="contentslining">
 	<h2 style="text-align: center;margin-top:-0.5%">선거공보물의 저작권은 해당 국회의원에게 있습니다.</h2>
-	<div style="position:absolute;top:0px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="position:static;top:0px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	    <img src="${contextPath }/resources/image/gangnamgu3/background01.jpg" width="700" height="984">
 	</div>
     
-	<div style="position:absolute;top:994px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	    <img src="${contextPath }/resources/image/gangnamgu3/background02.jpg" width="700" height="984">
 	</div>
 	
-	<div style="position:absolute;top:1988px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	    <img src="${contextPath }/resources/image/gangnamgu3/background03.jpg" width="700" height="984">
 	</div>
 	
-	<div style="position:absolute;top:2982px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangnamgu3/background04.jpg" width="700" height="984">
 	</div>
 	
-	<div style="position:absolute;top:3976px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	    <img src="${contextPath }/resources/image/gangnamgu3/background05.jpg" width="700" height="984">
 	</div>
 	
-	<div style="position:absolute;top:4970px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	    <img src="${contextPath }/resources/image/gangnamgu3/background06.jpg" width="700" height="984">
 
 	</div>
 	
-	<div style="position:absolute;top:5964px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangnamgu3/background07.jpg" width="700" height="984">
 		<span class="point" style="top: 70px;left: 155px;height: 65px;width: 215px;" id="공시가격" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 278px;left: 130px;height:16px;width: 63px;" id="공시가격" onclick="openTooltip(this)"></span>
@@ -330,11 +330,11 @@
 		<span class="point" style="top: 477px;left: 161px;height: 65px;width: 303px;" id="부동산보유세" onclick="openTooltip(this)"></span>
 	</div>
 
-	<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangnamgu3/background08.jpg" width="700" height="984">
 	</div>
 	
-	<div style="position:absolute;top:7952px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangnamgu3/background09.jpg" width="700" height="984">
 		<span class="point" style="top: 194px;left: 326px;height: 25px;width: 80px;" id="공시가격" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 284px;left: 162px;height:16px;width: 44px;" id="공시가격" onclick="openTooltip(this)"></span>
@@ -355,11 +355,11 @@
 			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 760px;left:58px;" onclick="openNav('강남도심 재생지원에 관한 특별법 제정, 일명 <유경준법>!')" >
-			<img src="${contextPath }/resources/image/logo/search.png"" width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 	</div>
 	
-	<div style="position:absolute;top:8946px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangnamgu3/background10.jpg" width="700" height="984">
 		<span class="point" style="top: 352px;left: 89px;height:16px;width: 41px;" id="과밀학급" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 370px;left: 263px;height:16px;width: 43px;" id="SW교육" onclick="openTooltip(this)"></span>
@@ -380,7 +380,7 @@
 	    
 	</div>
 	
-	<div style="position:absolute;top:9940px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangnamgu3/background11.jpg" width="700" height="984">
 		<span class="point" style="top: 388px;left: 441px;height:16px;width: 43px;" id="강남도심 재생지원" onclick="openTooltip(this)"></span>
 	</div>

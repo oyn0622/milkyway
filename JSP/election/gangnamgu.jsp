@@ -276,7 +276,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -333,7 +333,7 @@
 		<span class="point" style="top: 619px;left: 324px;height: 17px;width: 42px;" id="종상향" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 619px;left: 375px;height: 17px;width: 51px;" id="종세분화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 779px;left: 98px;height: 17px;width: 133px;" id="재건축 초과이익 분담금" onclick="openTooltip(this)"></span>
-		<div class="blinkBox" style="top: 347px;left:63px;" onclick="openNav('•1세대 1주택 종부세 기준 주택가, 현행 공시가 9억에서 12억 이상으로 상향 조정')" >
+		<div class="blinkBox" style="top: 347px;left:63px;" onclick="openNav('●1세대 1주택 종부세 기준 주택가, 현행 공시가 9억에서 12억 이상으로 상향 조정')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 705px;left:63px;" onclick="openNav(' 각종 규제의 현실화! 강남답게 자유롭게 재건축 규제를 확 풀겠습니다!')" >

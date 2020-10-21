@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,7 +131,22 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
@@ -257,7 +279,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -302,6 +324,9 @@
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/eunpyeonggu2/20200415_은평구을_강병원_선거공보_7.jpg" width="700" height="984">
 		<span class="point" style="top: 869px;left: 445px;height:24px;width: 160px;" id="신분당선 서북부 연장선" onclick="openTooltip(this)"></span>
+		<div class="blinkBox" style="top: 495px;left:69px;" onclick="openNav('이낙연+정세균 전현직 국무총리와 함께 ‘신분당선’을 꼭 성공시키겠습니다!')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="30" class="blink">
+		</div>
 	</div>
 
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -310,6 +335,22 @@
 		<span class="point" style="top: 333px;left: 519px;height: 19px;width: 72px;" id="역사문화벨트" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 454px;left: 235px;height: 19px;width: 67px;" id="GTX-A 개통" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 588px;left: 360px;height: 19px;width: 50px;" id="산,학,연" onclick="openTooltip(this)"></span>
+    
+		<div class="blinkBox" style="top: 215px;left:364px;" onclick="openNav('교육 일번지 은평!')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 314px;left:378px;" onclick="openNav('자연문화도시 은평!')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 431px;left:345px;" onclick="openNav('막힘없는 은평!')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 547px;left:349px;" onclick="openNav('혁신하는 은평!')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
     </div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">

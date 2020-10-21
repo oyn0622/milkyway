@@ -273,7 +273,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -314,7 +314,7 @@
 	    <img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_6.jpg" width="700" height="984">
 	</div>
 	
-	<div style="position:absolute;top:5964px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_7.jpg" width="700" height="984">
         <span class="point" style="top:193px;left: 252px;height: 42px;width:108px;" id="종부세" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 364px;left:600px;" onclick="openNav('문정권이 급격히 올린 보유세 조정 추진')" >
@@ -322,7 +322,7 @@
 		</div>
 	</div>
 
-	<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_8.jpg" width="700" height="984">
 		<span class="point" style="top: 676px;left: 132px;height: 28px;width: 243px;" id="학부모 교육 정보지원센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 712px;left: 132px;height: 28px;width: 183px;" id="교육특구" onclick="openTooltip(this)"></span>    
@@ -334,7 +334,7 @@
 		</div>
 	</div>
 	
-	<div style="position:absolute;top:7952px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
+	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/songpagu2/송파구을_배현진_선거공보_9.jpg" width="700" height="984">
         <span class="point" style="top: 358px;left: 118px;height: 36px;width: 260px;" id="탄청 동측도로 지하화" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 367px;left:620px;" onclick="openNav('탄천 동측도로 지하화 지상공원 계속 추진')" >

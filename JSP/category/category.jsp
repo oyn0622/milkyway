@@ -255,7 +255,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -272,7 +272,7 @@
        
        <input type="hidden" id="category_tmp" /> 
         
-       <div class="menutitle">·카테고리 선택</div>
+       <div class="menutitle">· 카테고리 선택</div>
         <div class="btn-group">
             <button class="button" onclick="changeCategoryTmp('정치개혁')">정치개혁</button>
             <button class="button" onclick="changeCategoryTmp('경제')">경제</button>
@@ -302,7 +302,7 @@
             <button class="button" onclick="changeCategoryTmp('장애인')">장애인</button>
           </div>
 
-          <div class="menutitle">·지역 선택</div>
+          <div class="menutitle">· 지역 선택</div>
           <div class="btn-group">
            <button class="button" onclick="search('all')">전체</button>
            <button class="button" onclick="search('종로구')">종로구</button>
@@ -617,7 +617,7 @@
 			        </c:when>
 			        
 			        <c:when test="${totalPromise < 10 }" >
-				      <c:forEach   var="p" begin="1" end="${(totalPromise-1)/10 +1}" step="1" >
+				      <c:forEach var="p" begin="1" end="${totalPromise}" step="1" >
 				         <c:choose>
 				           <c:when test="${p==page }">
 				            <span class="pages" style="font-weight:bold;" onclick="sendPage(1,${p})">${p }&nbsp;&nbsp;</span>

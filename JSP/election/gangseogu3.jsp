@@ -117,6 +117,12 @@
 		top:0;
 	}
 	
+	    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 	
 </style>
 
@@ -273,7 +279,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -304,7 +310,6 @@
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/gangseogu3/background04.jpg" width="700" height="984">
-		<span class="point" style="top: 388px;left: 441px;height:16px;width: 43px;" id="종상향" onclick="openTooltip(this)"></span>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">

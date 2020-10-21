@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,13 +131,28 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
 	
 	//여기서부터
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
-		var region="종로구 갑";
+		var region="종로구";
 		$.ajax({
 			type:"get",
 			url:"${contextPath}/election/getNewsLink",
@@ -258,7 +280,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -297,13 +319,32 @@
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 	    <img src="${contextPath }/resources/image/jongnogu/background06.jpg" width="700" height="984">
-	    <span class="link" style="top:390px;left:43px;height:16px;width:152px;" onclick="openNav('지역상권활성화')"></span>
 	    <span class="point" style="top:446px;left:43px;height:16px;width:152px;" id="스마트 여성 안심 통합 네트워크" onclick="openTooltip(this)"></span>
 	    <span class="point" style="top:587px;left:145px;height:16px;width:80px;" id="온종일 돌봄체계" onclick="openTooltip(this)"></span>
 	    <span class="point" style="top:268px;left:447px;height:16px;width:93px;" id="노인 공동거주 주택" onclick="openTooltip(this)"></span>
 	    <span class="point" style="top:357px;left:380px;height:16px;width:88px;" id="청년특임장관 신설" onclick="openTooltip(this)"></span>
 	    <span class="point" style="top:480px;left:525px;height:16px;width:81px;" id="탈시설 자립생활" onclick="openTooltip(this)"></span>
 	    <span class="point" style="top:552px;left:376px;height:16px;width:90px;" id="K-유니콘 프로젝트" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 245px;left:348px;" onclick="openNav('감염병대응체계·공중보건 위기대응 능력 강화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 334px;left:279px;" onclick="openNav('소상공인·자영업자가 잘사는 나라')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 421px;left:292px;" onclick="openNav('여성폭력 OUT! 여성이 안전한 사회')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 528px;left:270px;" onclick="openNav('더 촘촘한 아이돌봄 안전망 구축')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 529px;left:662px;" onclick="openNav('정책지원, 규제혁신으로 벤처 4대강국 도약')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -319,6 +360,7 @@
 	    <span class="point" style="top:524px;left:135px;height:16px;width:94px;" id="역사문화 도시재생" onclick="openTooltip(this)"></span>
 	    <span class="point" style="top:150px;left:475px;height:16px;width:45px;" id="행복주택" onclick="openTooltip(this)"></span>
 	    <span class="point" style="top:360px;left:510px;height:16px;width:45px;" id="생활SOC" onclick="openTooltip(this)"></span>
+	
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">

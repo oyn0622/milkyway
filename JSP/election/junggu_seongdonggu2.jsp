@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,13 +131,28 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
-		var region="중구성동구 을";
+		var region="중구성둥구 을";
 		$.ajax({
 			type:"get",
 			url:"${contextPath}/election/getNewsLink",
@@ -257,7 +279,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -300,6 +322,20 @@
 			<span class="point" style="top: 310px;left: 260px;height:17px;width: 67px;" id="K-유니콘기업" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 326px;left: 125px;height:17px;width: 56px;" id="K-벤처한류" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 589px;left:125px;height:17px;width: 92px;" id="전통 도심제조업지역" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 290px;left:358px;" onclick="openNav('도심의 경제부흥 스타트! 청년들의 희망 스타트!')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 517px;left:426px;" onclick="openNav('중구와 성동의 잠재력이 거대한 미래산업의 생태계가 됩니다!')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 656px;left:294px;" onclick="openNav('청년들에겐 희망을, 지역엔 활력을')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+
 		</div>
 		
 		<div style="position:absolute;top:5964px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -311,6 +347,15 @@
 			<span class="point" style="top: 407px;left: 310px;height:16px;width: 55px;" id="평생교육체계" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 810px;left: 220px;height:16px;width:90px;" id="숙의형 장터길 전환 프로젝트" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 778px;left: 390px;height:16px;width: 122px;" id="2030 한강 자연성 회복사업" onclick="openTooltip(this)"></span>
+		
+
+		<div class="blinkBox" style="top: 351px;left:346px;" onclick="openNav('함께 꿈꾸는 교육도시, 서울 최고의 명문교육특구 조성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 785px;left:313px;" onclick="openNav('금호와 옥수를 서울의 대표 명품 주거지로 탈바꿈 ')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 		</div>
 	
 		<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">

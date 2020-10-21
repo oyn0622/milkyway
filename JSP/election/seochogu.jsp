@@ -274,7 +274,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -326,19 +326,19 @@
 		<span class="point" style="top: 399px;left: 105px;height:16px;width: 90px;" id="초과이익환수제" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 485px;left: 107px;height:16px;width: 121px;" id="경부 고속도로 지하화" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 205px;left:27px;" onclick="openNav('부동산세 부담 완화')" >
-			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 453px;left:27px;" onclick="openNav('경부고속도로 지하화')" >
-			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 580px;left:27px;" onclick="openNav('육아·교육 1번지! 서초')" >
-			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 698px;left:27px;" onclick="openNav('활기찬 노후! 건강한 서초')" >
-			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		<div class="blinkBox" style="top: 833px;left:27px;" onclick="openNav('친환경과 문화의 선두! 서초')" >
-			<img src="${contextPath }/resources/image/logo/search.png width="20" class="blink">
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 
 	</div>

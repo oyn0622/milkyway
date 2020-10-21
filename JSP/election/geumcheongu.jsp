@@ -275,7 +275,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -337,8 +337,8 @@
 			<img src="${contextPath }/resources/image/geumcheongu/금천구_최기상_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 586px;left: 263px;height:24px;width: 210px;" id="제4차 국가철도망 구축계획" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 976px;left: 256px;height:24px;width: 118px;" id="도시재생활성화" onclick="openTooltip(this)"></span>
-			<div class="blinkBox" style="top: 810px;left:51px;" onclick="openNav('공군부대 이전 및 부지개발')" >
-				img src="${contextPath }/resources/image/logo/search.png" width="22" class="blink">
+			<div class="blinkBox" style="top: 810px;left:51px;" onclick="openNav('공군부대 이전 및 부지개발')">
+				<img src="${contextPath }/resources/image/logo/search.png" width="22" class="blink">
 			</div>
 		</div>
 	

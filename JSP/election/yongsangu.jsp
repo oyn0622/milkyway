@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,11 +131,27 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
-		var region="용산구 갑";
+		var region="용산구";
 		$.ajax({
 			type:"get",
 			url:"${contextPath}/election/getNewsLink",
@@ -254,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -296,6 +319,16 @@
 		<span class="point" style="top:456px;left: 726px;height: 21px;width:50px;" id="용적률" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:491px;left: 41px;height: 21px;width:128px;" id="주거환경 개선사업" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:630px;left: 93px;height: 21px;width:105px;" id="교육국제화특구" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 219px;left:468px;" onclick="openNav('용산 국제업무지구 사업 재추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 436px;left:468px;" onclick="openNav('재건축·재개발을 포함하는 주거환경 개선사업 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		
 	</div>
 	
 	<div style="width:1106px;height:808px;overflow:hidden;border:1.5px solid lightgray;transform:translate(16%);">
@@ -309,6 +342,18 @@
 		<span class="point" style="top:545px;left:313px;height: 21px;width:190px;" id="전문가노인 일자리 지원 사업" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:673px;left: 166px;height: 21px;width:80px;" id="철도 지하화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:762px;left: 119px;height: 21px;width:63px;" id="국책사업" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 221px;left:364px;" onclick="openNav('이태원을 중심으로 문화관광 트라이앵글 조성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 413px;left:245px;" onclick="openNav('용산을 명품 생태 중심으로')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 311px;left:328px;" onclick="openNav('이태원, 경리단, 해방촌길 상권 재활성화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 	
 	<div style="width:1106px;height:808px;overflow:hidden;border:1.5px solid lightgray;transform:translate(16%);">

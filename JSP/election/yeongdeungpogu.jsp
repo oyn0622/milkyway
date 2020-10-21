@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,7 +131,23 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -254,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -271,43 +294,57 @@
 	<div style="height: 100px;"></div>
 	<div class="contentslining">
 		<h2 style="text-align: center;margin-top:-0.5%">선거공보물의 저작권은 해당 국회의원에게 있습니다.</h2>
-		<div style="position: static;top:0px;width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="position: static;top:0px;width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_1.jpg" width="1098" height="800">
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_2.jpg" width="1098" height="800">
 			<span class="point" style="top: 682px;left: 135px;height:19px;width: 173px;" id="스마트메디칼 의료특구" onclick="openTooltip(this)"></span>
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_3.jpg" width="1098" height="800">
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_4.jpg" width="1098" height="800">
 			<span class="point" style="top: 692px;left: 410px;height:17px;width: 96px;" id="첨단 미래교실" onclick="openTooltip(this)"></span>
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_5.jpg" width="1098" height="800">
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_6.jpg" width="1098" height="800">
 			<span class="point" style="top: 479px;left: 892px;height:19px;width:82px;" id="MOU체결" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 689px;left: 720px;height:19px;width: 52px;" id="유수지" onclick="openTooltip(this)"></span>
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_7.jpg" width="1098" height="800">
 			<span class="point" style="top: 98px;left: 799px;height:19px;width: 159px;" id="선유고가 철거 조기완료" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 407px;left: 808px;height:19px;width: 142px;" id="발달장애인 훈련센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 458px;left: 740px;height:19px;width: 78px;" id="자치경찰제" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 609px;left:865px;height:19px;width:130px;" id="도림고가철거 추진" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 254px;left:756px;" onclick="openNav('안양천 종합체육공원 추진 ')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 431px;left:708px;" onclick="openNav('나쁜 까페골목 재생지원')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 646px;left:461px;" onclick="openNav('서남권 문화메카 아트벨리 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		
 		</div>
 	
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_8.jpg" width="1098" height="800">
 			<span class="point" style="top: 113px;left: 698px;height:19px;width: 95px;" id="지하 유휴공간" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 214px;left: 560px;height:19px;width: 108px;" id="재정비촉진지구" onclick="openTooltip(this)"></span>
@@ -316,17 +353,27 @@
 			<span class="point" style="top: 567px;left:605px;height:19px;width:76px;" id="전선지중화" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 617px;left:605px;height:19px;width:88px;" id="맘스스테이션" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 642px;left: 678px;height:19px;width: 87px;" id="기부채납지" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 116px;left:517px;" onclick="openNav('5호선 영등포시장역 지하 유휴공간, 문화공간 및 국제 초단편영화센터 (아카이브, 교육장, 대여시설) 설치')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div class="blinkBox" style="top: 532px;left:293px;" onclick="openNav('철도 미세먼지 차단숲 조성 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		
+		</div>
+		
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_9.jpg"width="1098" height="800">
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_10.jpg" width="1098" height="800">
 		</div>
 		
-		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(28%);">
+		<div style="width:1098px;height:800px;overflow:hidden;border:1.5px solid lightgray;transform:translate(20%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu/영등포구갑_김영주_선거공보_11.jpg"width="1098" height="800">
 		</div>
 

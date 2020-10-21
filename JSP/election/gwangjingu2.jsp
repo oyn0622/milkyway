@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -270,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -323,6 +330,14 @@
 		<span class="point" style="top: 417px;left: 332px;height:33px;width: 180px;" id="생활공유플랫폼" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 680px;left:173px;height:16px;width: 98px;" id="시간제 보육서비스" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 823px;left:123px;height:16px;width: 126px;" id="터미널 승하차장지하화" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 748px;left:275px;" onclick="openNav('04 동서울터미널 현대화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 280px;left:453px;" onclick="openNav('01 구의역 일대 ICT 스타트업 허브')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 	</div>
 
 	<div style="position:absolute;top:6958px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -331,6 +346,18 @@
 		<span class="point" style="top: 580px;left: 360px;height:16px;width: 191px;" id="중심시가지형 도시재생 활성화사업" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 664px;left: 476px;height:17px;width: 98px;" id="무료 공공와이파이" onclick="openTooltip(this)"></span>
         <span class="point" style="top: 753px;left: 472px;height:16px;width: 78px;" id="생활 SOC 사업" onclick="openTooltip(this)"></span>
+    
+		<div class="blinkBox" style="top: 285px;left:443px;" onclick="openNav('05 지하철 2호선 지하화 및 하부공간 환경 개선')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 453px;left:296px;" onclick="openNav('06 전통시장 활성화 및 지역상권 경기부양')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 754px;left:282px;" onclick="openNav('청소년 독서실 건립-10분 동네생활 SOC사업(자양 4동)')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
     </div>
 	
 	<div style="position:absolute;top:7952px;width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">

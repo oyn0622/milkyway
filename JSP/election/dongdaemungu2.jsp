@@ -189,7 +189,7 @@
 		var word=val.getAttribute('id');
 		var height=val.offsetHeight;
 		var clientRect=val.getBoundingClientRect();
-		relativeTop=(window.pageYOffset)+clientRect.top+2;
+		relativeTop=(window.pageYOffset)+clientRect.top+height-9;
 		relativeLeft=(window.pageXOffset)+clientRect.left;
 		
 		if(chkTooltip==1) { //툴팁 박스가 열려있다면
@@ -350,7 +350,7 @@
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
-			<img src="./dongdaemungu2_files/20200415_동대문구을_장경태_선거공보_10.jpg" width="809" height="1104">
+			<img src="${contextPath }/resources/image/dongdaemungu2/20200415_동대문구을_장경태_선거공보_10.jpg" width="809" height="1104">
 			<span class="point" style="top: 613px;left: 421px;height:19px;width: 128px;" id="우리동네 키움센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 637px;left: 481px;height:19px;width: 62px;" id="50+센터" onclick="openTooltip(this)"></span>
 			<div class="blinkBox" style="top: 983px;left:20px;" onclick="openNav('동부학당 건립, 전통문화 계승 및 청소년 인성 함양')" >

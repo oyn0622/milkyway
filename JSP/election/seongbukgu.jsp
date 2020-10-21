@@ -190,7 +190,7 @@
 		var word=val.getAttribute('id');
 		var height=val.offsetHeight;
 		var clientRect=val.getBoundingClientRect();
-		relativeTop=(window.pageYOffset)+clientRect.top+2;
+		relativeTop=(window.pageYOffset)+clientRect.top+height-9;
 		relativeLeft=(window.pageXOffset)+clientRect.left;
 		
 		if(chkTooltip==1) { //툴팁 박스가 열려있다면
@@ -274,7 +274,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -310,7 +310,7 @@
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/seongbukgu/20200415_성북구갑_김영배_선거공보_5.jpg" width="809" height="1104">
 			<span class="point" style="top: 732px;left: 186px;height: 30px;width: 253px;" id="국회의원 국민소환제" onclick="openTooltip(this)"></span>
-			<div class="blinkBox" style="top: 732px;left:167px;" onclick="openNav(''국회의원 국민소환제 ' 도입! 국민을 무서워하는 정치로! ')" >
+			<div class="blinkBox" style="top: 732px;left:167px;" onclick="openNav('국회의원 국민소환제 도입! 국민을 무서워하는 정치로! ')" >
 				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
 			</div>
 		</div>
@@ -324,7 +324,7 @@
 			<div class="blinkBox" style="top: 676px;left:187px;" onclick="openNav('소상공인 자영업자 지원확대로 동네경제 살리기')" >
 				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
 			</div>
-			<div class="blinkBox" style="top: 818px;left:187px;" onclick="openNav('1가구 1주택 실현을 위한 '맞춤형 주거정책' 추진')" >
+			<div class="blinkBox" style="top: 818px;left:187px;" onclick="openNav('1가구 2주택 실현을 위한 맞춤형 주거정책 추진')" >
 				<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
 			</div>
 		</div>

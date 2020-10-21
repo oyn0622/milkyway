@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,7 +131,22 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
@@ -257,7 +279,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -292,6 +314,29 @@
 			<span class="point" style="top:563px;left: 542px;height:40px;width:164px;" id="지구생태보전 및 기후위기대응 특별법" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 606px;left:552px;height:19px;width:86px;" id="국제탄소배출 기준" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 672px;left:584px;height:19px;width:82px;" id="환경인지 예산제" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 393px;left:320px;" onclick="openNav('재난대응 및 경제활성화지원 기본법 제ㆍ개정')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 426px;left:476px;" onclick="openNav('바이오 메디컬 클러스터 육성 등 공공의료 체제 지원')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		
+		<div class="blinkBox" style="top: 575px;left:296px;" onclick="openNav('보육 및 육아 지원특별법으로 온라인 교육체제 정비를 위한 긴급지원')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 582px;left:516px;" onclick="openNav('「지구생태보전 및 기후위기대응 특별법」 제정')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 673px;left:562px;" onclick="openNav('환경부의 부총리급 상향 및 환경인지 예산제 도입 ')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">

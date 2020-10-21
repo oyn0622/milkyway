@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,7 +131,20 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
-
+	var shown = true;
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+	
+	setInterval(toggle,500);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
@@ -257,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -295,6 +315,11 @@
 			<img src="${contextPath }/resources/image/nowongu/20200415_노원구갑_고용진_선거공보_5.jpg" width="809" height="1104">
 			<span class="point" style="top: 580px;left: 51px;height:21px;width: 112px;" id="월계청춘카페" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 604px;left: 228px;height:21px;width: 147px;" id="송전탑 지중화 사업" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top:890px;left:561px;" onclick="openNav('광운대역세권 개발사업 2021년 착공')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
@@ -312,6 +337,15 @@
 			<img src="${contextPath }/resources/image/nowongu/20200415_노원구갑_고용진_선거공보_8.jpg" width="809" height="1104">
 			<span class="point" style="top: 395px;left: 151px;height: 25px;width: 190px;" id="동부간선도로 지하화" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 161px;left: 142px;height:21px;width: 100px;" id="시멘트 사일로" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top:417px;left:355px;" onclick="openNav('동부간선도로 지하화 생태수변공원 조성')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top:416px;left:755px;" onclick="openNav('경춘선숲길 업그레이드 철도공원-문화관광벨트화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
@@ -319,12 +353,22 @@
 			<span class="point" style="top: 818px;left: 262px;height:21px;width: 127px;" id="제조업르네상스" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 847px;left: 146px;height:21px;width: 172px;" id="실손보험 청구간소화" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 537px;left: 204px;height: 24px;width: 201px;" id="고압 송전탑 지중화 사업" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top:427px;left:564px;" onclick="openNav('월계문화체육센터~영축산 순환산책로 연결')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/nowongu/20200415_노원구갑_고용진_선거공보_10.jpg" width="809" height="1104">
 			<span class="point" style="top: 524px;left: 506px;height: 26px;width: 209px;" id="생활정치 아카데미 활성화" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 809px;left: 393px;height: 26px;width: 134px;" id="건강 인센티브제" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top:525px;left:323px;" onclick="openNav('관내 대학생 참여 생활정치 아카데미 활성화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">

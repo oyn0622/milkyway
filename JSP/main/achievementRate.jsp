@@ -31,7 +31,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -44,10 +44,11 @@
             <!-- 로고 -->
           <span class="logo"> 
             <a href="${contextPath }/achievementRate" style="text-decoration:none; color:black; line-height: 73px;">
-                제20·21대 서울시 <br>국회의원 공약 이행률 보기
+                제20대 서울시 <br>국회의원 공약 이행률 보기
             </a>
           </span>
-          <div style="position: absolute;top:43%;left:8%;color:grey;font-weight: 400;">본 자료는 메니페스토의 국회의원 공약 이행률을 참고하여 제작되었습니다.</div>
+          <div style="position: absolute;top:46%;left:8%;color:grey;font-weight: 400;">본 자료는 한국매니페스토실천본부(http://manifesto.or.kr)의<br>
+            '2020년 20대 국회의원 공약이행자체평가표 모음'을 기초로 하여 제작되었습니다.<br>일부 국회의원은 공약 이행표가 제공되지 않아 서비스에서 제한되었습니다.</div>
 
         <!-- 팝업창 -->
         <div id="open-moda3" class="modal-window">

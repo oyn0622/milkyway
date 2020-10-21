@@ -274,7 +274,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -292,31 +292,31 @@
 	<div style="height: 100px;"></div>
 	<div class="contentslining">
 	<h2 style="text-align: center;margin-top:-0.5%">선거공보물의 저작권은 해당 국회의원에게 있습니다.</h2>
-		<div style="position: static;top:0px;width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="position: static;top:0px;width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_1.jpg" width="809" height="1104">
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_2.jpg" width="809" height="1104">
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_3.jpg" width="809" height="1104">
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_4.jpg" width="809" height="1104">
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_5.jpg" width="809" height="1104">
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_6.jpg" width="809" height="1104">
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 542px;left: 186px;height:19px;width: 70px;" id="신산업R&D" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 583px;left: 240px;height:19px;width: 104px;" id="스마트 창업밸리" onclick="openTooltip(this)"></span>
@@ -325,7 +325,7 @@
 			<span class="point" style="top: 542px;left:423px;height:19px;width:89px;" id="고령자복지주택" onclick="openTooltip(this)"></span>
 		</div>
 	
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_8.jpg" width="809" height="1104">
 			<span class="point" style="top: 264px;left:220px;height:19px;width:94px;" id="온종일 돌봄 체계" onclick="openTooltip(this)"></span>
 			<span class="point" style="top:558px;left: 102px;height:19px;width: 67px;" id="청년기본법" onclick="openTooltip(this)"></span>
@@ -333,35 +333,35 @@
 			<span class="point" style="top: 584px;left: 480px;height:19px;width: 64px;" id="중증장애인" onclick="openTooltip(this)"></span>
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_9.jpg"width="809" height="1104">
 			<span class="point" style="top: 290px;left: 356px;height:19px;width: 97px;" id="전선지중화 사업" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 380px;left: 218px;height:16px;width: 84px;" id="띠녹지 조성사업" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 907px;left: 156px;height:19px;width: 82px;" id="도시재생사업" onclick="openTooltip(this)"></span>
 			<div class="blinkBox" style="top: 546px;left:118px;" onclick="openNav('3 항공기 소음피해 대책 및 피해보상 근거 마련 추진')" >
-				<img src="../../search.png" width="18" class="blink">
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 			</div>
 			<div class="blinkBox" style="top: 844px;left:118px;" onclick="openNav('1 구로역 신역사 건립 및 역세권 정비사업 추진')" >
-				<img src="../../search.png" width="18" class="blink">
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 			</div>
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_10.jpg" width="809" height="1104">
 			<span class="point" style="top: 858px;left: 452px;height:19px;width: 45px;" id="용적률" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 858px;left: 596px;height:19px;width: 45px;" id="종상향" onclick="openTooltip(this)"></span>
 			<div class="blinkBox" style="top: 489px;left:110px;" onclick="openNav('3 구로·남구로시장, 고객지원센터·주차장 확보 및 구로시장 아케이드 구간연장')" >
-				<img src="../../search.png" width="18" class="blink">
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 			</div>
 			<div class="blinkBox" style="top: 704px;left:202px;" onclick="openNav('3 구로디지털산단 내 원스톱 <스마트 창업밸리> 구축사업 추진')" >
-				<img src="../../search.png" width="18" class="blink">
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 			</div>
 			<div class="blinkBox" style="top: 885px;left:202px;" onclick="openNav('2 청년 행복주택 및 지하 공공주차장 건립')" >
-				<img src="../../search.png" width="18" class="blink">
+				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 			</div>
 		</div>
 		
-		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(66%);">
+		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gurogu2/구로구을_윤건영_선거공보_11.jpg"width="809" height="1104">
 		</div>
 

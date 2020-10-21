@@ -274,7 +274,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -350,7 +350,7 @@
 		<div class="blinkBox" style="top: 767px;left:80px;" onclick="openNav('그린뉴딜 기본법 제정 및 미세먼지 저감조치 추진')" >
 			<img src="${contextPath }/resources/image/logo/search.png"  width="18" class="blink">
 		</div>
-		<div class="blinkBox" style="top: 878px;left:80px;" onclick="openNav('국회법 개정 등을 통한 '일하는 국회, 신뢰받는 국회' 실현')" >
+		<div class="blinkBox" style="top: 878px;left:80px;" onclick="openNav('국회법 개정 등을 통한 일하는 국회, 신뢰받는 국회 실현')" >
 			<img src="${contextPath }/resources/image/logo/search.png"  width="18" class="blink">
 		</div>
 	</div>

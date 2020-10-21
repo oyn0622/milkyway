@@ -277,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -338,7 +338,7 @@
 			<div class="blinkBox" style="top: 343px;left:40px;" onclick="openNav('광역급행철도 GTX-D 노선 강동구 경유 추진')" >
 				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 			</div>
-			<div class="blinkBox" style="top: 343px;left:420px;" onclick="openNav('태호, 유찬이법 등 안착으로 '어린이들이 안전한 강동' 실현')" >
+			<div class="blinkBox" style="top: 343px;left:420px;" onclick="openNav('태호, 유찬이법 등 안착으로 어린이들이 안전한 강동 실현')" >
 				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 			</div>
 			<div class="blinkBox" style="top: 502px;left:420px;" onclick="openNav('발달장애인 국가책임제 추진')" >
@@ -355,7 +355,7 @@
 			<span class="point" style="top: 823px;left:439px;height:19px;width:133px;" id="한국형 국민기본소득" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 991px;left:450px;height:19px;width:115px;" id="장애인연금 수급권" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 1015px;left: 450px;height:19px;width: 197px;" id="수요맞춤형 장애인 활동지원체계" onclick="openTooltip(this)"></span>
-			<div class="blinkBox" style="top: 968px;left:20px;" onclick="openNav('탄소제로사회 실현을 위한 '그린뉴딜 기본법' 제정')" >
+			<div class="blinkBox" style="top: 968px;left:20px;" onclick="openNav('탄소제로사회 실현을 위한 그린뉴딜 기본법 제정')" >
 				<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">
 			</div>
 		</div>

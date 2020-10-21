@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -125,6 +132,23 @@
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
 
+	var shown = true;
+
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -254,7 +278,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -295,10 +319,18 @@
 			<span class="point" style="top: 835px;left: 110px;height: 23px;width: 88px;" id="지역자산화" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 643px;left: 465px;height: 23px;width: 158px;" id="고도제한 완화" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 665px;left: 465px;height: 23px;width: 154px;" id="소규모 주택정비사업" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 472px;left:410px;" onclick="openNav('북한산 숲 프로젝트')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="35" class="blink">
+		</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/gangbukgu/20200415_강북구갑_천준호_선거공보_6.jpg" width="809" height="1104">
+		
+		<div class="blinkBox" style="top: 735px;left:298px;" onclick="openNav('시립 어린이전문병원 조속한 건립 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
@@ -313,6 +345,18 @@
 			<span class="point" style="top: 876px;left: 171px;height: 14px;width: 69px;" id="지역자산화" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 999px;left: 105px;height: 14px;width: 122px;" id="소규모 주택정비사업" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 1020px;left: 89px;height: 14px;width: 118px;" id="도시재생활성화사업" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 548px;left:316px;" onclick="openNav('우이동 파인트리 콘도 정상화와 공공성 확보')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 567px;left:434px;" onclick="openNav('4.19사거리 일대, 우이권역 도시재생활성화사업 성공적 추진 기원')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 1020px;left:312px;" onclick="openNav('수유도시재생활성화사업 성공적 추진 기원')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">

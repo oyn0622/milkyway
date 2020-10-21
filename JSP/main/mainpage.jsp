@@ -33,7 +33,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -51,7 +51,7 @@
           </span>
           <!-- 팝업창 -->
           <div id="open-moda1" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates" style="margin-left:41%;">
                 <a href="${contextPath }/election/jongnogu">
                     <img src="${contextPath}/resources/image/id_card/이낙연.png"></img>
@@ -60,7 +60,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda2" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates" style="margin-left:41%;">
                 <a href="${contextPath }/election/yongsangu">
                     <img src="${contextPath}/resources/image/id_card/권영세.png"></img>
@@ -69,7 +69,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda3" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates">
                 <a href="${contextPath }/election/gangseogu">
                     <img src="${contextPath}/resources/image/id_card/강선우.png"></img>
@@ -84,7 +84,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda4" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates">
                 <a href="${contextPath }/election/gangbukgu">
                     <img src="${contextPath}/resources/image/id_card/천준호.png"></img>
@@ -96,7 +96,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda5" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates" style="margin-left:41%;">
                 <a href="${contextPath }/election/geumcheongu">
                     <img src="${contextPath}/resources/image/id_card/최기상.png"></img>
@@ -105,7 +105,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda6" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates">
                 <a href="${contextPath }/election/nowongu">
                     <img src="${contextPath}/resources/image/id_card/고용진.png"></img>
@@ -120,7 +120,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda7" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates">
                 <a href="${contextPath }/election/dongjakgu">
                     <img src="${contextPath}/resources/image/id_card/김병기.png"></img>
@@ -132,7 +132,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda8" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates">
                 <a href="${contextPath }/election/yeongdeungpogu">
                     <img src="${contextPath}/resources/image/id_card/김영주.png"></img>
@@ -144,7 +144,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda9" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates">
                 <a href="${contextPath }/election/songpagu">
                     <img src="${contextPath}/resources/image/id_card/김웅.png"></img>
@@ -159,7 +159,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda10" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates">
                 <a href="${contextPath }/election/mapogu">
                     <img src="${contextPath}/resources/image/id_card/노웅래.png"></img>
@@ -171,7 +171,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda11" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates">
                 <a href="${contextPath }/election/dongdaemungu">
                     <img src="${contextPath}/resources/image/id_card/안규백.png"></img>
@@ -183,7 +183,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda12" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates">
                 <a href="${contextPath }/election/seodaemungu">
                     <img src="${contextPath}/resources/image/id_card/우상호.png"></img>
@@ -195,7 +195,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda13" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates">
                 <a href="${contextPath }/election/gwanakgu">
                     <img src="${contextPath}/resources/image/id_card/유기홍.png"></img>
@@ -207,7 +207,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda14" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates">
                 <a href="${contextPath }/election/seochogu">
                     <img src="${contextPath}/resources/image/id_card/윤희숙.png"></img>
@@ -219,7 +219,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda15" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates">
                 <a href="${contextPath }/election/gurogu">
                     <img src="${contextPath}/resources/image/id_card/이인영.png"></img>
@@ -231,7 +231,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda16" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates">
                 <a href="${contextPath }/election/dobonggu">
                     <img src="${contextPath}/resources/image/id_card/인재근.png"></img>
@@ -243,7 +243,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda17" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates"  >
                 <a href="${contextPath }/election/gwangjingu">
                     <img src="${contextPath}/resources/image/id_card/전혜숙.png"></img>
@@ -255,7 +255,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda18" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates"  >
                 <a href="${contextPath }/election/gangdonggu">
                     <img src="${contextPath}/resources/image/id_card/진선미.png"></img>
@@ -267,7 +267,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda19" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>
             <div class="candidates">
                 <a href="${contextPath }/election/gangnamgu">
                     <img src="${contextPath}/resources/image/id_card/태구민.png"></img>
@@ -283,7 +283,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda20" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates"  >
                 <a href="${contextPath }/election/yangcheongu">
                     <img src="${contextPath}/resources/image/id_card/황희.png"></img>
@@ -295,7 +295,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda21" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates"  >
                 <a href="${contextPath }/election/seongbukgu">
                     <img src="${contextPath}/resources/image/id_card/김영배.png"></img>
@@ -307,7 +307,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda22" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates"  >
                 <a href="${contextPath }/election/eunpyeonggu">
                     <img src="${contextPath}/resources/image/id_card/박주민.png"></img>
@@ -319,7 +319,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda23" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates"  >
                 <a href="${contextPath }/election/jungnanggu">
                     <img src="${contextPath}/resources/image/id_card/서영교.png"></img>
@@ -331,7 +331,7 @@
         </div>
         <!-- 팝업창 -->
         <div id="open-moda24" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기</a>    
             <div class="candidates"  >
                 <a href="${contextPath }/election/junggu_seongdonggu">
                     <img src="${contextPath}/resources/image/id_card/홍익표.png"></img>

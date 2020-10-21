@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,7 +131,23 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -254,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -288,15 +311,35 @@
 			<span class="point" style="top: 375px;left: 353px;height: 33PX;width: 237px;" id="ICT 보안 클러스터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 744px;left: 299px;height: 21px;width: 84px;" id="위례선 트램" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 803px;left: 378px;height: 19px;width: 79px;" id="민자적격성" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 384px;left:56px;" onclick="openNav('중앙전파관리소 송파 ICT 보안 클러스터 개발 확정')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="24" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 629px;left:40px;" onclick="openNav('위례신도시 광역교통대책 차질 없이 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="24" class="blink">
+		</div>
+		
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/songpagu3/20200415_송파구병_남인순_선거공보_5.jpg" width="809" height="1104">
+		
+		
+		<div class="blinkBox" style="top: 113px;left:59px;" onclick="openNav('성동구치소 이적지 문화체육복합시설,주민편의시설 유치 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="24" class="blink">
+		</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">
 			<img src="${contextPath }/resources/image/songpagu3/20200415_송파구병_남인순_선거공보_6.jpg" width="809" height="1104">
 			<span class="point" style="top: 407px;left: 165px;height: 14px;width: 126px;" id="반다비체육센터 신축" onclick="openTooltip(this)"></span>
+		
+		
+		<div class="blinkBox" style="top: 335px;left:53px;" onclick="openNav('곰두리체육센터에 반다비체육센터 신축 확정 및 송파구 체육문화시설 개선')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="24" class="blink">
+		</div>
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(45%);">

@@ -115,6 +115,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -123,7 +130,23 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -253,7 +276,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -292,6 +315,11 @@
 	<div style="width:1000px;height:684px;overflow:hidden;border:1.5px solid lightgray;transform:translate(24%);">
 		<img src="${contextPath }/resources/image/dongjakgu/background05.jpg" width="1000" height="684">
 		<span class="point" style="top: 387px;left: 465px;height: 17px;width: 125px;" id="수요맞춤형 장애인활동지원체계 " onclick="openTooltip(this)"></span>
+
+		<div class="blinkBox" style="top: 449px;left:645px;" onclick="openNav('동작구 관내 종합사회복지관 재배치 및 신축')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
@@ -299,12 +327,22 @@
 		<span class="point" style="top: 390px;left: 456px;height: 22px;width: 50px;" id="연륙교" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 450px;left: 467px;height: 22px;width: 154px;" id="다중주택 건립규모 완화" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 502px;left: 323px;height: 22px;width: 167px;" id="근대하수박스 관광자원화" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 553px;left:225px;" onclick="openNav('서부선 경전철 조기 착공 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="30" class="blink">
+		</div>
+	
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/dongjakgu/background07.jpg" width="700" height="984">
 		<span class="point" style="top: 607px;left: 113px;height: 22px;width: 148px;" id="장승배기 종합행정타운" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 775px;left: 110px;height: 22px;width: 170px;" id="신상도 지하차도 확장공사" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 609px;left:88px;" onclick="openNav('장승배기 종합행정타운 차질 없는 추진')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+
 	</div>
 
 	<div style="width:1000px;height:684px;overflow:hidden;border:1.5px solid lightgray;transform:translate(24%);">
@@ -313,6 +351,15 @@
 		<span class="point" style="top: 325px;left: 430px;height: 22px;width: 123px;" id="청소년 창의혁신 체험공간" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 299px;left: 810px;height: 22px;width: 69px;" id="데이케어센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 382px;left: 745px;height: 22px;width: 66px;" id="쓰레기 적환장" onclick="openTooltip(this)"></span>
+	
+		<div class="blinkBox" style="top: 327px;left:405px;" onclick="openNav('청소년 창의혁신 체험공간 조성 (노량진근린공원 내 지하벙커 이용)')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 303px;left:692px;" onclick="openNav('공공지역아동센터 및 데이케어센터 건립')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+	
 	</div>
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">

@@ -278,7 +278,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -342,13 +342,13 @@
 		<img src="${contextPath }/resources/image/seongbukgu2/20200415_성북구을_기동민_선거공보_8.jpg" width="700" height="984">
 		<span class="point" style="top: 852px;left: 247px;height:24px;width: 170px;" id="바이오혁신 커뮤니티센터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 906px;left: 212px;height:24px;width: 92px;" id="공공와이파이" onclick="openTooltip(this)"></span>
-		<div class="blinkBox" style="top: 276px;left:133px;" onclick="openNav('3. 아이와 부모가 모두 따뜻한 성북<br>07 방과 후 돌봄도 안심, 우리동네 키움센터 유치<br>08 성북형 아이돌봄 모델(아이휴 센터) 구축 방안 수립<br>09 공공형 실내놀이터 건립 추진')" >
+		<div class="blinkBox" style="top: 276px;left:133px;" onclick="openNav('3. 아이와 부모가 모두 따뜻한 성북')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
 		</div>
-		<div class="blinkBox" style="top: 620px;left:133px;" onclick="openNav('5. 어르신들과 함께하는 성북<br>13 어르신 맞춤형 돌봄SOS센터 유치 및 지역사회 통합 돌봄 체계 구축<br>14 노인헬스케어센터 건립 추진<br>15 구립 경로당 확충 추진')" >
+		<div class="blinkBox" style="top: 620px;left:133px;" onclick="openNav('5. 어르신들과 함께하는 성북')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
 		</div>
-		<div class="blinkBox" style="top: 774px;left:133px;" onclick="openNav('6. 경제활성화! 활력 넘치는 성북<br>16 전통시장 활성화 및 골목경제 맞춤형 지원 정책 수립<br>(석관동 특화거리 포함)<br>17 서울 바이오혁신 커뮤니티센터 조성(종암동 유치)<br>18 서울청년센터 성북 건립<br>19 공공와이파이 성북 전역 확대')" >
+		<div class="blinkBox" style="top: 774px;left:133px;" onclick="openNav('6. 경제활성화! 활력 넘치는 성북')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
 		</div>
     </div>
@@ -356,7 +356,7 @@
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
 		<img src="${contextPath }/resources/image/seongbukgu2/20200415_성북구을_기동민_선거공보_9.jpg" width="700" height="984">
 		<span class="point" style="top: 332px;left: 245px;height:24px;width: 124px;" id="생활문화공유센터" onclick="openTooltip(this)"></span>
-		<div class="blinkBox" style="top: 851px;left:133px;" onclick="openNav('10. 건강하고 지속가능한 성북<br>29 성북구 심리지원센터 건립 추진<br>30 개운산 도시자연공원구역 지정 적극 지원')" >
+		<div class="blinkBox" style="top: 851px;left:133px;" onclick="openNav('10. 건강하고 지속가능한 성북')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="26" class="blink">
 		</div>
 	</div>

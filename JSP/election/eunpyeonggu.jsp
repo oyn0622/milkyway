@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,7 +131,22 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
@@ -257,7 +279,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -286,27 +308,52 @@
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/eunpyeonggu/은평구갑_박주민_선거공보_3.jpg" width="809" height="1104">
 			<span class="point" style="top: 502px;left: 614px;height:21px;width: 62px;" id="대형 교각" onclick="openTooltip(this)"></span>
+
+		<div class="blinkBox" style="top: 147px;left:30px;" onclick="openNav('맑고 깨끗한 녹번천으로 복원하겠습니다')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="35" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/eunpyeonggu/은평구갑_박주민_선거공보_4.jpg" width="809" height="1104">
 			<span class="point" style="top: 955px;left: 554px;height:21px;width: 95px;" id="마이스(MICE)" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 1030px;left: 571px;height:21px;width: 99px;" id="상업중심지구" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 177px;left:133px;" onclick="openNav('서울혁신파크가 다시 태어납니다')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="35" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/eunpyeonggu/은평구갑_박주민_선거공보_5.jpg" width="809" height="1104">
+		
+		<div class="blinkBox" style="top: 187px;left:89px;" onclick="openNav('새절역 초역세권화 드디어 실현됩니다')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="35" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/eunpyeonggu/은평구갑_박주민_선거공보_6.jpg" width="809" height="1104">
 			<span class="point" style="top: 384px;left: 140px;height:32px;width: 200px;" id="광역복합환승센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 517px;left: 263px;height:32px;width: 99px;" id="민관합동" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 192px;left:92px;" onclick="openNav('광역복합환승센터를 건립하겠습니다')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="35" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/eunpyeonggu/은평구갑_박주민_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 539px;left:303px;height:21px;width:83px;" id="강북횡단선" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 154px;left:97px;" onclick="openNav('교통체증 해결하고, 교통의 허브로 거듭납니다')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="35" class="blink">
+		</div>
+		
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">

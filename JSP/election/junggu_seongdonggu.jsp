@@ -116,6 +116,13 @@
 		position:relative;
 		top:0;
 	}
+	
+    .blinkBox {
+		cursor: pointer;
+		position:absolute;
+		width:70px;
+		height:70px;
+	}
 </style>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,7 +131,23 @@
 	var chkTooltip=0; //툴팁 열려있는지 체크하는 변수
 	var relativeTop,relativeLeft;
 	var relativeTop_tmp,relativeLeft_tmp; //열려있는 툴팁박스의 top, left (이미 선택한 단어의 툴팁인지 아닌지를 확인하기 위함)
+	var shown = true;
 
+	function toggle() {
+		var blink_element= $('.blink');
+		if(shown==true) {
+			blink_element.hide();
+			shown=false;
+		}
+		else {
+			blink_element.show();
+			shown=true;
+		}
+	}
+
+
+	setInterval(toggle,1000);
+	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -254,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -304,7 +327,15 @@
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/junggu_seongdonggu/20200415_중구성동구갑_홍익표_선거공보_7.jpg" width="809" height="1104">
 			<span class="point" style="top: 292px;left: 405px;height: 26px;width: 163px;" id="첨단 스마트도서관" onclick="openTooltip(this)"></span>
-
+		
+		<div class="blinkBox" style="top: 296px;left:621px;" onclick="openNav('서울숲에 4차산업혁명을 이끌 과학문화미래관 또는 첨단 스마트도서관 건립')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 668px;left:370px;" onclick="openNav('어린이 안전보호구역 확대 및 보호구역 시설 개선 등을 통한 어린이 교통안전 환경 대폭 강화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
 		</div>
 	
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
@@ -312,6 +343,19 @@
 			<span class="point" style="top: 654px;left: 236px;height: 24px;width: 258px;" id="뚝섬유수지 복합문화체육센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 739px;left: 486px;height: 19px;width: 103px;" id="뚝섬유수지 복합문화체육센터" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 974px;left: 298px;height: 19px;width: 101px;" id="젠트리피케이션" onclick="openTooltip(this)"></span>
+		
+		<div class="blinkBox" style="top: 299px;left:321px;" onclick="openNav('왕십리도선동 · 행당동 지역 중 · 고등학교 재배치를 통한 교육 여건 개선 방안 마련')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 659px;left:548px;" onclick="openNav('성동구민체육센터 리모델링 및 뚝섬유수지 복합문화체육센터 건립')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
+		<div class="blinkBox" style="top: 864px;left:249px;" onclick="openNav('지역경제 활성화를 위한 소상공인 · 자영업자 지원 강화 및 전통시장 현대화')" >
+			<img src="${contextPath }/resources/image/logo/search.png" width="20" class="blink">
+		</div>
+		
 		</div>
 		
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">

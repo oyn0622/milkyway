@@ -277,7 +277,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -351,7 +351,6 @@
 	
 	<div style="width:700px;height:984px;overflow:hidden;border:1.5px solid lightgray;transform:translate(58%);">
         <img src="${contextPath }/resources/image/gangseogu/강서구갑_강선우_선거공보_10.jpg" width="700" height="984">
-        <span class="point" style="top:328px;left: 97px;height: 26px;width:100px;" id="공동육아나눔터" onclick="openTooltip(this)"></span>
 		<span class="point" style="top:796px;left: 332px;height: 18px;width:66px;" id="저류지 복개" onclick="openTooltip(this)"></span>
 		<div class="blinkBox" style="top: 266px;left:78px;" onclick="openNav('강서형 지역화폐 도입')" >
 			<img src="${contextPath }/resources/image/logo/search.png" width="18" class="blink">

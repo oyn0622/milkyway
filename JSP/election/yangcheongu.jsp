@@ -276,7 +276,7 @@
 				<li><a href="#">제21대 국회의원 공약보기</a>
 				<ul id="sub-menu">
 					<li><a href="${contextPath }/" aria-label="subemnu">선거공보물 보기</a></li>
-					<li><a href="${contextPath }/category" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+					<li><a href="${contextPath }/category" aria-label="subemnu">분야별 공약 보기</a></li>
 				</ul>
 				</li>
 				<li><a href="${contextPath }/achievementRate">지난 공약 이행률 보기</a></li>
@@ -301,7 +301,7 @@
 		<img src="${contextPath }/resources/image/yangcheongu/background02.jpg" width="730" height="999">
 	</div>
 
-	<div style="position:absolute;top:1860px;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
+	<div style="position:absolute;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
 		<img src="${contextPath }/resources/image/yangcheongu/background03.jpg" width="1200" height="820">
 		<span class="point" style="top: 309px;left: 279px;height: 17px;width: 80px;" id="도시재생뉴딜사업" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 339px;left: 260px;height: 17px;width: 67px;" id="10분생활SOC" onclick="openTooltip(this)"></span>
