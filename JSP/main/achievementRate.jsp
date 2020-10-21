@@ -62,6 +62,20 @@
                 </a>
             </div>
         </div>
+	        <!-- 팝업창 -->
+        <div id="open-moda1" class="modal-window">
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <div class="emptycandidates" style="margin-left:27%;padding:2%;">
+                해당 국회의원은 자료가 제공되지 않아 서비스를 이용할 수 없습니다. 
+            </div>
+        </div>
+        <!-- 팝업창 -->
+        <div id="open-moda2" class="modal-window">
+            <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
+            <div class="emptycandidates" style="margin-left:27%;padding:2%;">
+                해당 국회의원은 자료가 제공되지 않아 서비스를 이용할 수 없습니다. 
+            </div>
+        </div>
         <!-- 팝업창 -->
         <div id="open-moda4" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
