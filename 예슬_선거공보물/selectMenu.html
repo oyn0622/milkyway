@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK SUNNY 은하수</title>
+    <link rel="stylesheet" type="text/css" href="../color.css"  />
+    <link rel="stylesheet" type="text/css" href="../outerdesign.css"  />
+    <link rel="stylesheet" type="text/css" href="../modal.css"/>
+    <link rel="stylesheet" type="text/css" href="../fixedmenutab.css"/>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+        body{
+            background-color:#d2e2de;
+            font-family: 'Noto Sans KR', sans-serif;
+            overflow:scroll;
+        }
+        #smallTitle{
+            margin-top: 8%;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #bigTitle{
+            text-align: center;
+            font-size: 50px;
+            font-weight:bold;
+            vertical-align: middle;
+        }
+        .menutitle{
+            padding:0;
+            margin:0;
+            font-weight:bold;
+            font-size:20px;
+            margin-left:15%;
+            margin-top:2%;
+            margin-bottom:1%;
+            
+        }
+        /*버튼메뉴*/
+        .btn-group .button{
+            background-color: white;
+            border: none;
+            color:black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
+            margin-bottom:4px;
+            height:60px;
+            width:200px;
+          
+        }
+        .btn-group{
+            margin-left:13%;
+        }
+        .dropdownC{
+            background-color: white;
+            border: none;
+            color:black;
+            padding:0;
+            margin:0;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
+            margin-bottom:4px;
+            height:60px;
+        }
+
+        .button:hover {
+                    background-color: #bbc9c6;
+                }
+        .button:focus {
+                    font-weight: 600;
+                    color:#fff;
+                    background-color: #7d9690;
+                    outline:none;
+    
+                  }
+          .dropdown-contentC {
+              display: none;
+              position: fixed;
+              background-color: #ffffff;
+              width:700px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+              border:3px solid #7d9690;
+              padding:20px;
+              top:inherit;
+          }
+          .dropdown-contentC a {
+            font-size: 16px;
+            font-weight: bold;
+            color:#999999;
+          }
+
+          .dropdown-contentC .button {
+ 
+              border: 2px solid #ebebeb;
+   
+          }
+        
+
+          .dropdownC:hover .dropdown-contentC {
+              display: block;
+          }
+ 
+        
+
+
+    </style>
+
+    <script>
+      function changeCategoryTmp(category) {
+       //$('#category_tmp').val(category);
+        document.getElementById('category_result').innerHTML=category;
+      }
+
+    </script>
+</head>
+<body>
+    <!-- 메뉴 -->
+    <nav role="navigation">
+      <ul id="main-menu">
+          <li><a href="mainpage.html" style="padding:0;"><img src="../로고.png" style="width:240px;transform:translateY(-16%);"></a></li>
+          <li><a href="#">은하수 소개</a></li>
+          <li><a href="#">제21대 국회의원 공약보기</a>
+          <ul id="sub-menu">
+              <li><a href="#" aria-label="subemnu">선거공보물 보기</a></li>
+              <li><a href="#" aria-label="subemnu">국회의원 별 공약 보기</a></li>
+              <li><a href="#" aria-label="subemnu">카테고리 별 공약 보기</a></li>
+          </ul>
+          </li>
+          <li><a href="#">지난 공약 이행률 보기</a></li>
+
+      </ul>
+    </nav>
+    
+        <!-- 콘텐츠 -->
+        <div id="smallTitle">제21대 서울시 국회의원</div>
+        <div id="bigTitle">분야별 공약 보기</div>
+        <!--선택-->
+        <input type="hidden" id="category_tmp"/>
+       <h5 style="color:#8e9e9a;font-size:19px;text-align: center;">카테고리를 선택하신 후 지역을 선택해주세요.</h5>
+       <div class="menutitle">· 카테고리 선택 <span id="category_result" style="font-size: 18px;color:gray;margin-left:10px;"></span> </div>
+        <div class="btn-group">
+          <button class="button" onclick="changeCategoryTmp('정치개혁')">정치개혁</button>
+          <button class="button" onclick="changeCategoryTmp('경제')">경제</button>
+          <button class="button" onclick="changeCategoryTmp('과학기술')">과학기술</button>
+          <button class="button" onclick="changeCategoryTmp('보건/의료')">보건/의료</button>
+          <button class="button" onclick="changeCategoryTmp('문화(예술/체육)')">문화(예술/체육)</button>
+        </div>
+        <div class="btn-group">
+          <button class="button" onclick="changeCategoryTmp('국가안보/통일')">국가안보/통일</button>
+          <button class="button" onclick="changeCategoryTmp('안전')">안전</button>
+          <button class="button" onclick="changeCategoryTmp('환경')">환경</button>
+          <button class="button" onclick="changeCategoryTmp('일자리/노동')">일자리/노동</button>
+          <button class="button" onclick="changeCategoryTmp('교육')">교육</button>
+        </div>
+        <div class="btn-group">
+          <button class="button" onclick="changeCategoryTmp('복지')">복지</button>
+          <button class="button" onclick="changeCategoryTmp('교통')">교통</button>
+          <button class="button" onclick="changeCategoryTmp('주거')">주거</button>
+          <button class="button" onclick="changeCategoryTmp('도시')">도시</button>
+          <button class="button" onclick="changeCategoryTmp('동물')">동물</button>
+        </div>
+        <div class="btn-group">
+          <button class="button" onclick="changeCategoryTmp('여성')">여성</button>
+          <button class="button" onclick="changeCategoryTmp('어린이')">어린이</button>
+          <button class="button" onclick="changeCategoryTmp('청년')">청년</button>
+          <button class="button" onclick="changeCategoryTmp('어르신')">어르신</button>
+          <button class="button" onclick="changeCategoryTmp('장애인')">장애인</button>
+        </div>
+
+          <div class="menutitle">· 지역 선택</div>
+          <div class="btn-group">
+           <button class="button">전체</button>
+           <button class="button">종로구</button>
+           <div class="dropdownC">
+              <button class="button">중구성동구</button>
+              <div class="dropdown-contentC">
+                <button class="button">중구성동구(갑)</button>
+                <button class="button">중구성동구(을)</button>
+                <button class="button">-</button>
+                <br>
+                <a href="selectMenu.html">창닫기 X</a>
+              </div>
+           </div>
+   
+           <button class="button">용산구</button>
+           <div class="dropdownC">
+              <button class="button">광진구</button>
+              <div class="dropdown-contentC">
+                <button class="button">광진구(갑)</button>
+                <button class="button">광진구(을)</button>
+                <button class="button">-</button>
+                <br>
+                <a href="selectMenu.html">창닫기 X</a>
+              </div>
+           </div>
+         </div>
+         <div class="btn-group">
+          <div class="dropdownC">
+            <button class="button">동대문구</button>
+            <div class="dropdown-contentC">
+              <button class="button">동대문구(갑)</button>
+              <button class="button">동대문구(을)</button>
+              <button class="button">-</button>
+              <br>
+              <a href="selectMenu.html">창닫기 X</a>
+            </div>
+         </div>
+         <div class="dropdownC">
+          <button class="button">중랑구</button>
+          <div class="dropdown-contentC">
+            <button class="button">중랑구(갑)</button>
+            <button class="button">중랑구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+       </div>
+        <div class="dropdownC">
+          <button class="button">성북구</button>
+          <div class="dropdown-contentC">
+            <button class="button">성북구(갑)</button>
+            <button class="button">성북구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+        </div>
+        <div class="dropdownC">
+          <button class="button">강북구</button>
+          <div class="dropdown-contentC">
+            <button class="button">강북구(갑)</button>
+            <button class="button">강북구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+        </div>
+        <div class="dropdownC">
+          <button class="button">도봉구</button>
+          <div class="dropdown-contentC">
+            <button class="button">도봉구(갑)</button>
+            <button class="button">도봉구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+        </div>
+         </div>
+         <div class="btn-group">
+          <div class="dropdownC">
+            <button class="button">노원구</button>
+            <div class="dropdown-contentC">
+              <button class="button">노원구(갑)</button>
+              <button class="button">노원구(을)</button>
+              <button class="button">노원구(병)</button>
+              <br>
+              <a href="selectMenu.html">창닫기 X</a>
+            </div>
+         </div>
+         <div class="dropdownC">
+          <button class="button">은평구</button>
+          <div class="dropdown-contentC">
+            <button class="button">은평구(갑)</button>
+            <button class="button">은평구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+       </div>
+        <div class="dropdownC">
+          <button class="button">서대문구</button>
+          <div class="dropdown-contentC">
+            <button class="button">서대문구(갑)</button>
+            <button class="button">서대문구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+        </div>
+        <div class="dropdownC">
+          <button class="button">마포구</button>
+          <div class="dropdown-contentC">
+            <button class="button">마포구(갑)</button>
+            <button class="button">마포구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+        </div>
+        <div class="dropdownC">
+          <button class="button">양천구</button>
+          <div class="dropdown-contentC">
+            <button class="button">양천구(갑)</button>
+            <button class="button">양천구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+       </div>
+         </div>
+         <div class="btn-group">
+          <div class="dropdownC">
+            <button class="button">강서구</button>
+            <div class="dropdown-contentC">
+              <button class="button">강서구(갑)</button>
+              <button class="button">강서구(을)</button>
+              <button class="button">강서구(병)</button>
+              <br>
+              <a href="selectMenu.html">창닫기 X</a>
+            </div>
+         </div>
+         <div class="dropdownC">
+          <button class="button">구로구</button>
+          <div class="dropdown-contentC">
+            <button class="button">구로구(갑)</button>
+            <button class="button">구로구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+       </div>
+       <button class="button">금천구</button>
+        <div class="dropdownC">
+          <button class="button">영등포구</button>
+          <div class="dropdown-contentC">
+            <button class="button">영등포구(갑)</button>
+            <button class="button">영등포구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+        </div>
+        <div class="dropdownC">
+          <button class="button">동작구</button>
+          <div class="dropdown-contentC">
+            <button class="button">동작구(갑)</button>
+            <button class="button">동작구(을)</button>
+            <button class="button">-</button>
+            <br>
+            <a href="selectMenu.html">창닫기 X</a>
+          </div>
+        </div>
+
+       </div>
+         </div>
+         <div class="btn-group">
+          <div class="dropdownC">
+            <button class="button">관악구</button>
+            <div class="dropdown-contentC">
+              <button class="button">관악구(갑)</button>
+              <button class="button">관악구(을)</button>
+              <button class="button">-</button>
+              <br>
+              <a href="selectMenu.html">창닫기 X</a>
+            </div>
+            </div>
+            <div class="dropdownC">
+              <button class="button">서초구</button>
+              <div class="dropdown-contentC">
+                <button class="button">서초구(갑)</button>
+                <button class="button">서초구(을)</button>
+                <button class="button">-</button>
+                <br>
+                <a href="selectMenu.html">창닫기 X</a>
+              </div>
+              </div>
+          <div class="dropdownC">
+            <button class="button">강남구</button>
+            <div class="dropdown-contentC">
+              <button class="button">강남구(갑)</button>
+              <button class="button">강남구(을)</button>
+              <button class="button">강남구(병)</button>
+              <br>
+              <a href="selectMenu.html">창닫기 X</a>
+            </div>
+            </div>
+           
+            <div class="dropdownC">
+              <button class="button">송파구</button>
+              <div class="dropdown-contentC">
+                <button class="button">송파구(갑)</button>
+                <button class="button">송파구(을)</button>
+                <button class="button">송파구(병)</button>
+                <br>
+                <a href="selectMenu.html">창닫기 X</a>
+              </div>
+              </div>
+              <div class="dropdownC">
+              <button class="button">강동구</button>
+              <div class="dropdown-contentC">
+                <button class="button">강동구(갑)</button>
+                <button class="button">강동구(을)</button>
+                <button class="button">-</button>
+                <br>
+                <a href="selectMenu.html">창닫기 X</a>
+              </div>
+              </div>
+         </div>
+
+
+    
+</body>
+</html>
