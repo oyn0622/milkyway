@@ -43,8 +43,7 @@ nav {
     #sub-menu {
         margin-top:10px;
         background: #fcfcfc;
-        opacity: 0;
-        visibility: hidden;
+        display:none;
         transition: all 0.15s ease-in;
         text-align: center;
 
@@ -63,9 +62,8 @@ nav {
         text-decoration: none;
     }
 
-    #main-menu > li:hover #sub-menu {
-        opacity: 1;
-        visibility: visible;
+    #dropdown:hover #sub-menu {
+      display:block;
     }
 
     #sub-menu > li >  a:hover {
