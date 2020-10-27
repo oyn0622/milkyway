@@ -62,7 +62,7 @@ nav {
         text-decoration: none;
     }
 
-    #dropdown:hover #sub-menu {
+    #main-menu>li:hover #sub-menu {
       display:block;
     }
 
