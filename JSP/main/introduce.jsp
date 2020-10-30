@@ -112,8 +112,23 @@
             청소년이 이해하기 쉽도록 제공하기 위해 '은하수'프로젝트가 시작되었습니다.        
         </div>
         <div class="thanksto">
+            <h3>은하수 프로젝트</h3>
+            <h5 style="display: inline;">기획</h5><h5 style="display: inline;padding-left:20px;font-weight: 300;">조수연</h5><h5 style="display: inline;padding-left:20px;font-weight: 300;">황은해</h5>
+            <br>
+            <h5 style="display: inline;margin-left:-12px;margin-right:9px;">디자인</h5><h5 style="display: inline;font-weight: 300;margin-right: 55px;margin-left: 8px;">오소은</h5>
+            <br>
+            <h5 style="display: inline;">개발</h5><h5 style="display: inline;padding-left:20px;font-weight: 300;">오예나</h5><h5 style="display: inline;padding-left:20px;font-weight: 300;">이예슬</h5>
+        </div>
+        <div class="thanksto">
             <h3>도움 주신 분들</h3>
-            <h5>SKSUNNY 소소한소통</h5>
+            <h5 style="font-weight: 300;">SKSUNNY  소소한소통   강나연   강미애   강인혜   고상원   고아름   권현민   김건희   김경아   김다혜   김민기</h5>
+            <h5 style="font-weight: 300;">김보연   김영은   김준섭   김지우   김지윤   김지현   김진선   김현수   김효준   김희진</h5>
+            <h5 style="font-weight: 300;">박서은   박세하   박치선   박현정   서유림   송유지   송지영   신유민   안은실   안지은</h5>
+            <h5 style="font-weight: 300;">엄규원   오소연   오예나   용다혜   유도경   유혜인   이서연   이석주   이성빈   이승현</h5>
+            <h5 style="font-weight: 300;">이예슬   이유정   이재은   이재희   이한나   이한빛   이현정   이혜리   이혜정   임이주</h5>
+            <h5 style="font-weight: 300;">임재호   임지원   임현정   장서진   장소영   장준화   전진솔   전찬영   정2   정다미</h5>
+            <h5 style="font-weight: 300;">정서정   정지혜   조명진   조수연   조종선   진은지   채세림   최보원   최예지   최유진</h5>
+            <h5 style="font-weight: 300;">최재혁   한아연   함수현   홍세인   황영해   황은해</h5>
         </div>
 
 </body>
