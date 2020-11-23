@@ -146,7 +146,7 @@
 	}
 
 
-	setInterval(toggle,1000);
+	setInterval(toggle,300);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
@@ -308,7 +308,7 @@
 		<div style="width:809px;height:1104px;overflow:hidden;border:1.5px solid lightgray;transform:translate(46%);">
 			<img src="${contextPath }/resources/image/yeongdeungpogu2/영등포구을_김민석_선거공보_3.jpg" width="809" height="1104">
 			<span class="point" style="top: 394px;left: 502px;height:19px;width: 102px;" id="미래공공의료 특별법" onclick="openTooltip(this)"></span>
-			<span class="point" style="top: 417px;left: 502px;height:19px;width: 150px;" id="바이오 메디컬 클러스터 육성" onclick="openTooltip(this)"></span>
+			<span class="point" style="top: 417px;left: 502px;height:19px;width: 150px;" id="바이오 메티컬 클러스터 육성" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 438px;left: 502px;height:19px;width: 71px;" id="공공의료 체제" onclick="openTooltip(this)"></span>
 			<span class="point" style="top: 607px;left:174px;height:19px;width:85px;" id="소그룹 공동보육" onclick="openTooltip(this)"></span>
 			<span class="point" style="top:563px;left: 542px;height:40px;width:164px;" id="지구생태보전 및 기후위기대응 특별법" onclick="openTooltip(this)"></span>

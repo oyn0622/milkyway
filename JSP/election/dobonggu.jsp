@@ -143,7 +143,7 @@
 			shown=true;
 		}
 	}
-	setInterval(toggle,500);
+	setInterval(toggle,300);
 
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';

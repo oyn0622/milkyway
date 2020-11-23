@@ -146,7 +146,7 @@
 	}
 
 
-	setInterval(toggle,500);
+	setInterval(toggle,300);
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기
@@ -301,7 +301,7 @@
 		<img src="${contextPath }/resources/image/yangcheongu/background02.jpg" width="730" height="999">
 	</div>
 
-	<div style="position:absolute;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
+	<div style="width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
 		<img src="${contextPath }/resources/image/yangcheongu/background03.jpg" width="1200" height="820">
 		<span class="point" style="top: 309px;left: 279px;height: 17px;width: 80px;" id="도시재생뉴딜사업" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 339px;left: 260px;height: 17px;width: 67px;" id="10분생활SOC" onclick="openTooltip(this)"></span>
@@ -319,7 +319,7 @@
 		</div>
 	</div>
 
-	<div style="position:absolute;top:2700px;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
+	<div style="top:2700px;width:1200px;height:820px;overflow:hidden;border:1.5px solid lightgray;transform:translate(15%);">
 		<img src="${contextPath }/resources/image/yangcheongu/background04.jpg" width="1200" height="820">
 		<span class="point" style="top: 427px;left: 106px;height: 19px;width: 70px;" id="혁신성장밸리" onclick="openTooltip(this)"></span>
 		<span class="point" style="top: 410px;left: 47px;height: 19px;width: 68px;" id="미래교육센터" onclick="openTooltip(this)"></span>

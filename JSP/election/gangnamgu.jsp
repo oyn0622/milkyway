@@ -114,8 +114,8 @@
 	.blinkBox {
 		cursor: pointer;
 		position:absolute;
-		width:100px;
-		height:100px;
+		width:45px;
+		height:45px;
 	}
 	
 	.contentslining{
@@ -173,7 +173,7 @@
 	}
 
 
-	setInterval(toggle,500);
+	setInterval(toggle,300);
 	function openNav(linkName) {
 		if(linkName!=word_tmp) { //방금 눌렀던 단어를 또 누르는 경우가 아닐 때 & 처음 사이드바 열 때
 			getNewsLink(linkName);

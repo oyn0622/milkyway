@@ -143,7 +143,7 @@
 			shown=true;
 		}
 	}
-	setInterval(toggle,500);
+	setInterval(toggle,300);
 
 
 	

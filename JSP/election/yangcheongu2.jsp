@@ -119,8 +119,8 @@
 	.blinkBox {
 		cursor: pointer;
 		position:absolute;
-		width:100px;
-		height:100px;
+		width:45px;
+		height:45px;
 	}
 </style>
 
@@ -144,7 +144,7 @@
 		}
 	}
 	
-	setInterval(toggle,500);
+	setInterval(toggle,300);
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';
 	var word_tmp=''; //(side bar) 이전에 누른 단어를 또 눌렀는지 확인하기 위한 변수
 	function getNewsLink(linkName) { //ajax로 sidebar 기사 링크 가져오기

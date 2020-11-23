@@ -119,8 +119,8 @@
 	.blinkBox {
 		cursor: pointer;
 		position:absolute;
-		width:100px;
-		height:100px;
+		width:45px;
+		height:45px;
 	}
 </style>
 
@@ -146,7 +146,7 @@
 	}
 
 
-	setInterval(toggle,500);
+	setInterval(toggle,300);
 	
 	
 	var sideText='<h3 id="linkName" style="padding: 8px 8px 8px 32px;"></h3><span id="closebtn" onclick="javascript:closeNav()">x</span>';

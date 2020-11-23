@@ -58,7 +58,7 @@
                     <img src="${contextPath }/resources/image/id_card2/금태섭.png"></img>
                 </a>
                 <a href="">
-                    <img src="${contextPath }/resources/image/id_card2/한정애.png" style="margin-top:-5%; margin-left:10px;"></img>
+                    <img src="${contextPath }/resources/image/id_card2/한정애.png" style="margin-left:10px;"></img>
                 </a>
             </div>
         </div>
