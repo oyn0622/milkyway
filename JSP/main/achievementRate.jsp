@@ -54,10 +54,10 @@
         <div id="open-moda3" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/금태섭.png"></img>
                 </a>
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/한정애.png" style="margin-left:10px;"></img>
                 </a>
             </div>
@@ -80,7 +80,7 @@
         <div id="open-moda4" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates" style="margin-left:37%;">
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/박용진.png"></img>
                 </a>
             </div>
@@ -89,7 +89,7 @@
         <div id="open-moda5" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates" style="margin-left:37%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/이훈.png"></img>
                 </a>
             </div>
@@ -98,13 +98,13 @@
         <div id="open-moda6" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/고용진.png"></img>
                 </a>
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/우원식.png"></img>
                 </a>
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/김성환.png"></img>
                 </a>
             </div>
@@ -113,7 +113,7 @@
         <div id="open-moda7" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:37%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/김병기.png"></img>
                 </a>
             </div>
@@ -122,7 +122,7 @@
         <div id="open-moda8" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:37%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/신경민.png"></img>
                 </a>
 
@@ -132,10 +132,10 @@
         <div id="open-moda9" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates" >
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/박인숙.png"></img>
                 </a>
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/최재성.png"></img>
                 </a> 
                 <a href="">
@@ -147,10 +147,10 @@
         <div id="open-moda10" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/노웅래.png"></img>
                 </a>
-                <a href="" style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html" style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/손혜원.png"></img>
                 </a>
             </div>
@@ -159,10 +159,10 @@
         <div id="open-moda11" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/안규백.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/민병두.png"></img>
                 </a>
             </div>
@@ -171,10 +171,10 @@
         <div id="open-moda12" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/우상호.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/김영호.png"></img>
                 </a>
             </div>
@@ -183,10 +183,10 @@
         <div id="open-moda13" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/김성식.png"></img>
                 </a>
-                <a href="" style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html" style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/오신환.png"></img>
                 </a>
             </div>
@@ -195,10 +195,10 @@
         <div id="open-moda14" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/이혜훈.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/박성중.png"></img>
                 </a>
             </div>
@@ -207,10 +207,10 @@
         <div id="open-moda15" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/이인영.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/박영선.png"></img>
                 </a>
             </div>
@@ -219,7 +219,7 @@
         <div id="open-moda16" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:37%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/인재근.png"></img>
                 </a>
             </div>
@@ -228,7 +228,7 @@
         <div id="open-moda17" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:37%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/전혜숙.png"></img>
                 </a>
             </div>
@@ -237,10 +237,10 @@
         <div id="open-moda18" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/진선미.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/심재권.png"></img>
                 </a>
             </div>
@@ -249,10 +249,10 @@
         <div id="open-moda19" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>
             <div class="candidates"style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/전현희.png"></img>
                 </a>
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/이은재.png" style="margin-left:10px;"></img>
                 </a>                
             </div>
@@ -261,10 +261,10 @@
         <div id="open-moda20" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/황희.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/김용태.png"></img>
                 </a>
             </div>
@@ -273,10 +273,10 @@
         <div id="open-moda21" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/유승희.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/기동민.png"></img>
                 </a>
             </div>
@@ -285,10 +285,10 @@
         <div id="open-moda22" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/박주민.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/강병원.png"></img>
                 </a>
             </div>
@@ -297,7 +297,7 @@
         <div id="open-moda23" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:37%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/박홍근.png"></img>
                 </a>
             </div>
@@ -306,10 +306,10 @@
         <div id="open-moda24" class="modal-window">
             <a href="#modal-close" title="Close" class="modal-close">지도로 돌아가기 X</a>    
             <div class="candidates" style="margin-left:22%;">
-                <a href="">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html">
                     <img src="${contextPath }/resources/image/id_card2/홍익표.png"></img>
                 </a>
-                <a href=""style="margin-left:10px;">
+                <a href="http://www.manifesto.or.kr/manifesto_data/20200210/20na/01.html"style="margin-left:10px;">
                     <img src="${contextPath }/resources/image/id_card2/지상욱.png"></img>
                 </a>
             </div>
