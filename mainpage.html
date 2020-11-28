@@ -15,7 +15,18 @@
     
 </head>
 <body>
+      <!-- Link to open the modal -->
+        <p>
+            <a href="#ex1" rel="modal:open"><img src="이용안내서.png" style="width: 56px; position:fixed;top:84%;left:6%;"></img>
+            </a>
+            <a href="#ex1" rel="modal:open" style="position: absolute;top:85%;left:11%;text-decoration: none;color:black;font-weight: 600;">사이트</a>
+            <a href="#ex1" rel="modal:open" style="position: absolute;top:88%;left:11%;text-decoration: none;color:black;font-weight: 600;">이용안내서</a></p>
 
+            <!-- Modal HTML embedded directly into document -->
+        <div id="ex1" class="modal">
+            <p>Thanks for clicking. That felt good.</p>
+            <a href="#" rel="modal:close" style="text-decoration: none;color:rgb(247, 95, 95);font-weight: 600;margin-left:90%;">닫기</a>
+        </div>
     <!-- 메뉴 -->
     <nav role="navigation">
         <ul id="main-menu">
@@ -449,4 +460,10 @@
 </div>
 
 
+  <!-- Remember to include jQuery :) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  
+  <!-- jQuery Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     </div>
