@@ -22,6 +22,25 @@
     <link rel="stylesheet" type="text/css" href="${contextPath }/resources/css/modalforAR.css"/>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+	$(document).ready(function(){
+		var cate="${category}";
+		var reg="${region}";
+		if(cate!='n') {
+			$('#category_tmp').val(cate);
+			document.getElementById(cate).setAttribute("class","Clickbutton");
+			if(reg=='n'){ //지역이 전체이면
+				document.getElementById('all').setAttribute("class","Clickbutton");
+			}
+		}
+		if(reg!='n') {
+			document.getElementById(reg).setAttribute("class","Clickbutton");
+			if(reg.charAt(reg.length-1)!='구' && reg.charAt(reg.length-1)!='l') { //갑을병이면
+				document.getElementById(reg).style.width="120px";
+				document.getElementById(reg).style.padding="0px";
+			}
+		}
+	});
+	
 	/* 페이지 */
 	function sendPage(section,page) {
 		var category=$('#category').val();
@@ -60,12 +79,20 @@
 	}
 	
 	function changeCategoryTmp(category) {
+		category_tmp=$('#category_tmp').val();
+		document.getElementById(category_tmp).setAttribute("class","button");
 		$('#category_tmp').val(category);
+		document.getElementById(category).setAttribute("class","Clickbutton");
 	}
 	
 	function search(region) {
 		var category=$('#category_tmp').val();
 		if(category!='') {
+			document.getElementById(region).setAttribute("class", "Clickbutton");
+			if(region.charAt(region.length-1)!='구' && region.charAt(region.length-1)!='l') { //갑을병이면
+				document.getElementById(region).style.width="120px";
+				document.getElementById(region).style.padding="0px";
+			}
 		   	var form = document.createElement("form");
 		   	form.setAttribute("method", "get");
 		   	form.setAttribute("action", "${contextPath}/category");
@@ -188,21 +215,33 @@
         }
 
         .button:hover {
-                    background-color: #bbc9c6;
-                }
-        .button:focus {
-                    font-weight: 600;
-                    color:#fff;
-                    background-color: #7d9690;
-                    outline:none;
-    
-                  }
+        	background-color: #bbc9c6;
+        	}
+           
+        .Clickbutton {
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
+            margin-bottom:4px;
+            height:60px;
+            width:160px;
+            font-weight: 600;
+            color:#fff;
+            background-color: #7d9690;
+            outline:none;
+            }
+            
           .dropdownC{
             position: relative;
             display: inline-block;
           }
           .dropdown-contentC {
-              display: none;
+              visibility: hidden;
               position: absolute;
               left: 0;
               background-color: #ffffff;
@@ -230,10 +269,10 @@
         
 
           .dropdownC:hover .dropdown-contentC {
-              display: block;
+              visibility: visible;
           }
           .dropdownC:hover .button {
-              display: inline;
+              visibility: visible;
           }
 
 </style>
@@ -270,59 +309,61 @@
         <div id="bigTitle">분야별 공약 보기</div>
         <!--선택-->
        
-       <input type="hidden" id="category_tmp" /> 
-        
+       <input type="hidden" id="category_tmp" value="경제"/> 
+
+	   <h5 style="color:#8e9e9a;font-size:19px;text-align: center;">1.[카테고리]를 먼저 선택해주세요.<br>2.[지역]을 이어서 택하면 자동으로 검색이 진행됩니다.<br>※주의※ [카테고리]-[지역] 선택 순서를 따르지 않으면 검색이 진행되지 않습니다.<br>3.다른 분야와 지역에 대해 검색하고 싶으면 1번 절차로 돌아갑니다.</h5>
+
        <div class="menutitle">· 카테고리 선택</div>
         <div class="btn-group">
-            <button class="button" onclick="changeCategoryTmp('정치개혁')">정치개혁</button>
-            <button class="button" onclick="changeCategoryTmp('경제')">경제</button>
-            <button class="button" onclick="changeCategoryTmp('과학기술')">과학기술</button>
-            <button class="button" onclick="changeCategoryTmp('보건/의료')">보건/의료</button>
-            <button class="button" onclick="changeCategoryTmp('문화(예술/체육)')">문화(예술/체육)</button>
-          </div>
-          <div class="btn-group">
-            <button class="button" onclick="changeCategoryTmp('국가안보/통일')">국가안보/통일</button>
-            <button class="button" onclick="changeCategoryTmp('안전')">안전</button>
-            <button class="button" onclick="changeCategoryTmp('환경')">환경</button>
-            <button class="button" onclick="changeCategoryTmp('일자리/노동')">일자리/노동</button>
-            <button class="button" onclick="changeCategoryTmp('교육')">교육</button>
-          </div>
-          <div class="btn-group">
-            <button class="button" onclick="changeCategoryTmp('복지')">복지</button>
-            <button class="button" onclick="changeCategoryTmp('교통')">교통</button>
-            <button class="button" onclick="changeCategoryTmp('주거')">주거</button>
-            <button class="button" onclick="changeCategoryTmp('도시')">도시</button>
-            <button class="button" onclick="changeCategoryTmp('동물')">동물</button>
-          </div>
-          <div class="btn-group">
-            <button class="button" onclick="changeCategoryTmp('여성')">여성</button>
-            <button class="button" onclick="changeCategoryTmp('어린이')">어린이</button>
-            <button class="button" onclick="changeCategoryTmp('청년')">청년</button>
-            <button class="button" onclick="changeCategoryTmp('어르신')">어르신</button>
-            <button class="button" onclick="changeCategoryTmp('장애인')">장애인</button>
-          </div>
+          <button class="button" id="정치개혁" onclick="changeCategoryTmp('정치개혁')">정치개혁</button>
+          <button class="button" id="경제" onclick="changeCategoryTmp('경제')">경제</button>
+          <button class="button" id="과학기술" onclick="changeCategoryTmp('과학기술')">과학기술</button>
+          <button class="button" id="보건/의료" onclick="changeCategoryTmp('보건/의료')">보건/의료</button>
+          <button class="button" id="문화(예술/체육)" onclick="changeCategoryTmp('문화(예술/체육)')">문화(예술/체육)</button>
+        </div>
+        <div class="btn-group">
+          <button class="button" id="국가안보/통일" onclick="changeCategoryTmp('국가안보/통일')">국가안보/통일</button>
+          <button class="button" id="안전" onclick="changeCategoryTmp('안전')">안전</button>
+          <button class="button" id="환경" onclick="changeCategoryTmp('환경')">환경</button>
+          <button class="button" id="일자리/노동" onclick="changeCategoryTmp('일자리/노동')">일자리/노동</button>
+          <button class="button" id="교육" onclick="changeCategoryTmp('교육')">교육</button>
+        </div>
+        <div class="btn-group">
+          <button class="button" id="복지" onclick="changeCategoryTmp('복지')">복지</button>
+          <button class="button" id="교통" onclick="changeCategoryTmp('교통')">교통</button>
+          <button class="button" id="주거" onclick="changeCategoryTmp('주거')">주거</button>
+          <button class="button" id="도시" onclick="changeCategoryTmp('도시')">도시</button>
+          <button class="button" id="동물" onclick="changeCategoryTmp('동물')">동물</button>
+        </div>
+        <div class="btn-group">
+          <button class="button" id="여성" onclick="changeCategoryTmp('여성')">여성</button>
+          <button class="button" id="어린이" onclick="changeCategoryTmp('어린이')">어린이</button>
+          <button class="button" id="청년" onclick="changeCategoryTmp('청년')">청년</button>
+          <button class="button" id="어르신" onclick="changeCategoryTmp('어르신')">어르신</button>
+          <button class="button" id="장애인" onclick="changeCategoryTmp('장애인')">장애인</button>
+        </div>
 
           <div class="menutitle">· 지역 선택</div>
           <div class="btn-group">
-           <button class="button" onclick="search('all')">전체</button>
-           <button class="button" onclick="search('종로구')">종로구</button>
+           <button class="button" id="all" onclick="search('all')">전체</button>
+           <button class="button" id="종로구" onclick="search('종로구')">종로구</button>
            <div class="dropdownC">
               <button class="button">중구성동구</button>
               <div class="dropdown-contentC">
-                <button class="button" onclick="search('중구성동구 갑')">중구성동구(갑)</button>
-                <button class="button" onclick="search('중구성동구 을')">중구성동구(을)</button>
+                <button class="button" id="중구성동구 갑" onclick="search('중구성동구 갑')">중구성동구(갑)</button>
+                <button class="button" id="중구성동구 을" onclick="search('중구성동구 을')">중구성동구(을)</button>
                 <button class="button" onclick="noResult()">-</button>
                 <br>
                   
               </div>
            </div>
    
-           <button class="button" onclick="search('용산구')">용산구</button>
+           <button class="button" id="용산구" onclick="search('용산구')">용산구</button>
            <div class="dropdownC">
               <button class="button">광진구</button>
               <div class="dropdown-contentC">
-                <button class="button" onclick="search('광진구 갑')">광진구(갑)</button>
-                <button class="button" onclick="search('광진구 을')">광진구(을)</button>
+                <button class="button" id="광진구 갑" onclick="search('광진구 갑')">광진구(갑)</button>
+                <button class="button" id="광진구 을" onclick="search('광진구 을')">광진구(을)</button>
                 <button class="button" onclick="noResult()">-</button>
                 <br>
                   
@@ -333,8 +374,8 @@
           <div class="dropdownC">
             <button class="button">동대문구</button>
             <div class="dropdown-contentC">
-              <button class="button" onclick="search('동대문구 갑')">동대문구(갑)</button>
-              <button class="button" onclick="search('동대문구 을')">동대문구(을)</button>
+              <button class="button" id="동대문구 갑" onclick="search('동대문구 갑')">동대문구(갑)</button>
+              <button class="button" id="동대문구 을" onclick="search('동대문구 을')">동대문구(을)</button>
               <button class="button" onclick="noResult()">-</button>
               <br>
                 
@@ -343,8 +384,8 @@
          <div class="dropdownC">
           <button class="button">중랑구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('중랑구 갑')">중랑구(갑)</button>
-            <button class="button" onclick="search('중랑구 을')">중랑구(을)</button>
+            <button class="button" id="중랑구 갑" onclick="search('중랑구 갑')">중랑구(갑)</button>
+            <button class="button" id="중랑구 을" onclick="search('중랑구 을')">중랑구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -353,8 +394,8 @@
         <div class="dropdownC">
           <button class="button">성북구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('성북구 갑')">성북구(갑)</button>
-            <button class="button" onclick="search('성북구 을')">성북구(을)</button>
+            <button class="button" id="성북구 갑" onclick="search('성북구 갑')">성북구(갑)</button>
+            <button class="button" id="성북구 을" onclick="search('성북구 을')">성북구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -363,8 +404,8 @@
         <div class="dropdownC">
           <button class="button">강북구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('강북구 갑')">강북구(갑)</button>
-            <button class="button" onclick="search('강북구 을')">강북구(을)</button>
+            <button class="button" id="강북구 갑" onclick="search('강북구 갑')">강북구(갑)</button>
+            <button class="button" id="강북구 을" onclick="search('강북구 을')">강북구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -373,8 +414,8 @@
         <div class="dropdownC">
           <button class="button">도봉구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('도봉구 갑')">도봉구(갑)</button>
-            <button class="button" onclick="search('도봉구 을')">도봉구(을)</button>
+            <button class="button" id="도봉구 갑" onclick="search('도봉구 갑')">도봉구(갑)</button>
+            <button class="button" id="도봉구 을" onclick="search('도봉구 을')">도봉구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -385,9 +426,9 @@
           <div class="dropdownC">
             <button class="button">노원구</button>
             <div class="dropdown-contentC">
-              <button class="button" onclick="search('노원구 갑')">노원구(갑)</button>
-              <button class="button" onclick="search('노원구 을')">노원구(을)</button>
-              <button class="button" onclick="search('노원구 병')">노원구(병)</button>
+              <button class="button" id="노원구 갑" onclick="search('노원구 갑')">노원구(갑)</button>
+              <button class="button" id="노원구 을" onclick="search('노원구 을')">노원구(을)</button>
+              <button class="button" id="노원구 병" onclick="search('노원구 병')">노원구(병)</button>
               <br>
                 
             </div>
@@ -395,8 +436,8 @@
          <div class="dropdownC">
           <button class="button">은평구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('은평구 갑')">은평구(갑)</button>
-            <button class="button" onclick="search('은평구 을')">은평구(을)</button>
+            <button class="button" id="은평구 갑" onclick="search('은평구 갑')">은평구(갑)</button>
+            <button class="button" id="은평구 을" onclick="search('은평구 을')">은평구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -405,8 +446,8 @@
         <div class="dropdownC">
           <button class="button">서대문구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('서대문구 갑')">서대문구(갑)</button>
-            <button class="button" onclick="search('서대문구 을')">서대문구(을)</button>
+            <button class="button" id="서대문구 갑" onclick="search('서대문구 갑')">서대문구(갑)</button>
+            <button class="button" id="서대문구 을" onclick="search('서대문구 을')">서대문구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -415,8 +456,8 @@
         <div class="dropdownC">
           <button class="button">마포구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('마포구 갑')">마포구(갑)</button>
-            <button class="button" onclick="search('마포구 을')">마포구(을)</button>
+            <button class="button" id="마포구 갑" onclick="search('마포구 갑')">마포구(갑)</button>
+            <button class="button" id="마포구 을" onclick="search('마포구 을')">마포구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -437,9 +478,9 @@
           <div class="dropdownC">
             <button class="button">강서구</button>
             <div class="dropdown-contentC">
-              <button class="button" onclick="search('강서구 갑')">강서구(갑)</button>
-              <button class="button" onclick="search('강서구 을')">강서구(을)</button>
-              <button class="button" onclick="search('강서구 병')">강서구(병)</button>
+              <button class="button" id="강서구 갑" onclick="search('강서구 갑')">강서구(갑)</button>
+              <button class="button" id="강서구 을" onclick="search('강서구 을')">강서구(을)</button>
+              <button class="button" id="강서구 병" onclick="search('강서구 병')">강서구(병)</button>
               <br>
                 
             </div>
@@ -447,19 +488,19 @@
          <div class="dropdownC">
           <button class="button">구로구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('구로구 갑')">구로구(갑)</button>
-            <button class="button" onclick="search('구로구 을')">구로구(을)</button>
+            <button class="button" id="구로구 갑" onclick="search('구로구 갑')">구로구(갑)</button>
+            <button class="button" id="구로구 을" onclick="search('구로구 을')">구로구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
           </div>
        </div>
-       <button class="button" onclick="search('금천구')">금천구</button>
+       <button class="button" id="금천구" onclick="search('금천구')">금천구</button>
         <div class="dropdownC">
           <button class="button">영등포구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('영등포구 갑')">영등포구(갑)</button>
-            <button class="button" onclick="search('영등포구 을')">영등포구(을)</button>
+            <button class="button" id="영등포구 갑" onclick="search('영등포구 갑')">영등포구(갑)</button>
+            <button class="button" id="영등포구 을" onclick="search('영등포구 을')">영등포구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -468,8 +509,8 @@
         <div class="dropdownC">
           <button class="button">동작구</button>
           <div class="dropdown-contentC">
-            <button class="button" onclick="search('동작구 갑')">동작구(갑)</button>
-            <button class="button" onclick="search('동작구 을')">동작구(을)</button>
+            <button class="button" id="동작구 갑" onclick="search('동작구 갑')">동작구(갑)</button>
+            <button class="button" id="동작구 을" onclick="search('동작구 을')">동작구(을)</button>
             <button class="button" onclick="noResult()">-</button>
             <br>
               
@@ -482,8 +523,8 @@
           <div class="dropdownC">
             <button class="button">관악구</button>
             <div class="dropdown-contentC">
-              <button class="button" onclick="search('관악구 갑')">관악구(갑)</button>
-              <button class="button" onclick="search('관악구 을')">관악구(을)</button>
+              <button class="button" id="관악구 갑" onclick="search('관악구 갑')">관악구(갑)</button>
+              <button class="button" id="관악구 을" onclick="search('관악구 을')">관악구(을)</button>
               <button class="button" onclick="noResult()">-</button>
               <br>
                 
@@ -492,8 +533,8 @@
             <div class="dropdownC">
               <button class="button">서초구</button>
               <div class="dropdown-contentC">
-                <button class="button" onclick="search('서초구 갑')">서초구(갑)</button>
-                <button class="button" onclick="search('서초구 을')">서초구(을)</button>
+                <button class="button" id="서초구 갑" onclick="search('서초구 갑')">서초구(갑)</button>
+                <button class="button" id="서초구 을" onclick="search('서초구 을')">서초구(을)</button>
                 <button class="button" onclick="noResult()">-</button>
                 <br>
                   
@@ -502,9 +543,9 @@
           <div class="dropdownC">
             <button class="button">강남구</button>
             <div class="dropdown-contentC">
-              <button class="button" onclick="search('강남구 갑')">강남구(갑)</button>
-              <button class="button" onclick="search('강남구 을')">강남구(을)</button>
-              <button class="button" onclick="search('강남구 병')">강남구(병)</button>
+              <button class="button" id="강남구 갑" onclick="search('강남구 갑')">강남구(갑)</button>
+              <button class="button" id="강남구 을" onclick="search('강남구 을')">강남구(을)</button>
+              <button class="button" id="강남구 병" onclick="search('강남구 병')">강남구(병)</button>
               <br>
                 
             </div>
@@ -513,9 +554,9 @@
             <div class="dropdownC">
               <button class="button">송파구</button>
               <div class="dropdown-contentC">
-                <button class="button" onclick="search('송파구 갑')">송파구(갑)</button>
-                <button class="button" onclick="search('송파구 을')">송파구(을)</button>
-                <button class="button" onclick="search('송파구 병')">송파구(병)</button>
+                <button class="button" id="송파구 갑" onclick="search('송파구 갑')">송파구(갑)</button>
+                <button class="button" id="송파구 을" onclick="search('송파구 을')">송파구(을)</button>
+                <button class="button" id="송파구 병" onclick="search('송파구 병')">송파구(병)</button>
                 <br>
                   
               </div>
@@ -523,8 +564,8 @@
               <div class="dropdownC">
               <button class="button">강동구</button>
               <div class="dropdown-contentC">
-                <button class="button" onclick="search('강동구 갑')">강동구(갑)</button>
-                <button class="button" onclick="search('강동구 을')">강동구(을)</button>
+                <button class="button" id="강동구 갑" onclick="search('강동구 갑')">강동구(갑)</button>
+                <button class="button" id="강동구 을" onclick="search('강동구 을')">강동구(을)</button>
                 <button class="button" onclick="noResult()">-</button>
                 <br>
                   
