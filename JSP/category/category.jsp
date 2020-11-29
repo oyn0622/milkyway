@@ -376,7 +376,7 @@ img {vertical-align: middle;}
 </head>
 
 <body>
-  <a href="#ex1" rel="modal:open"><img src="이용안내서.png" style="width: 56px; position:fixed;top:84%;left:6%;"></img>
+  <a href="#ex1" rel="modal:open"><img src="${contextPath }/resources/image/logo/이용안내서.png" style="width: 56px; position:fixed;top:84%;left:6%;"></img>
   </a>
   <a href="#ex1" rel="modal:open" style="position: absolute;top:85%;left:11%;text-decoration: none;color:black;font-weight: 600;">사이트</a>
   <a href="#ex1" rel="modal:open" style="position: absolute;top:88%;left:11%;text-decoration: none;color:black;font-weight: 600;">이용안내서</a></p>
