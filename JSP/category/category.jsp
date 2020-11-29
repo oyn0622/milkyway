@@ -274,13 +274,148 @@
           .dropdownC:hover .button {
               visibility: visible;
           }
+	          * {box-sizing: border-box}
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
 
 </style>
 
 </head>
 
 <body>
+  <a href="#ex1" rel="modal:open"><img src="이용안내서.png" style="width: 56px; position:fixed;top:84%;left:6%;"></img>
+  </a>
+  <a href="#ex1" rel="modal:open" style="position: absolute;top:85%;left:11%;text-decoration: none;color:black;font-weight: 600;">사이트</a>
+  <a href="#ex1" rel="modal:open" style="position: absolute;top:88%;left:11%;text-decoration: none;color:black;font-weight: 600;">이용안내서</a></p>
 
+<div id="ex1" class="modal">
+  <div class="slideshow-container">
+      <div class="firstfake">
+          <p></p>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="사이트이용안내서/분야별/1.png" style="width:100%;height:61%;">
+        
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="사이트이용안내서/분야별/2.png" style="width:100%;height: 61%;">
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="사이트이용안내서/분야별/3.png" style="width:100%;height: 61%;">
+      </div>
+    
+        
+        
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(-1)"></span> 
+        <span class="dot" onclick="currentSlide(0)"></span> 
+        <span class="dot" onclick="currentSlide(1)"></span>
+
+      </div>
+  <a href="#" rel="modal:close" style="text-decoration: none;color:rgb(247, 95, 95);font-weight: 600;margin-left:90%;">닫기</a>
+</div>
 	    <!-- 메뉴 -->
 		<nav role="navigation">
 			<ul id="main-menu">
@@ -673,5 +808,47 @@
 			</div>
 			</div>
 		</div>
+         <script>
+          var slideIndex = 1;
+          showSlides(slideIndex);
+  
+          function plusSlides(n) {
+              showSlides(slideIndex += n);
+          }
+  
+          function currentSlide(n) {
+          showSlides(slideIndex = n);
+          }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    var fakepage = document.getElementsByClassName("firstfake");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+  
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+         
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+  
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    fakepage.innerHTML=null;
+  }
+      </script>
+  
+  
+    <!-- Remember to include jQuery :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 </body>
 </html>
