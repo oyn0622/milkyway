@@ -708,7 +708,7 @@ img {vertical-align: middle;}
               </div>
          </div>
 	<div style="height: 60px;"></div>
-	<div style="width:54%;margin:0 auto 3% auto;background:white;border:#cccccc;">
+	<div style="width:74%;margin:0 auto 3% auto;background:white;border:#cccccc;">
 		<div style="width:100%;height:100%;padding:3%;">
 		<div style="text-align:center;display:block;margin-left:8%;margin-right:auto;border:2.5px solid #7d9690;width:77%;padding:1%;">
 		<c:choose>
