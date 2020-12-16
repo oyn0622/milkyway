@@ -14,6 +14,7 @@ nav {
         padding: 0;
         padding-top:4px;
         list-style: none;
+        
     }
     #main-menu{
         display:flex;
@@ -26,7 +27,7 @@ nav {
     }
 
     #main-menu > li > a {
-        font-size: medium;
+        font-size: small;
         color: black;
         font-weight: 500;
         text-align: center;
@@ -34,6 +35,7 @@ nav {
         letter-spacing: 0.05em;
         display: block;
         padding: 14px 16px;
+        margin-top:10px;
    }
    #main-menu > li > a:hover {
 
